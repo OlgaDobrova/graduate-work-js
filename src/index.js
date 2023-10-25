@@ -1,3 +1,3 @@
-import oneModule from "./modules/one";
+import headerPhone from "./modules/headerPhone";
 
-oneModule();
+headerPhone();

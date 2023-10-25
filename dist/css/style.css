@@ -478,11 +478,18 @@ template, [hidden] {
     -webkit-transition: 0.5s;
     transition: 0.5s;
 }
+.header-contacts__phone-number-accord.open {
+    top: 30px;
+    left: 0;
+}
 
 .header-contacts__phone-number-accord a {
     -webkit-transition: 0.5s;
     transition: 0.5s;
     opacity: 0;
+}
+.header-contacts__phone-number-accord.open a {
+    opacity: 1;
 }
 
 .header-contacts__arrow {
