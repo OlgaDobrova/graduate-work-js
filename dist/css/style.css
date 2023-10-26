@@ -4810,6 +4810,11 @@ div.wave-block:nth-child(17):after {
     transition: 1s;
 }
 
+.popup-dialog-menu.active-menu {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0); 
+}
+
 @media (max-width: 1024px) {
     .popup-dialog-menu {
         width: 549px;
@@ -4829,6 +4834,9 @@ div.wave-block:nth-child(17):after {
         -webkit-transform: translate3d(0, -100vh, 0);
         transform: translate3d(0, -100vh, 0);
         left: -5%;
+    }
+    .popup-dialog-menu.active-menu {
+        padding-top: 30px;
     }
 }
 
@@ -6684,6 +6692,9 @@ div.wave-block:nth-child(17):after {
         -ms-flex-align: center;
         align-items: center;
     }
+    .header .menu {
+       margin-top: 160px;
+   } 
 }
 
 .menu__icon {
