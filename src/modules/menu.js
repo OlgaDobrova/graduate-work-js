@@ -1,3 +1,5 @@
+import { handleElement } from "./helpers";
+
 export const menu = () => {
   const menuBtn = document.querySelectorAll(".menu .menu__icon");
   const menu = document.querySelector(".popup-dialog-menu");
@@ -6,10 +8,6 @@ export const menu = () => {
   let idInterval;
   let topElement;
   let direction = "down";
-
-  const handleMenu = () => {
-    menu.classList.toggle("active-menu");
-  };
 
   const scroll = () => {
     let top = topElement;
@@ -35,18 +33,20 @@ export const menu = () => {
   };
 
   menuBtn.forEach((btn) => {
-    btn.addEventListener("click", handleMenu);
+    btn.addEventListener("click", () => {
+      handleElement(".popup-dialog-menu", "active-menu");
+    });
   });
 
   menu.addEventListener("click", (e) => {
     if (e.target.closest(".close-menu")) {
-      handleMenu();
+      handleElement(".popup-dialog-menu", "active-menu");
     } else if (e.target.closest(".popup-menu-nav>.popup-menu-nav__item>a")) {
       const link = e.target.attributes["href"].value.slice(1);
 
       e.preventDefault();
       topElement = document.getElementById(link).offsetTop; // позиция элемента от верхнего края документа
-      handleMenu();
+      handleElement(".popup-dialog-menu", "active-menu");
       scroll();
     }
   });
