@@ -1,3 +1,6 @@
+* {
+  box-sizing: border-box;
+}
 .feedback--flex--row {
   position: relative;
   display: flex;
@@ -54,4 +57,17 @@
 #feedback4 .feedback__message,
 #feedback5 .feedback__message {
   color: #ffffff
+}
+.row:has(.formula-item-popup) {
+  z-index: 0;
+}
+.row:has(.formula-item-popup.active-bottom) {
+  z-index: 1;
+}
+.formula-item-popup.active-bottom {
+  bottom: -250px;
+  padding-top: 40px;
+}
+.formula-item-popup.active-bottom::before {
+  transform: rotate(180deg);
 }
