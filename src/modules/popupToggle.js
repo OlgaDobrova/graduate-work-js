@@ -1,8 +1,6 @@
 import { handleElement, animate } from "./helpers";
 
 export const popupToggle = () => {
-  // console.log(document.querySelectorAll(".link-list"));
-
   document.addEventListener("click", (e) => {
     let dataAtt = e.target.dataset["popup"];
     let popupElement = document.querySelector(`.popup.${dataAtt}`);

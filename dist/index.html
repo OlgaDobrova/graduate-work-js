@@ -10,6 +10,7 @@
 			href="https://fonts.googleapis.com/css?family=Montserrat+Alternates:400,600,700,800,900&amp;subset=cyrillic,cyrillic-ext"
 			rel="stylesheet">
 	<link rel="stylesheet" href="./css/style.css">
+	<link rel="stylesheet" href="./css/mystyle.css">
 	<script src="./js/main.js" defer></script>
 	<title>Relax Live</title></head>
 <body>
@@ -164,15 +165,18 @@
 						<div class="feedback__icon"><img src="./images/main/feedback_icon.svg" alt="phone"></div>
 						<div class="feedback__title">Получите консультацию от специалиста в удобное для Вас время</div>
 						<form class="feedback__form" id="feedback1">
-							<div class="feedback__input">
-								<input class="input feedback__input-input" name="phone" type="text"
-									   placeholder="Введите номер телефона" id="feedback-input1"
-									   minlength="18"></div>
-							<button class="button">Перезвоните мне</button>
-							<div class="checkbox"><input class="checkbox__input" type="checkbox" id="checkbox1"> <label
-									class="checkbox__label" for="checkbox1"></label>
-								<div class="checkbox__descr checkbox__descr_round-feedback">Я соглашаюсь с
-									<span class="link-privacy">политикой конфиденциальности</span>
+							<div class="feedback__body">
+								<div class="feedback__input">
+									<input class="input feedback__input-input" name="phone" type="text"
+											 placeholder="Введите номер телефона" id="feedback-input1"
+											 minlength="18" required></div>
+								<button class="button">Перезвоните мне</button>
+								<div class="checkbox">
+									<input class="checkbox__input" type="checkbox" id="checkbox1" required> 
+									<label class="checkbox__label" for="checkbox1"></label>
+									<div class="checkbox__descr checkbox__descr_round-feedback">Я соглашаюсь с
+										<span class="link-privacy" data-popup="popup-privacy">политикой конфиденциальности</span>
+									</div>
 								</div>
 							</div>
 						</form>
@@ -518,22 +522,37 @@
 				<span>вашу мечту о ремонте со встречи?</span>
 			</div>
 			<div class="feedback-block__descr">Обсудите проект со специалистом или вызовите замерщика.</div>
-			<form class="feedback-block__form" id="feedback2"><label><span><sup>*</sup>Введите ваше имя:</span> <input
-					type="text" class="feedback-block__form-input feedback-block__form-input_name" name="name" required=""
-					maxlength="20"></label> <label><span><sup>*</sup>Введите ваш номер:</span> <input type="text"
-																									  class="feedback-block__form-input feedback-block__form-input_phone"
-																									  name="phone"
-																									  id="feedback-input2"
-																									  required=""
-																									  placeholder="+7 (___)___-__-__"
-																									  minlength="18"></label>
-				<button class="button button-feedback-block">Перезвоните мне</button>
-				<div class="checkbox checkbox-feedback-block">
-					<input class="checkbox__input" type="checkbox" id="checkbox2"
-						   required=""> <label class="checkbox__label"
-											   for="checkbox2"></label>
-					<div class="checkbox__descr">Нажимая на кнопку, Вы даете согласие на
-						<span class="link-privacy">обработку своих персональных данных</span>
+			<form class="feedback-block__form" id="feedback2">
+				<div class="feedback__body" >
+					<div class="feedback--flex--row">
+						<label>
+							<span>
+								<sup>*</sup>Введите ваше имя:
+							</span> 
+							<input
+							type="text" class="feedback-block__form-input feedback-block__form-input_name" name="name" required
+							maxlength="20">
+						</label> 
+						<label>
+							<span>
+								<sup>*</sup>Введите ваш номер:
+							</span> 
+							<input type="text" class="feedback-block__form-input feedback-block__form-input_phone" 
+								name="phone"
+								id="feedback-input2"
+								required=""
+								placeholder="+7 (___)___-__-__"
+								minlength="18">
+						</label>
+						<button class="button button-feedback-block">Перезвоните мне</button>
+						<div class="checkbox checkbox-feedback-block">
+							<input class="checkbox__input" type="checkbox" id="checkbox2"
+									 > <label class="checkbox__label"
+														 for="checkbox2"></label>
+							<div class="checkbox__descr">Нажимая на кнопку, Вы даете согласие на
+								<span class="link-privacy" data-popup="popup-privacy">обработку своих персональных данных</span>
+							</div>
+						</div>
 					</div>
 				</div>
 			</form>
@@ -797,14 +816,17 @@
 					<div class="feedback__icon"><img src="./images/main/feedback_icon.svg" alt=""></div>
 					<div class="feedback__title">Получите консультацию от специалиста в удобное для Вас время</div>
 					<form class="feedback__form" id="feedback3">
-						<div class="feedback__input"><input class="input feedback__input-input" name="phone" type="text"
-															placeholder="Введите номер телефона" id="feedback-input3" minlength="18">
-						</div>
-						<button class="button">Перезвоните мне</button>
-						<div class="checkbox"><input class="checkbox__input" type="checkbox" id="checkbox3"> <label
-								class="checkbox__label" for="checkbox3"></label>
-							<div class="checkbox__descr checkbox__descr_round-feedback">Я соглашаюсь с
-								<span class="link-privacy">политикой конфиденциальности</span>
+						<div class="feedback__body" >
+							<div class="feedback__input"><input class="input feedback__input-input" name="phone" type="text"
+																placeholder="Введите номер телефона" id="feedback-input3" minlength="18">
+							</div>
+							<button class="button">Перезвоните мне</button>
+							<div class="checkbox">
+								<input class="checkbox__input" type="checkbox" id="checkbox3" required> <label
+									class="checkbox__label" for="checkbox3"></label>
+								<div class="checkbox__descr checkbox__descr_round-feedback">Я соглашаюсь с
+									<span class="link-privacy" data-popup="popup-privacy">политикой конфиденциальности</span>
+								</div>
 							</div>
 						</div>
 					</form>
@@ -943,22 +965,35 @@
 				<span>стоимости ремонта Вашего помещения</span>
 			</div>
 			<div class="feedback-block__descr">Обсудите проект со специалистом или вызовите замерщика.</div>
-			<form class="feedback-block__form" id="feedback4"><label><span><sup>*</sup>Введите ваше имя:</span> <input
-					type="text" class="feedback-block__form-input feedback-block__form-input_name" name="name" required=""
-					maxlength="20"></label> <label><span><sup>*</sup>Введите ваш номер:</span> <input type="text"
-																									  class="feedback-block__form-input feedback-block__form-input_phone"
-																									  name="phone"
-																									  id="feedback-input4"
-																									  required=""
-																									  placeholder="+7 (___)___-__-__"
-																									  minlength="18"></label>
-				<button class="button button-feedback-block">Перезвоните мне</button>
-				<div class="checkbox checkbox-feedback-block">
-					<input class="checkbox__input" type="checkbox" id="checkbox4"
-						   required=""> <label class="checkbox__label"
-											   for="checkbox4"></label>
-					<div class="checkbox__descr">Нажимая на кнопку, Вы даете согласие на
-						<span class="link-privacy">обработку своих персональных данных</span>
+			<form class="feedback-block__form" id="feedback4">
+				<div class="feedback__body" >
+					<div class="feedback--flex--row">
+						<label>
+							<span><sup>*</sup>Введите ваше имя:</span> 
+							<input
+							type="text" class="feedback-block__form-input feedback-block__form-input_name" name="name" required=""
+							maxlength="20">
+						</label> 
+						<label>
+							<span><sup>*</sup>Введите ваш номер:</span> 
+							<input type="text"
+								class="feedback-block__form-input feedback-block__form-input_phone"
+								name="phone"
+								id="feedback-input4"
+								required=""
+								placeholder="+7 (___)___-__-__"
+								minlength="18">
+						</label>
+						<button class="button button-feedback-block">Перезвоните мне</button>
+						<div class="checkbox checkbox-feedback-block">
+							<input class="checkbox__input" type="checkbox" id="checkbox4"
+									required> 
+							<label class="checkbox__label" for="checkbox4">
+							</label>
+							<div class="checkbox__descr">Нажимая на кнопку, Вы даете согласие на
+								<span class="link-privacy" data-popup="popup-privacy">обработку своих персональных данных</span>
+							</div>
+						</div>
 					</div>
 				</div>
 			</form>
@@ -1142,22 +1177,27 @@
 				<span>на свой вопрос?</span>
 			</div>
 			<div class="feedback-block__descr">Обсудите проект со специалистом или вызовите замерщика.</div>
-			<form class="feedback-block__form" id="feedback5"><label><span><sup>*</sup>Введите ваше имя:</span> <input
-					type="text" class="feedback-block__form-input feedback-block__form-input_name" name="name" required=""
-					maxlength="20"></label> <label><span><sup>*</sup>Введите ваш номер:</span> <input type="text"
-																									  class="feedback-block__form-input feedback-block__form-input_phone"
-																									  name="phone"
-																									  id="feedback-input5"
-																									  required=""
-																									  placeholder="+7 (___)___-__-__"
-																									  minlength="18"></label>
-				<button class="button button-feedback-block">Перезвоните мне</button>
-				<div class="checkbox checkbox-feedback-block">
-					<input class="checkbox__input" type="checkbox" id="checkbox5"
-						   required=""> <label class="checkbox__label"
-											   for="checkbox5"></label>
-					<div class="checkbox__descr">Нажимая на кнопку, Вы даете согласие на
-						<span class="link-privacy">обработку своих персональных данных</span>
+			<form class="feedback-block__form" id="feedback5">
+				<div class="feedback__body" >
+					<div class="feedback--flex--row">
+						<label><span><sup>*</sup>Введите ваше имя:</span> <input
+							type="text" class="feedback-block__form-input feedback-block__form-input_name" name="name" required=""
+							maxlength="20"></label> <label><span><sup>*</sup>Введите ваш номер:</span> <input type="text"
+																												class="feedback-block__form-input feedback-block__form-input_phone"
+																												name="phone"
+																												id="feedback-input5"
+																												required=""
+																												placeholder="+7 (___)___-__-__"
+																												minlength="18"></label>
+						<button class="button button-feedback-block">Перезвоните мне</button>
+						<div class="checkbox checkbox-feedback-block">
+							<input class="checkbox__input" type="checkbox" id="checkbox5"
+									required> <label class="checkbox__label"
+														for="checkbox5"></label>
+							<div class="checkbox__descr">Нажимая на кнопку, Вы даете согласие на
+								<span class="link-privacy" data-popup="popup-privacy">обработку своих персональных данных</span>
+							</div>
+						</div>
 					</div>
 				</div>
 			</form>
