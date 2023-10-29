@@ -22,4 +22,40 @@ const animate = ({ timing, draw, duration }) => {
   });
 };
 
-export { handleElement, animate };
+//появление
+const emerging = (popupElement) => {
+  popupElement.style.visibility = "visible";
+
+  popupElement.style.opacity = 0;
+  animate({
+    duration: 1000,
+    timing(timeFraction) {
+      return timeFraction;
+    },
+    draw(progress) {
+      popupElement.style.opacity = String(progress);
+    },
+  });
+};
+
+//скрытие
+const hiding = (popupElement, removeClass = "") => {
+  animate({
+    duration: 1000,
+    timing(timeFraction) {
+      return timeFraction;
+    },
+    draw(progress) {
+      popupElement.style.opacity = String(1 - progress);
+      if (progress == 1) {
+        popupElement.style.visibility = "";
+        popupElement.style.opacity = "";
+        if (removeClass != "") {
+          popupElement.classList.remove(removeClass);
+        }
+      }
+    },
+  });
+};
+
+export { handleElement, animate, emerging, hiding };

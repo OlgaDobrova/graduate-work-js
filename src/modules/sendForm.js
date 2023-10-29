@@ -1,10 +1,12 @@
+import { emerging, hiding } from "./helpers";
+
 export const sendForm = ({ formId, someElem = [] }) => {
   const form = document.getElementById(formId);
 
   const statusBlock = document.createElement("div");
   const loadText = "Загрузка...";
   const errorText = "Ошибка...";
-  const sussesText = `<div>Спасибо за заявку!</div><div>Наш менеджер свяжется с вами!</div>`;
+  const sussesText = `<div>Успешная отправка!</div>`;
 
   let formNameInput, formNamePhone, formCheckboxInput;
 
@@ -49,9 +51,21 @@ export const sendForm = ({ formId, someElem = [] }) => {
     sendData(formBody)
       .then((data) => {
         let formElements = form.querySelectorAll("input");
+        let popupElement = document.querySelector(`.popup.popup-thank`);
 
         form.querySelector(".feedback__body").style.display = "none";
         statusBlock.innerHTML = sussesText;
+        emerging(popupElement);
+
+        popupElement.addEventListener("click", (e) => {
+          if (
+            !e.target.closest(".feedback-wrap") ||
+            e.target.classList.contains("close")
+          ) {
+            hiding(popupElement);
+            hiding(document.querySelector(`.popup.popup-consultation`));
+          }
+        });
 
         formElements.forEach((input) => {
           input.value = "";
@@ -82,8 +96,6 @@ export const sendForm = ({ formId, someElem = [] }) => {
         name: formNameInput ? formNameInput.value : "",
         phone: formNamePhone.value,
       };
-
-      console.log(user);
 
       formCheckboxInput = form.querySelector('input[type="checkbox"]');
       if (!formCheckboxInput.checked) {
