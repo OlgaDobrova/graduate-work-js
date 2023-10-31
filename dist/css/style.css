@@ -7991,7 +7991,7 @@ div.wave-block:nth-child(17):after {
     color: #ffffff;
 }
 
-.active svg path {
+/* .active svg path {
     -webkit-transition: 0.5s;
     transition: 0.5s;
     stroke: #F48922;
@@ -7999,7 +7999,7 @@ div.wave-block:nth-child(17):after {
 
 .active:hover svg path {
     stroke: #F48922;
-}
+} */
 
 .active_menu {
     color: rgba(255, 255, 255, 0.2);

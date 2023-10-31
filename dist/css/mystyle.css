@@ -71,3 +71,157 @@
 .formula-item-popup.active-bottom::before {
   transform: rotate(180deg);
 }
+.formula-slider.splide__list {
+  align-items: flex-start;
+}
+.formula-item.splide__slide {
+  padding-top: 50px;
+
+}
+.formula-item.splide__slide.is-active {
+  opacity: 1;
+}
+.formula-item.splide__slide.is-active .formula-item-popup {
+  visibility: visible;
+  opacity: 1;
+}
+.repair-types .repair-types-tab .slider-arrow {
+  display: none;
+}
+.repair-types .splide__arrow--prev svg {
+  transform: translateY(3px);
+}
+.repair-types .splide__arrow--next svg {
+  transform: translateY(3px);
+}
+
+/* .repair-types .splide {
+  visibility: visible;
+} */
+.repair-types .splide__arrows.splide__arrows--ltr {
+  display: block !important;
+}
+.repair-types .nav-list-repair.splide__list {
+  display: flex;
+  flex-direction: column;
+}
+.repair-types .nav-list-repair.splide__list .button_o.splide__slide {
+  position: relative;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100% !important;
+  margin: 10px 0 10px 170px;
+}
+.repair-types .nav-list-repair.splide__list .button_o.splide__slide svg {
+  position: absolute;
+  top: 0;
+  left: -40px;
+  z-index: -1;
+}
+
+.repair-types .nav-list-repair.splide__list .splide__slide.is-active svg path {
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  stroke: #F48922;
+}
+
+.repair-types .nav-list-repair.splide__list .button_o.splide__slide:hover svg path {
+  stroke: #F48922;
+}
+.repair-types .repair-types-tab .splide__track--nav>.splide__list>.splide__slide.is-active {
+  border: none;
+}
+
+.repair-types .splide__pagination {
+  counter-reset: pagination-num;
+  width: 70px;
+  height: 70px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #ffffff;
+  border-radius: 50%;
+  opacity: 0.8;
+}
+.repair-types .splide__pagination .count {
+  padding-left: 15px;
+}
+
+.repair-types .splide__pagination__page:before {
+  counter-increment: pagination-num;
+  content: counter( pagination-num );
+}
+
+.repair-types .splide__pagination li{
+  position: absolute;
+  left: calc(50% - 18px);
+  top: 12px;
+}
+.repair-types .splide__pagination li button {
+  opacity: 0;
+  background: none;
+}
+.repair-types .splide__pagination li button.is-active {
+  opacity: 1;
+  background: none;
+}
+
+@media (max-width: 1024px) {
+  .formula-item.splide__slide .formula-item-popup {
+      top: 125px;
+  }
+  .repair-types .repair-types-tab .slider-arrow {
+    display: flex;
+  }
+  .repair-types .nav-wrap.nav-wrap-repair::before{
+    display: none;
+  }
+  .repair-types .nav-list-repair.splide__list {
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: flex-start;
+    justify-content: center;
+    width: 100%;
+  }
+  .repair-types .nav-list-repair.splide__list .button_o.splide__slide {
+    justify-content: center !important;
+    margin: 0;
+  }
+  .repair-types .nav-list-repair.splide__list .splide__slide.is-active {
+    margin: 0;
+    justify-content: center !important;
+  }
+  .repair-types .nav-list-repair .button_o.splide__slide  svg{
+    left: 50% !important;
+    transform: translateX(-50%)
+  }
+  .repair-types .nav-list-repair .is-active svg path {
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+    stroke: #F48922;
+  }
+  
+  .repair-types .nav-list-repair .button_o:hover svg path {
+    stroke: #F48922;
+  }
+  .repair-types .repair-types-slider .splide__pagination {
+    bottom: 5.5em;
+  }
+}
+
+@media (max-width: 575px) {
+  .splide__arrow svg {
+    transform: none;
+  }
+  .formula-slider.splide__list {
+    min-height: 335px;
+  }
+  .formula-item.splide__slide .formula-item-popup {
+      top: 125px;
+  }
+}
+
+
+
+
+

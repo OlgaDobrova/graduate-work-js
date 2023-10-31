@@ -6,7 +6,7 @@ export const sendForm = ({ formId, someElem = [] }) => {
   const statusBlock = document.createElement("div");
   const loadText = "Загрузка...";
   const errorText = "Ошибка...";
-  const sussesText = `<div>Успешная отправка!</div>`;
+  const sussesText = `<div>Отправка завершена успешно!</div>`;
 
   let formNameInput, formNamePhone, formCheckboxInput;
 
