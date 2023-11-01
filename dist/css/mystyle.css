@@ -165,7 +165,28 @@
   opacity: 1;
   background: none;
 }
+#reviews-arrow_left svg {
+  transform: none;
+  padding-top: 3px;
+}
+#reviews-arrow_right svg {
+  padding-top: 3px;
+}
 
+.accordion h2 {
+  position: relative;
+}
+.accordion h2 .plus {
+  color: #322823;
+  font-size: 50px;
+  position: absolute;
+  top: 15px;
+  right: 30px;
+  opacity: 0.5;
+}
+.accordion h2.msg-active .plus {
+  transform: rotate(45deg);
+}
 @media (max-width: 1024px) {
   .formula-item.splide__slide .formula-item-popup {
       top: 125px;
@@ -219,7 +240,12 @@
   .formula-item.splide__slide .formula-item-popup {
       top: 125px;
   }
+  #reviews-arrow_left svg, 
+  #reviews-arrow_right svg {
+    padding-top: 0;
+  }
 }
+
 .portfolio-desktop.splide {
   width: calc(100% + 22px);
 }
@@ -231,8 +257,8 @@
   grid-row-gap: 0px;
 }
 
-.popup-portfolio-slider-wrap.splide.is-initialized { 
+/* .popup-portfolio-slider-wrap.splide.is-initialized { 
   visibility: hidden;
-}
+} */
 
 

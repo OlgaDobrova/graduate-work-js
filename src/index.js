@@ -4,6 +4,8 @@ import { popupToggle } from "./modules/popupToggle";
 import { sendForm } from "./modules/sendForm";
 import { maskPhone } from "./modules/maskPhone";
 import { splideCarousel } from "./modules/splideCarousel";
+import { accordion } from "./modules/accordion";
+import { repairTypesContent } from "./modules/repairTypesContent";
 
 // import { messageFeedbackService } from "./modules/messageFeedbackService";
 
@@ -18,6 +20,8 @@ menu();
 popupToggle();
 maskPhone("phone"); //значение атрибута name для input, в котором нужна маска
 splideCarousel();
+accordion();
+repairTypesContent();
 sendForm({
   formId: "feedback1",
   someElem: [{ id: "БАННЕР. Консультация от специалиста в удобное время" }],

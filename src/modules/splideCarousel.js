@@ -1,37 +1,40 @@
 import Splide from "@splidejs/splide";
 
 export const splideCarousel = () => {
+  //когда страница загружена
   document.addEventListener("DOMContentLoaded", function () {
     let portfolioSpliderActive;
-
+    //общие св-ва для класса
     Splide.defaults = {
       direction: "ltr", //направление: слева направо
-      perMove: 1,
-      focus: "center",
-      pauseOnHover: true,
-      autoplay: true,
+      perMove: 1, // движение по одному...
+      focus: "center", // м.б. num(№ слайда) или позиционирование
+      pauseOnHover: true, // приостанов
+      autoplay: true, // автопрокрутка (по умолч через 5000мс)
     };
+
+    //слушатель изменения размеров рабочей области
     window.addEventListener("resize", () => {
       const windowClientWidth = document.documentElement.clientWidth;
-
+      // если мобильная версия
       if (windowClientWidth < 1024) {
         const splideSliderFormula = new Splide("#formula .splide", {
-          type: "loop",
-
-          perPage: 3,
-          perMove: 1,
-          focus: "center",
-          pauseOnHover: true,
-          autoplay: true,
-          pagination: false,
+          type: "loop", // зацикливание слайдера
+          perPage: 3, // кол-во видимых страниц
+          // perMove: 1,
+          // focus: "center",
+          // pauseOnHover: true,
+          // autoplay: true,
+          pagination: false, // наличие пагинации
           breakpoints: {
+            // точки останова
             768: {
               perPage: 1,
               gap: ".7rem",
             },
           },
         });
-
+        // инициализация слайдера
         splideSliderFormula.mount();
       }
     });
@@ -39,41 +42,41 @@ export const splideCarousel = () => {
     //блок repair-types
     //основной
     const repairTypesSliderSplide = new Splide(".repair-types-slider.splide", {
-      type: "fade",
-      perPage: 1,
-      rewind: true,
+      type: "fade", // плавный переход, не поддерживает perPage
+      // perPage: 1,
+      rewind: true, // определяет перематывать ли карусель, не работает при type:"loop"
       pagination: false,
-      arrows: false,
+      arrows: false, // наличие стрелок
       autoplay: false,
     });
     //миниатюры
     const repairTypesTabSplide = new Splide(".repair-types-tab.splide", {
-      autoWidth: true,
-      gap: 10,
+      autoWidth: true, //ширина слайдов определяется их шириной. При нем не указывать значения perPage и perMove
+      perMove: undefined, //значение отменено
+      gap: 10, //number|string  Промежуток между слайдами
       rewind: true,
       pagination: false,
       focus: "center",
       arrows: false,
-      isNavigation: true,
+      isNavigation: true, //карусель делает слайды кликабельными для перехода к другой карусели
       autoplay: false,
       breakpoints: {
         1024: {
-          updateOnMove: true,
-          isNavigation: true,
-          focus: "is-active",
-          cloneStatus: false,
+          // здесь изменения
+          updateOnMove: true, //Обновляет is-active статус слайдов непосредственно перед перемещением карусели
           type: "loop",
+          perMove: 1,
+          perPage: 1,
           gap: 0,
           arrows: true,
           autoplay: false,
           focus: "center",
-          rewind: false,
         },
       },
     });
-    //связь слайдеров
+    //связь слайдеров: основной.sync(миниатюры)  , при наличии св-ва isNavigation: true
     repairTypesSliderSplide.sync(repairTypesTabSplide);
-    //запуск слайдеров
+    //запуск слайдеров, инициализация
     repairTypesSliderSplide.mount();
     repairTypesTabSplide.mount();
 
@@ -97,7 +100,7 @@ export const splideCarousel = () => {
       count.textContent = `/ ${pagination.childElementCount - 1}`;
     });
 
-    //
+    //Слайдер в блоке Портфолио
     const portfolioSplider = new Splide(".portfolio-desktop.splide", {
       perMove: 1,
       pauseOnHover: true,
@@ -132,8 +135,14 @@ export const splideCarousel = () => {
 
     portfolioSplider.mount();
 
-    // document.querySelector(
-    //   ".popup-portfolio-slider-wrap.splide.is-initialized"
-    // ).style.visibility = "hidden !important";
+    // слайдер в блоке reviews
+    const reviewsSplider = new Splide(".reviews-slider-wrap.splide", {
+      type: "loop",
+      perPage: 1,
+      autoplay: false,
+      pagination: false,
+    });
+    //инициализация
+    reviewsSplider.mount();
   });
 };

@@ -46,7 +46,7 @@ export const popupToggle = () => {
       emerging(popupElement);
 
       popupElement.addEventListener("click", (e) => {
-        if ((dataAtt = "popup-consultation")) {
+        if (dataAtt == "popup-consultation") {
           if (
             !e.target.closest(".feedback-wrap") ||
             e.target.classList.contains("close")
@@ -63,8 +63,12 @@ export const popupToggle = () => {
             !e.target.closest(".popup-dialog") ||
             e.target.classList.contains("close")
           ) {
+            // console.log("мы снаружи от .popup-dialog");
             hiding(popupElement);
           }
+          // else {
+          //   console.log("мы внутри .popup-dialog");
+          // }
         }
       });
     }
