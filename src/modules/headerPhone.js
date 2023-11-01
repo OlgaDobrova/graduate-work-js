@@ -8,4 +8,3 @@ export const headerPhone = () => {
     headerContactsPhoneNumberAccord.classList.toggle("open");
   });
 };
-// export default headerPhone;

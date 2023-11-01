@@ -24,7 +24,7 @@ export const sendForm = ({ formId, someElem = [] }) => {
   };
 
   const sendData = (data) => {
-    return fetch(`http://localhost:4545/${formId}`, {
+    return fetch(`http://localhost:2525/${formId}`, {
       method: "POST",
       body: JSON.stringify(data),
       headers: {

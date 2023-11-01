@@ -1,1 +1,1 @@
-(()=>{"use strict";console.log("initialization")})();
+console.log("admin.js");

@@ -72,7 +72,7 @@ export const repairTypesContent = () => {
   };
 
   // заполнение списков
-  getData("./dbb/dbRepairTypes.json")
+  getData("http://localhost:4545/repairTypes")
     .then((arrRepair) => {
       //Заполнение списка услуг и цен
       repairTypes(arrRepair);

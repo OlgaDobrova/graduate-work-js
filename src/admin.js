@@ -1,3 +1,1 @@
-// import { authentication } from "./modules/authentication";
-
-// authentication();
+console.log("admin.js");

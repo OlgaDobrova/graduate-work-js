@@ -7,6 +7,8 @@ import { splideCarousel } from "./modules/splideCarousel";
 import { accordion } from "./modules/accordion";
 import { repairTypesContent } from "./modules/repairTypesContent";
 
+// console.log("hello");
+
 headerPhone();
 menu();
 popupToggle();
