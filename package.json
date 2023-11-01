@@ -3,11 +3,13 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "mainAdmin": "admin.js",
   "scripts": {
     "build": "webpack --mode=production",
     "watch": "webpack --watch --mode=development",
     "start": "webpack serve --mode=development --open",
-    "server": "json-server --watch db/dbFeedback.json --port=4545"
+    "server": "json-server --watch db/dbFeedback.json --port=4545",
+    "serverUsers": "json-server --watch db/dbUsers.json --port=2525"
   },
   "keywords": [],
   "author": "",

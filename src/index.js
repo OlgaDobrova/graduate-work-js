@@ -7,14 +7,6 @@ import { splideCarousel } from "./modules/splideCarousel";
 import { accordion } from "./modules/accordion";
 import { repairTypesContent } from "./modules/repairTypesContent";
 
-// import { messageFeedbackService } from "./modules/messageFeedbackService";
-
-// window.messageFeedbackService = new MessageFeedbackService();
-
-// messageFeedbackService.getMessageFeedback().then((data) => {
-//   console.log(data);
-// });
-
 headerPhone();
 menu();
 popupToggle();
