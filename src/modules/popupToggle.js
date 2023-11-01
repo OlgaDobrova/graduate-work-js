@@ -35,6 +35,12 @@ export const popupToggle = () => {
     ) {
       handleElement(".popup-dialog-menu", "active-menu");
     }
+    // else if (dataAtt == "popup-portfolio") {
+    //   // popupPortfolioSplider.mount();
+    //   popupElement.querySelector(
+    //     ".popup-portfolio-slider-wrap.splide.is-initialized"
+    //   ).style.visibility = "visible";
+    // }
 
     if (popupElement) {
       emerging(popupElement);
@@ -47,6 +53,11 @@ export const popupToggle = () => {
           ) {
             hiding(popupElement);
           }
+          // } else if (dataAtt == "popup-portfolio") {
+          //   popupElement.querySelector(
+          //     ".popup-portfolio-slider-wrap.splide.is-initialized"
+          //   ).style.visibility = "hidden";
+          //   // popupPortfolioSplider.destroy();
         } else {
           if (
             !e.target.closest(".popup-dialog") ||

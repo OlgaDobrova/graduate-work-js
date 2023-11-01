@@ -220,8 +220,19 @@
       top: 125px;
   }
 }
+.portfolio-desktop.splide {
+  width: calc(100% + 22px);
+}
+.portfolio-slider.mobile-hide.splide__list {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+}
 
-
-
+.popup-portfolio-slider-wrap.splide.is-initialized { 
+  visibility: hidden;
+}
 
 

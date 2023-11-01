@@ -2260,7 +2260,7 @@ div.wave-block:nth-child(17):after {
     margin-left: auto;
     margin-right: auto;
     border-radius: 20px;
-    overflow: hidden;
+    /* overflow: hidden; */
     z-index: 1;
 }
 
@@ -6000,7 +6000,7 @@ div.wave-block:nth-child(17):after {
 }
 
 .popup-portfolio-text {
-    display: none;
+    display: flex;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
     -ms-flex-direction: column;
