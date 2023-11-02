@@ -7,9 +7,9 @@
     "build": "webpack --mode=production",
     "watch": "webpack --watch --mode=development",
     "start": "webpack serve --mode=development --open",
-    "server1": "json-server --watch db/dbFeedback.json --port=2525",
-    "server2": "json-server --watch db/dbRepairTypes.json --port=4545 --host=127.0.0.1",
-    "server3": "json-server --watch db/dbUsers.json --port=3535"
+    "server2525": "json-server --watch db/dbFeedback.json --port=2525",
+    "server4545": "json-server --watch db/dbRepairTypes.json --port=4545 --host=127.0.0.1",
+    "server3535": "json-server --watch db/dbUsers.json --port=3535"
   },
   "keywords": [],
   "author": "",
@@ -18,5 +18,8 @@
     "webpack": "^5.88.2",
     "webpack-cli": "^5.1.4",
     "webpack-dev-server": "^4.15.1"
+  },
+  "dependencies": {
+    "@splidejs/splide": "^4.1.4"
   }
 }
