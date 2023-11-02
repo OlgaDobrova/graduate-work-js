@@ -5,6 +5,7 @@ import { popupToggle } from "./modules/popupToggle";
 import { maskPhone } from "./modules/maskPhone";
 import { sendForm } from "./modules/sendForm";
 import { repairTypesContent } from "./modules/repairTypesContent";
+import { splideCarousel } from "./modules/splideCarousel";
 
 headerPhone();
 menu();
@@ -12,6 +13,7 @@ accordion();
 popupToggle();
 maskPhone("phone"); //значение атрибута name для input, в котором нужна маска
 repairTypesContent();
+splideCarousel();
 
 sendForm({
   formId: "feedback1",
