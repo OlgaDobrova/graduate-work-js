@@ -3,7 +3,27 @@
     {
       "id": 1,
       "login": "user",
-      "password": "12345678"
+      "password": "12345678",
+      "children": true,
+      "permission": true
+    },
+    {
+      "login": "uuu7",
+      "password": "kkk",
+      "id": 2
+    },
+    {
+      "login": "uuu",
+      "password": "oooo",
+      "id": 3,
+      "children": true,
+      "permission": false
+    },
+    {
+      "login": "yyyr",
+      "password": "yyyr",
+      "id": 4,
+      "permission": true
     }
   ]
 }
