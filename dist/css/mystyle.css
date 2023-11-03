@@ -58,6 +58,8 @@
 #feedback5 .feedback__message {
   color: #ffffff
 }
+
+/* слайдер в блоке формула */
 .row:has(.formula-item-popup) {
   z-index: 0;
 }
@@ -261,4 +263,78 @@
   visibility: hidden;
 } */
 
+ 
 
+/* слайдер в блоке ДОГОВОР */
+.transparency-slider-wrap.splide {
+  visibility: visible;
+}
+.popup-transparency-slider-wrap .popup-transparency-slider.splide__list {
+  overflow: visible;
+}
+.popup-transparency-slider-wrap .splide__pagination {
+  counter-reset: pagination-num;
+  width: 70px;
+  height: 70px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgba(50, 40, 35, 0.5);
+  box-shadow: 0px 0px 10px rgba(50, 40, 35, 0.1);
+  border-radius: 50%;
+  color: #ffffff
+}
+.popup-transparency-slider-wrap .splide__pagination .count {
+  padding-left: 20px;
+  padding-top: 8px;
+}
+
+.popup-transparency-slider-wrap .splide__pagination__page:before {
+  counter-increment: pagination-num;
+  content: counter( pagination-num );
+}
+
+.popup-transparency-slider-wrap .splide__pagination li{
+  position: absolute;
+  left: calc(50% - 18px);
+  top: 12px;
+}
+.popup-transparency-slider-wrap .splide__pagination li::after {
+  position: absolute;
+  left: 8px;
+  bottom: -2px;
+  content: '';
+  width: 23px;
+  height: 1px;
+  border-radius: 50px;
+  transform: rotate(140deg);
+  background: linear-gradient(#F48922 0%, #FFB015 100%);
+}
+.popup-transparency-slider-wrap .splide__pagination li button {
+  opacity: 0;
+  background: none;
+}
+.popup-transparency-slider-wrap .splide__pagination li button.is-active {
+  opacity: 1;
+  background: none;
+  color: #ffffff
+}
+.popup-transparency-slider-wrap .splide__arrow svg path {
+  fill: #ccc
+}
+@media (max-width: 1024px) {
+  .transparency-slider-wrap .transparency-slider.row.splide__list {
+    flex-wrap: nowrap;
+  }
+  .transparency-slider-wrap .splide__arrow svg {
+    margin-top: 3px;
+  }
+  .transparency-slider-wrap .splide__arrow--prev svg {
+    transform: scaleX(1);
+  }
+  
+}
+@media (max-width: 575px) {
+  .transparency-slider-wrap .splide__arrow svg {
+    margin-top: 0;
+  }
+}

@@ -26,9 +26,14 @@
       "permission": true
     },
     {
-      "login": "v",
-      "password": "v",
+      "login": "r",
+      "password": "u",
       "id": 5
+    },
+    {
+      "login": "r",
+      "password": "u5",
+      "id": 6
     }
   ]
 }

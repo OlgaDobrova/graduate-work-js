@@ -2422,9 +2422,9 @@ div.wave-block:nth-child(17):after {
 }
 
 @media (max-width: 1090px) {
-    .transparency-slider.row {
+    /* .transparency-slider.row {
         display: block;
-    }
+    } */
 }
 
 .transparency-slider-wrap {

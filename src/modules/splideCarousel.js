@@ -12,11 +12,12 @@ export const splideCarousel = () => {
       autoplay: true, // автопрокрутка (по умолч через 5000мс)
     };
 
-    //слайдеры только для мобилок
+    // ====================================================
+    // СЛАЙДЕРЫ ТОЛЬКО НА МОБИЛЬНОЙ ВЕРСИИ
     const windowClientWidth = document.documentElement.clientWidth;
 
     if (windowClientWidth < 1024) {
-      //БЛОК ФОРМУЛА
+      //БЛОК ФОРМУЛА - мобилка
       const splideSliderFormula = new Splide("#formula .splide", {
         type: "loop", // зацикливание слайдера
         perPage: 3, // кол-во видимых страниц
@@ -36,29 +37,52 @@ export const splideCarousel = () => {
       // инициализация слайдера
       splideSliderFormula.mount();
 
-      // //БЛОК ДОГОВОР
-      // const splideTransparency = new Splide(
-      //   ".transparency-slider-wrap.splide",
-      //   {
-      //     type: "loop", // зацикливание слайдера
-      //     perPage: 3, // кол-во видимых страниц
-      //     perMove: 1, //движение по 1 слайду
-      //     focus: "center", // м.б. num(№ слайда) или позиционирование
-      //     // pauseOnHover: true,
-      //     // autoplay: true,
-      //     pagination: false, // наличие пагинации
-      //     breakpoints: {
-      //       // точки останова
-      //       768: {
-      //         perPage: 1,
-      //         gap: ".7rem",
-      //       },
-      //     },
-      //   }
-      // );
-      // // инициализация слайдера
-      // splideTransparency.mount();
+      //БЛОК ДОГОВОР - мобилка
+      const splideTransparency = new Splide(
+        ".transparency-slider-wrap.splide",
+        {
+          type: "loop", // зацикливание слайдера
+          perPage: 1, // кол-во видимых страниц
+          perMove: 1, //движение по 1 слайду
+          focus: "center", // м.б. num(№ слайда) или позиционирование
+          autoplay: false,
+          pagination: false, // наличие пагинации
+        }
+      );
+      // инициализация слайдера
+      splideTransparency.mount();
     }
+
+    // ====================================================
+    // СЛАЙДЕРЫ В МОДАЛЬНОМ ОКНЕ
+
+    //БЛОК ДОГОВОР - модалка
+    const splidePopupTransparency = new Splide(
+      ".popup-transparency-slider-wrap.splide",
+      {
+        type: "loop", // зацикливание слайдера
+        perPage: 1, // кол-во видимых страниц
+        perMove: 1, //движение по 1 слайду
+        focus: "center", // м.б. num(№ слайда) или позиционирование
+        autoplay: false,
+        pagination: true, // наличие пагинации
+      }
+    );
+    // инициализация слайдера
+    splidePopupTransparency.mount();
+
+    let paginationPopupTransparency = document.querySelector(
+      ".popup-transparency-slider-wrap.splide .splide__pagination"
+    );
+    let countPopupTransparency =
+      paginationPopupTransparency.querySelector(".count");
+    countPopupTransparency.textContent = `${
+      paginationPopupTransparency.childElementCount - 1
+    }`;
+    let spliderPopupTransparency = document.querySelector(
+      ".popup-transparency-slider-wrap.splide"
+    );
+    spliderPopupTransparency.classList.remove("is-initialized");
 
     //блок repair-types
     //основной

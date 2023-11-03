@@ -37,6 +37,15 @@ export const popupToggle = () => {
     }
 
     if (popupElement) {
+      if ((dataAtt = "popup-transparency")) {
+        let splideList = popupElement.querySelector(
+          ".popup-transparency-slider-wrap.splide"
+        );
+        if (!splideList) {
+          return;
+        }
+        splideList.classList.add("is-initialized");
+      }
       emerging(popupElement);
 
       popupElement.addEventListener("click", (e) => {
@@ -47,17 +56,24 @@ export const popupToggle = () => {
           ) {
             hiding(popupElement);
           }
+        } else if (
+          (dataAtt == "popup-transparency" || dataAtt == "popup-portfolio") &&
+          (!e.target.closest(".popup-dialog") ||
+            e.target.classList.contains("close"))
+        ) {
+          let splider = popupElement.querySelector(".splide");
+          if (!splider) {
+            return;
+          }
+          splider.classList.remove("is-initialized");
+          hiding(popupElement);
         } else {
           if (
             !e.target.closest(".popup-dialog") ||
             e.target.classList.contains("close")
           ) {
-            // console.log("мы снаружи от .popup-dialog");
             hiding(popupElement);
           }
-          // else {
-          //   console.log("мы внутри .popup-dialog");
-          // }
         }
       });
     }
