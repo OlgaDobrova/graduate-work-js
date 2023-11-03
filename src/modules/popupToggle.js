@@ -37,10 +37,8 @@ export const popupToggle = () => {
     }
 
     if (popupElement) {
-      if ((dataAtt = "popup-transparency")) {
-        let splideList = popupElement.querySelector(
-          ".popup-transparency-slider-wrap.splide"
-        );
+      if (dataAtt == "popup-transparency" || dataAtt == "popup-portfolio") {
+        let splideList = popupElement.querySelector(".splide");
         if (!splideList) {
           return;
         }

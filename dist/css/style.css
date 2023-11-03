@@ -5972,7 +5972,7 @@ div.wave-block:nth-child(17):after {
 
 .popup-portfolio-slider__slide {
     height: 100%;
-    overflow: hidden;
+    /* overflow: hidden; */
 }
 
 @media (max-width: 575px) {

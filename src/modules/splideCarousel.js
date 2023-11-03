@@ -57,6 +57,10 @@ export const splideCarousel = () => {
     // СЛАЙДЕРЫ В МОДАЛЬНОМ ОКНЕ
 
     //БЛОК ДОГОВОР - модалка
+    const arrTransparency = document.querySelectorAll(
+      "#transparency .transparency-slider.splide__list .transparency-item__img"
+    );
+
     const splidePopupTransparency = new Splide(
       ".popup-transparency-slider-wrap.splide",
       {
@@ -83,6 +87,8 @@ export const splideCarousel = () => {
       ".popup-transparency-slider-wrap.splide"
     );
     spliderPopupTransparency.classList.remove("is-initialized");
+
+    // ====================================================
 
     //блок repair-types
     //основной
@@ -145,40 +151,57 @@ export const splideCarousel = () => {
       count.textContent = `/ ${pagination.childElementCount - 1}`;
     });
 
-    // БЛОК ПОРТФОЛИО
+    // ====================================================
+    // ОСНОВНОЙ БЛОК СО СЛАЙДЕРОМ НА DESKTOP, ПО КЛИКУ ПЕРЕХОД В МОДАЛЬНОЕ ОКНО!!!
+    //БЛОК ПОРТФОЛИО
     const portfolioSplider = new Splide(".portfolio-desktop.splide", {
       perMove: 1,
       pauseOnHover: true,
       autoplay: false,
       pagination: false,
+      omitEnd: true,
       arrowPath:
         "M16.03 5.47a.75.75 0 0 1 0 1.06l-4.773 4.773a.75.75 0 0 1-1.06-1.06L14.439 6l-4.242-4.243a.75.75 0 1 1 1.06-1.06L16.03 5.47zM.5 5.25h15v1.5H.5v-1.5z",
     });
 
-    // portfolioSplider.on("click", function (e) {
-    //   const popupPortfolioSplider = new Splide(
-    //     ".popup-portfolio-slider-wrap.splide",
-    //     {
-    //       type: "loop",
-    //       perPage: 1,
-    //       perMove: 1,
-    //       pauseOnHover: true,
-    //       autoplay: false,
-    //       pagination: true,
-    //       index: e.index,
-    //       // focus: e.index,
-    //     }
-    //   );
+    portfolioSplider.on("click", function (e) {
+      let pagination, count;
+      const popupPortfolioSplider = new Splide(
+        ".popup-portfolio-slider-wrap.splide",
+        {
+          type: "loop",
+          perPage: 1,
+          perMove: 1,
+          pauseOnHover: true,
+          autoplay: false,
+          pagination: true,
+          start: e.index,
+          updateOnMove: true,
+        }
+      );
 
-    //   popupPortfolioSplider.on("mounted", function (e) {
-    //     console.log(portfolioSpliderActive);
-    //     console.log(popupPortfolioSplider.options);
-    //   });
+      popupPortfolioSplider.mount();
 
-    //   popupPortfolioSplider.mount();
-    // });
+      let spliderPopupPortfolio = document.querySelector(
+        ".popup-portfolio-slider-wrap.splide"
+      );
+      pagination = spliderPopupPortfolio.querySelector(".splide__pagination");
+      let el = document.createElement("div");
+      el.classList.add("count");
+      el.textContent = pagination.childElementCount;
+      pagination.append(el);
+
+      // console.log(count);
+
+      spliderPopupPortfolio.classList.remove("is-initialized");
+    });
+    // countPopupPortfolio.textContent =
+    //   paginationPopupPortfolio.childElementCount;
 
     portfolioSplider.mount();
+
+    // ====================================================
+    // СЛАЙДЕР ОБЫКНОВЕННЫЙ
 
     // БЛОК ОТЗЫВЫ
     const reviewsSplider = new Splide(".reviews-slider-wrap.splide", {

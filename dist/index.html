@@ -763,7 +763,7 @@
 				<div class="splide__track">
 					<div class="transparency-slider row splide__list">
 						<div class="transparency-item splide__slide">
-							<div class="transparency-item__img" data-popup="popup-transparency">
+							<div class="transparency-item__img" data-popup="popup-transparency" data-id="1">
 								<img src="./images/transparency/item_img.jpg" alt="document">
 								<div class="item-hover"><img src="./images/zoom.svg" alt="zoom"> <span>Нажмите, чтобы<br>увеличить</span>
 									<div class="transparency-item__hint">
@@ -777,7 +777,7 @@
 							</div>
 						</div><!-- splide__slide --> 
 						<div class="transparency-item splide__slide">
-							<div class="transparency-item__img" data-popup="popup-transparency">
+							<div class="transparency-item__img" data-popup="popup-transparency" data-id="2">
 								<img src="./images/transparency/item_img.jpg" alt="document">
 								<div class="item-hover"><img src="./images/zoom.svg" alt="zoom"> <span>Нажмите, чтобы<br>увеличить</span>
 									<div class="transparency-item__hint">
@@ -791,7 +791,7 @@
 							</div>
 						</div><!-- splide__slide -->
 						<div class="transparency-item splide__slide">
-							<div class="transparency-item__img" data-popup="popup-transparency">
+							<div class="transparency-item__img" data-popup="popup-transparency" data-id="3">
 								<img src="./images/transparency/item_img.jpg" alt="document">
 								<div class="item-hover"><img src="./images/zoom.svg" alt="zoom"> <span>Нажмите, чтобы<br>увеличить</span>
 									<div class="transparency-item__hint">
@@ -2155,29 +2155,15 @@
 										<div class="popup-portfolio-text__title">Руководитель проекта:</div>
 										<div class="popup-portfolio-text__title"><strong>Тюленев Э.Н.</strong></div>
 									</div>
-								</div><!-- /popup-portfolio-text --></div>
+								</div><!-- /popup-portfolio-text -->
+							</div>
 							</div><!-- /popup-portfolio-slide -->
 						</div>
 					</div>
-					<div class="slider-counter" id="popup-portfolio-counter">
-						<div class="slider-counter-content">
-							<div class="slider-counter-content__current">1</div>
-							<div class="slider-counter-content__total">3</div>
-						</div>
+					<div class="splide__pagination">
+						<div class="count"></div>
 					</div>
-					<div class="popup-arrow popup-arrow_left" id="popup_portfolio_left">
-						<svg width="32" height="44" fill="none" viewBox="0 0 32 44" preserveAspectRatio="xMinYMin meet"
-							 xmlns="http://www.w3.org/2000/svg">
-							<path d="M30 41.999l-28-20 28-20" stroke="#fff" stroke-opacity=".5" stroke-width="3" stroke-linecap="round"
-								  stroke-linejoin="round"></path>
-						</svg>
-					</div>
-					<div class="popup-arrow popup-arrow_right" id="popup_portfolio_right">
-						<svg width="32" height="44" fill="none" viewBox="0 0 32 44" preserveAspectRatio="xMinYMin meet"
-							 xmlns="http://www.w3.org/2000/svg">
-							<path d="M2 1.999l28 20-28 20" stroke="#fff" stroke-opacity=".5" stroke-width="3" stroke-linecap="round"
-								  stroke-linejoin="round"></path>
-						</svg>
+					<div class="splide__arrows">
 					</div>
 				</div>
 		</div>
@@ -2235,9 +2221,9 @@
 						</svg>
 					</div>
 				</div>
-				<div class="splide__pagination">
+				<ul class="splide__pagination">
 					<div class="count"></div>
-				</div>
+				</ul>
 				
 			</div>
 		</div>
