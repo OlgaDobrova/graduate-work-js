@@ -1,0 +1,6 @@
+.main-auth {
+  flex-direction: column;
+}
+#table .table-th.down svg {
+  transform: rotate(180deg);
+}

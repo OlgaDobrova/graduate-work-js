@@ -9,8 +9,10 @@
 	<link
 			href="https://fonts.googleapis.com/css?family=Montserrat+Alternates:400,600,700,800,900&amp;subset=cyrillic,cyrillic-ext"
 			rel="stylesheet">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide/dist/css/splide.min.css">
 	<link rel="stylesheet" href="./css/style.css">
-	<script src="./js/main.js" defer></script>
+	<link rel="stylesheet" href="./css/mystyle.css">
+	<script src="./js/index.main.js" defer></script>
 	<title>Relax Live</title></head>
 <body>
 	<div class="main" id="main">
@@ -33,6 +35,7 @@
 				<div class="header-contacts__arrow"><img src="./images/header/arrow.svg" alt="arrow"></div>
 			</div><!-- contacts -->
 			<div class="logo">Relax Live</div>
+			<a href="/admin" class="entrance" target="_blank">Вход ЛК</a>
 			<div class="menu">
 				<div class="menu-phone-icon">
 					<a href="tel:+79123456789"><img src="./images/header/phoneIcon.svg" alt="phoneIcon"></a>
@@ -158,30 +161,36 @@
 							</div>
 						</div>
 					</div><!-- services-item - 4--></div>
-				<button class="button button_wide">Проконсультироваться</button>
+				<button class="button button_wide" data-popup="popup-consultation">Проконсультироваться</button>
 				<div class="feedback">
 					<div class="feedback-wrap">
 						<div class="feedback__icon"><img src="./images/main/feedback_icon.svg" alt="phone"></div>
 						<div class="feedback__title">Получите консультацию от специалиста в удобное для Вас время</div>
 						<form class="feedback__form" id="feedback1">
-							<div class="feedback__input">
-								<input class="input feedback__input-input" name="phone" type="text"
-									   placeholder="Введите номер телефона" id="feedback-input1"
-									   minlength="18"></div>
-							<button class="button">Перезвоните мне</button>
-							<div class="checkbox"><input class="checkbox__input" type="checkbox" id="checkbox1"> <label
-									class="checkbox__label" for="checkbox1"></label>
-								<div class="checkbox__descr checkbox__descr_round-feedback">Я соглашаюсь с
-									<span class="link-privacy">политикой конфиденциальности</span>
+							<div class="feedback__body">
+								<div class="feedback__input">
+									<input class="input feedback__input-input" name="phone" type="text"
+											 placeholder="Введите номер телефона" id="feedback-input1"
+											 minlength="18" required></div>
+								<button class="button">Перезвоните мне</button>
+								<div class="checkbox">
+									<input class="checkbox__input" type="checkbox" id="checkbox1" required> 
+									<label class="checkbox__label" for="checkbox1"></label>
+									<div class="checkbox__descr checkbox__descr_round-feedback">Я соглашаюсь с
+										<span class="link-privacy" data-popup="popup-privacy">политикой конфиденциальности</span>
+									</div>
 								</div>
 							</div>
 						</form>
 					</div>
-				</div><!-- /feedback --></div><!-- services --></div><!-- wrapper_main --></div><!-- main -->
+				</div><!-- /feedback -->
+			</div><!-- services -->
+		</div><!-- wrapper_main -->
+	</div><!-- main -->
 	<div class="formula" id="formula">
 		<div class="wrapper_small mobile-hide tablet-hide">
 			<div class="row">
-				<div class="formula-item">
+				<div class="formula-item" data-popupformula="formula-item-popup-01">
 					<div class="formula-item__icon">
 						<div class="formula-item-popup formula-item-popup-01">Работы ведутся
 							<strong>точно</strong> по графику со
@@ -192,7 +201,7 @@
 					<div class="formula-item__descr">Делаем объекты в конкретный срок</div>
 				</div><!-- formula-item --></div>
 			<div class="row">
-				<div class="formula-item">
+				<div class="formula-item" data-popupformula="formula-item-popup-06">
 					<div class="formula-item__icon">
 						<div class="formula-item-popup formula-item-popup-06"><p>
 							<strong>Сами</strong> вывозим и утилизируем мусор.
@@ -202,7 +211,7 @@
 						<span class="formula-item__icon-inner-text">06</span></div>
 					<div class="formula-item__descr">Оставляем чистоту после ремонта</div>
 				</div><!-- formula-item -->
-				<div class="formula-item">
+				<div class="formula-item" data-popupformula="formula-item-popup-02">
 					<div class="formula-item__icon">
 						<div class="formula-item-popup formula-item-popup-02">Наш
 							<strong>профессиональный</strong> опыт реализации
@@ -218,7 +227,7 @@
 				<div class="section-title formula-title">Формула успешности <span>ремонта от Relax Live</span></div>
 			</div><!-- row -->
 			<div class="row">
-				<div class="formula-item">
+				<div class="formula-item" data-popupformula="formula-item-popup-05">
 					<div class="formula-item__icon">
 						<div class="formula-item-popup formula-item-popup-05"><p>Стоимость
 							<strong>фиксируется</strong> в договоре и
@@ -230,7 +239,7 @@
 						<span class="formula-item__icon-inner-text">05</span></div>
 					<div class="formula-item__descr">Несколько вариантов оплаты и рассрочка</div>
 				</div><!-- formula-item -->
-				<div class="formula-item">
+				<div class="formula-item" data-popupformula="formula-item-popup-03">
 					<div class="formula-item__icon">
 						<div class="formula-item-popup formula-item-popup-03">Перед началом работ мы
 							<strong>грамотно</strong>
@@ -241,7 +250,7 @@
 					<div class="formula-item__descr">Разумное распределение бюджета</div>
 				</div><!-- formula-item --></div>
 			<div class="row">
-				<div class="formula-item">
+				<div class="formula-item" data-popupformula="formula-item-popup-04">
 					<div class="formula-item__icon">
 						<div class="formula-item-popup formula-item-popup-04">Стоимость услуг,
 							<strong>зафиксированная</strong> в
@@ -253,11 +262,29 @@
 						<span class="formula-item__icon-inner-text">04</span></div>
 					<div class="formula-item__descr">Гарантируем фиксированную цену</div>
 				</div><!-- formula-item --></div><!-- row --></div><!-- /wrapper-small tablet-hide -->
-		<div class="wrapper_small desktop-hide">
+		<div class="wrapper_small desktop-hide splide">
 			<div class="section-title formula-title">Формула успешности <span>ремонта от Relax Live</span></div>
-			<div class="formula-slider-wrap">
-				<div class="formula-slider">
-					<div class="formula-item formula-slider__slide">
+			<div class="splide__arrows">
+				<button class="splide__arrow splide__arrow--prev slider-arrow slider-arrow_left slider-arrow_left-formula" id="formula-arrow_left">
+					<svg width="18" height="12" fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 17 12"
+						 preserveAspectRatio="xMinYMin meet">
+						<path
+								d="M.97 5.47a.75.75 0 0 0 0 1.06l4.773 4.773a.75.75 0 1 0 1.06-1.06L2.561 6l4.242-4.243a.75.75 0 0 0-1.06-1.06L.97 5.47zm16.53-.22h-16v1.5h16v-1.5z"
+								fill="#322823"></path>
+					</svg>
+				</button>
+				<button class="splide__arrow splide__arrow--next slider-arrow slider-arrow_right slider-arrow_right-formula" id="formula-arrow_right">
+					<svg width="17" height="12" fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 17 12"
+						 preserveAspectRatio="xMinYMin meet">
+						<path
+								d="M16.03 5.47a.75.75 0 0 1 0 1.06l-4.773 4.773a.75.75 0 0 1-1.06-1.06L14.439 6l-4.242-4.243a.75.75 0 1 1 1.06-1.06L16.03 5.47zM.5 5.25h15v1.5H.5v-1.5z"
+								fill="#322823"></path>
+					</svg>
+				</button>
+			</div>
+			<div class="formula-slider-wrap splide__track">
+				<div class="formula-slider splide__list">
+					<div class="formula-item formula-slider__slide splide__slide">
 						<div class="formula-item__icon">
 							<div class="formula-item-popup formula-item-popup-01">Работы ведутся
 								<strong>точно</strong> по графику со
@@ -268,7 +295,7 @@
 						</div>
 						<div class="formula-item__descr">Делаем объекты в конкретный срок</div>
 					</div><!-- formula-item -->
-					<div class="formula-item formula-slider__slide">
+					<div class="formula-item formula-slider__slide splide__slide">
 						<div class="formula-item__icon">
 							<div class="formula-item-popup formula-item-popup-02">Наш
 								<strong>профессиональный</strong> опыт реализации
@@ -280,7 +307,7 @@
 						</div>
 						<div class="formula-item__descr">Подстраиваемость<br>под любую задачу</div>
 					</div><!-- formula-item -->
-					<div class="formula-item formula-slider__slide">
+					<div class="formula-item formula-slider__slide splide__slide">
 						<div class="formula-item__icon">
 							<div class="formula-item-popup formula-item-popup-03">Перед началом работ мы
 								<strong>грамотно</strong>
@@ -290,7 +317,7 @@
 						</div>
 						<div class="formula-item__descr">Разумное распределение бюджета</div>
 					</div><!-- formula-item -->
-					<div class="formula-item formula-slider__slide">
+					<div class="formula-item formula-slider__slide splide__slide">
 						<div class="formula-item__icon">
 							<div class="formula-item-popup formula-item-popup-04">Стоимость услуг,
 								<strong>зафиксированная</strong> в
@@ -301,7 +328,7 @@
 						</div>
 						<div class="formula-item__descr">Гарантируем фиксированную цену</div>
 					</div><!-- formula-item -->
-					<div class="formula-item formula-slider__slide">
+					<div class="formula-item formula-slider__slide splide__slide">
 						<div class="formula-item__icon">
 							<div class="formula-item-popup formula-item-popup-05"><p>Стоимость
 								<strong>фиксируется</strong> в договоре и
@@ -313,7 +340,7 @@
 						</div>
 						<div class="formula-item__descr">Несколько вариантов оплаты и рассрочка</div>
 					</div><!-- formula-item -->
-					<div class="formula-item formula-slider__slide">
+					<div class="formula-item formula-slider__slide splide__slide">
 						<div class="formula-item__icon">
 							<div class="formula-item-popup formula-item-popup-06">
 								<strong>Сами</strong> вывозим и утилизируем мусор. По
@@ -324,168 +351,190 @@
 						<div class="formula-item__descr">Оставляем чистоту<br>после ремонта</div>
 					</div>
 				</div><!-- /formula-slider -->
-				<div class="slider-arrow slider-arrow_left slider-arrow_left-formula" id="formula-arrow_left">
-					<svg width="18" height="12" fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 17 12"
-						 preserveAspectRatio="xMinYMin meet">
-						<path
-								d="M.97 5.47a.75.75 0 0 0 0 1.06l4.773 4.773a.75.75 0 1 0 1.06-1.06L2.561 6l4.242-4.243a.75.75 0 0 0-1.06-1.06L.97 5.47zm16.53-.22h-16v1.5h16v-1.5z"
-								fill="#322823"></path>
-					</svg>
-				</div>
-				<div class="slider-arrow slider-arrow_right slider-arrow_right-formula" id="formula-arrow_right">
-					<svg width="17" height="12" fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 17 12"
-						 preserveAspectRatio="xMinYMin meet">
-						<path
-								d="M16.03 5.47a.75.75 0 0 1 0 1.06l-4.773 4.773a.75.75 0 0 1-1.06-1.06L14.439 6l-4.242-4.243a.75.75 0 1 1 1.06-1.06L16.03 5.47zM.5 5.25h15v1.5H.5v-1.5z"
-								fill="#322823"></path>
-					</svg>
-				</div>
 			</div><!-- /formula-slider-wrap --></div>
 	</div><!-- formula -->
-	<div class="repair-types" id="repair-types">
+	<div class="repair-types " id="repair-types">
 		<div class="wrapper_middle">
 			<div class="row row_reverse">
-				<div class="repair-types-slider-wrap">
-					<div class="repair-types-slider">
-						<div class="types-repair1">
-							<div class="repair-types-slider__slide">
-								<img src="./images/repair-types/electro.jpg" alt="electro"></div>
-							<div class="repair-types-slider__slide">
-								<img src="./images/repair-types/cosmetic.jpg" alt="cosmetic"></div>
-							<div class="repair-types-slider__slide">
-								<img src="./images/repair-types/capital.jpg" alt="capital"></div>
-							<div class="repair-types-slider__slide">
-								<img src="./images/repair-types/electro.jpg" alt="electro"></div>
-							<div class="repair-types-slider__slide">
-								<img src="./images/repair-types/cosmetic.jpg" alt="cosmetic"></div>
-						</div>
-						<div class="types-repair2">
-							<div class="repair-types-slider__slide">
-								<img src="./images/repair-types/cosmetic.jpg" alt="cosmetic"></div>
-							<div class="repair-types-slider__slide">
-								<img src="./images/repair-types/electro.jpg" alt="electro"></div>
-							<div class="repair-types-slider__slide">
-								<img src="./images/repair-types/capital.jpg" alt="capital"></div>
-							<div class="repair-types-slider__slide">
-								<img src="./images/repair-types/electro.jpg" alt="electro"></div>
-						</div>
-						<div class="types-repair3">
-							<div class="repair-types-slider__slide">
-								<img src="./images/repair-types/capital.jpg" alt="capital"></div>
-							<div class="repair-types-slider__slide">
-								<img src="./images/repair-types/electro.jpg" alt="electro"></div>
-							<div class="repair-types-slider__slide">
-								<img src="./images/repair-types/capital.jpg" alt="capital"></div>
-						</div>
-						<div class="types-repair4">
-							<div class="repair-types-slider__slide">
-								<img src="./images/repair-types/electro.jpg" alt="electro"></div>
-							<div class="repair-types-slider__slide">
-								<img src="./images/repair-types/cosmetic.jpg" alt="cosmetic"></div>
-						</div>
-						<div class="types-repair5">
-							<div class="repair-types-slider__slide">
-								<img src="./images/repair-types/capital.jpg" alt="capital"></div>
-							<div class="repair-types-slider__slide">
-								<img src="./images/repair-types/electro.jpg" alt="electro"></div>
-							<div class="repair-types-slider__slide">
-								<img src="./images/repair-types/capital.jpg" alt="capital"></div>
-							<div class="repair-types-slider__slide">
-								<img src="./images/repair-types/electro.jpg" alt="electro"></div>
-							<div class="repair-types-slider__slide">
-								<img src="./images/repair-types/capital.jpg" alt="capital"></div>
-						</div>
-					</div><!-- /.repair-types-slider -->
-					<div class="slider-counter slider-counter-repair slider-counter-responsive" id="repair-counter">
-						<div class="slider-counter-content">
-							<div class="slider-counter-content__current">1</div>
-							<div class="slider-counter-content__total">3</div>
-						</div>
+				<div class="repair-types-slider splide">
+					<div class="repair-types-slider-wrap splide__track">
+						<div class="repair-types-slider splide__list">
+							<div class="types-repair1 splide__slide">
+								<div class="nestedSplideTrack splide">
+									<div class="splide__pagination">
+										<div class="count"></div>
+									</div>
+									<div class="nestedSplideTrack splide__track">
+										<div class="nestedSplideList splide__list">
+											<div class="repair-types-slider__slide splide__slide">
+												<img src="./images/repair-types/electro.jpg" alt="electro"></div>
+											<div class="repair-types-slider__slide splide__slide">
+												<img src="./images/repair-types/cosmetic.jpg" alt="cosmetic"></div>
+											<div class="repair-types-slider__slide splide__slide">
+												<img src="./images/repair-types/capital.jpg" alt="capital"></div>
+											<div class="repair-types-slider__slide splide__slide">
+												<img src="./images/repair-types/electro.jpg" alt="electro"></div>
+											<div class="repair-types-slider__slide splide__slide">
+												<img src="./images/repair-types/cosmetic.jpg" alt="cosmetic"></div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="types-repair2 splide__slide">
+								<div class="nestedSplideTrack splide">
+									<div class="splide__pagination">
+										<div class="count"></div>
+									</div>
+									<div class="nestedSplideTrack splide__track">
+										<div class="nestedSplideList splide__list">
+											<div class="repair-types-slider__slide splide__slide">
+												<img src="./images/repair-types/cosmetic.jpg" alt="cosmetic"></div>
+											<div class="repair-types-slider__slide splide__slide">
+												<img src="./images/repair-types/electro.jpg" alt="electro"></div>
+											<div class="repair-types-slider__slide splide__slide">
+												<img src="./images/repair-types/capital.jpg" alt="capital"></div>
+											<div class="repair-types-slider__slide splide__slide">
+												<img src="./images/repair-types/electro.jpg" alt="electro"></div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="types-repair3 splide__slide">
+								<div class="nestedSplideTrack splide">
+									<div class="splide__pagination">
+										<div class="count"></div>
+									</div>
+									<div class="nestedSplideTrack splide__track">
+										<div class="nestedSplideList splide__list">
+											<div class="repair-types-slider__slide splide__slide">
+												<img src="./images/repair-types/capital.jpg" alt="capital"></div>
+											<div class="repair-types-slider__slide splide__slide">
+												<img src="./images/repair-types/electro.jpg" alt="electro"></div>
+											<div class="repair-types-slider__slide splide__slide">
+												<img src="./images/repair-types/capital.jpg" alt="capital"></div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="types-repair4 splide__slide">
+								<div class="nestedSplideTrack splide">
+									<div class="splide__pagination">
+										<div class="count"></div>
+									</div>
+									<div class="nestedSplideTrack splide__track">
+										<div class="nestedSplideList splide__list">
+											<div class="repair-types-slider__slide splide__slide">
+												<img src="./images/repair-types/electro.jpg" alt="electro"></div>
+											<div class="repair-types-slider__slide splide__slide">
+												<img src="./images/repair-types/cosmetic.jpg" alt="cosmetic"></div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="types-repair5 splide__slide">
+								<div class="nestedSplideTrack splide">
+									<div class="splide__pagination">
+										<div class="count"></div>
+									</div>
+									<div class="nestedSplideTrack splide__track">
+										<div class="nestedSplideList splide__list">
+											<div class="repair-types-slider__slide splide__slide">
+												<img src="./images/repair-types/capital.jpg" alt="capital"></div>
+											<div class="repair-types-slider__slide splide__slide">
+												<img src="./images/repair-types/electro.jpg" alt="electro"></div>
+											<div class="repair-types-slider__slide splide__slide">
+												<img src="./images/repair-types/capital.jpg" alt="capital"></div>
+											<div class="repair-types-slider__slide splide__slide">
+												<img src="./images/repair-types/electro.jpg" alt="electro"></div>
+											<div class="repair-types-slider__slide splide__slide">
+												<img src="./images/repair-types/capital.jpg" alt="capital"></div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div><!-- /.repair-types-slider -->
+						<div class="link-list link-list-repair desktop-hide">
+							<a>Полный список услуг и цен
+								<svg width="17" height="16" fill="none" viewBox="0 0 17 16" preserveAspectRatio="xMinYMin meet">
+									<path
+											d="M16.207 8.707a1 1 0 0 0 0-1.414L9.843.929A1 1 0 1 0 8.43 2.343L14.086 8l-5.657 5.657a1 1 0 1 0 1.414 1.414l6.364-6.364zM0 9h15.5V7H0v2z"
+											fill="#7F6956">
+									</path>
+								</svg>
+							</a>
+						</div><!-- link-list tablet-hide  -->
+					</div><!-- /repair-types-slider-wrap -->
+				</div>
+				<div class="repair-types-tab splide">
+					<div class="section-title repair-types-title">Какие виды<br><span>ремонта мы делаем:</span>
 					</div>
-					<div class="slider-arrow slider-arrow_left" id="repair-types-arrow_left">
-						<svg width="18" height="12" fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 12"
-							 preserveAspectRatio="xMinYMin meet">
-							<path
-									d="M.97 5.47a.75.75 0 0 0 0 1.06l4.773 4.773a.75.75 0 1 0 1.06-1.06L2.561 6l4.242-4.243a.75.75 0 0 0-1.06-1.06L.97 5.47zm16.53-.22h-16v1.5h16v-1.5z"
-									fill="#322823"></path>
-						</svg>
-					</div>
-					<div class="slider-arrow slider-arrow_right" id="repair-types-arrow_right">
-						<svg width="17" height="12" fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 17 12"
-							 preserveAspectRatio="xMinYMin meet">
-							<path
-									d="M16.03 5.47a.75.75 0 0 1 0 1.06l-4.773 4.773a.75.75 0 0 1-1.06-1.06L14.439 6l-4.242-4.243a.75.75 0 1 1 1.06-1.06L16.03 5.47zM.5 5.25h15v1.5H.5v-1.5z"
-									fill="#322823"></path>
-						</svg>
-					</div>
-					<div class="link-list link-list-repair desktop-hide"><a>Полный список услуг и цен
-						<svg width="17" height="16" fill="none" viewBox="0 0 17 16" preserveAspectRatio="xMinYMin meet">
-							<path
-									d="M16.207 8.707a1 1 0 0 0 0-1.414L9.843.929A1 1 0 1 0 8.43 2.343L14.086 8l-5.657 5.657a1 1 0 1 0 1.414 1.414l6.364-6.364zM0 9h15.5V7H0v2z"
-									fill="#7F6956"></path>
-						</svg>
-					</a></div><!-- link-list tablet-hide  --></div><!-- /repair-types-slider-wrap -->
-				<div class="repair-types-tab">
-					<div class="section-title repair-types-title">Какие виды<br><span>ремонта мы делаем:</span></div>
 					<!-- /.section-title repair-types-title -->
-					<div class="nav-wrap nav-wrap-repair">
-						<nav class="nav repair-types-nav">
-							<div class="nav-list nav-list-repair">
-								<button type="button" class="button_o repair-types-nav__item repair-types-nav__item-1 active">
-									<svg width="259" height="46" fill="none" viewBox="0 0 259 46" preserveAspectRatio="xMinYMin meet">
+					<div class="nav-wrap nav-wrap-repair ">
+						<div class="splide__arrows">
+							<button class="splide__arrow splide__arrow--prev slider-arrow slider-arrow_left" id="repair-types-arrow_left">
+								<svg width="18" height="12" fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 17 12"
+									preserveAspectRatio="xMinYMin meet">
+									<path
+											d="M.97 5.47a.75.75 0 0 0 0 1.06l4.773 4.773a.75.75 0 1 0 1.06-1.06L2.561 6l4.242-4.243a.75.75 0 0 0-1.06-1.06L.97 5.47zm16.53-.22h-16v1.5h16v-1.5z"
+											fill="#322823"></path>
+								</svg>
+							</button>
+							<button class="splide__arrow splide__arrow--next slider-arrow slider-arrow_right" id="repair-types-arrow_right">
+								<svg width="17" height="12" fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 17 12"
+									preserveAspectRatio="xMinYMin meet">
+									<path
+											d="M16.03 5.47a.75.75 0 0 1 0 1.06l-4.773 4.773a.75.75 0 0 1-1.06-1.06L14.439 6l-4.242-4.243a.75.75 0 1 1 1.06-1.06L16.03 5.47zM.5 5.25h15v1.5H.5v-1.5z"
+											fill="#322823"></path>
+								</svg>
+							</button>
+						</div>
+						<nav class="nav repair-types-nav splide__track">
+							<div class="nav-list nav-list-repair splide__list">
+								<button type="button" class="splide__slide button_o repair-types-nav__item repair-types-nav__item-1">
+									<svg height="46" fill="none" viewBox="0 0 259 46" preserveAspectRatio="xMinYMin meet">
 										<path
 												d="M33.5 1h-10c-12.15 0-22 9.85-22 22s9.85 22 22 22h187M48.5 1h187c12.15 0 22 9.85 22 22s-9.85 22-22 22h-17.1"
 												stroke="#EEEBE5" stroke-width="2" stroke-linecap="round"></path>
 									</svg>
 									Частичный ремонт
 								</button><!-- /.repair-types__nav-item -->
-								<button type="button" class="button_o repair-types-nav__item repair-types-nav__item-2">
-									<svg width="300" height="46" fill="none" viewBox="0 0 300 46" preserveAspectRatio="xMinYMin meet">
+								<button type="button" class="splide__slide button_o repair-types-nav__item repair-types-nav__item-2">
+									<svg height="46" fill="none" viewBox="0 0 300 46" preserveAspectRatio="xMinYMin meet">
 										<path
 												d="M38.25 1H23C10.85 1 1 10.85 1 23s9.85 22 22 22h221.289M55.711 1H277c12.15 0 22 9.85 22 22s-9.85 22-22 22h-23.515"
 												stroke="#EEEBE5" stroke-width="2" stroke-linecap="round"></path>
 									</svg>
 									Косметический ремонт
 								</button><!-- /.repair-types__nav-item -->
-								<button type="button" class="button_o repair-types-nav__item repair-types-nav__item-3">
-									<svg width="281" height="46" fill="none" viewBox="0 0 281 46" preserveAspectRatio="xMinYMin meet">
+								<button type="button" class="splide__slide button_o repair-types-nav__item repair-types-nav__item-3">
+									<svg height="46" fill="none" viewBox="0 0 281 46" preserveAspectRatio="xMinYMin meet">
 										<path
 												d="M35.875 1H23C10.85 1 1 10.85 1 23s9.85 22 22 22h205.777M52.223 1H258c12.15 0 22 9.85 22 22s-9.85 22-22 22h-20.613"
 												stroke="#EEEBE5" stroke-width="2" stroke-linecap="round"></path>
 									</svg>
 									Капитальный ремонт
 								</button><!-- /.repair-types__nav-item -->
-								<button type="button" class="button_o repair-types-nav__item repair-types-nav__item-4">
-									<svg width="268" height="46" fill="none" viewBox="0 0 268 46" preserveAspectRatio="xMinYMin meet">
+								<button type="button" class="splide__slide button_o repair-types-nav__item repair-types-nav__item-4">
+									<svg height="46" fill="none" viewBox="0 0 268 46" preserveAspectRatio="xMinYMin meet">
 										<path
 												d="M34.25 1H23C10.85 1 1 10.85 1 23s9.85 22 22 22h195.164M49.836 1H245c12.15 0 22 9.85 22 22s-9.85 22-22 22h-18.627"
 												stroke="#EEEBE5" stroke-width="2" stroke-linecap="round"></path>
 									</svg>
 									Евроремонт ремонт
 								</button><!-- /.repair-types__nav-item -->
-								<button type="button" class="button_o repair-types-nav__item repair-types-nav__item-5">
-									<svg width="324" height="46" fill="none" viewBox="0 0 324 46" preserveAspectRatio="xMinYMin meet">
+								<button type="button" class="splide__slide button_o repair-types-nav__item repair-types-nav__item-5">
+									<svg height="46" fill="none" viewBox="0 0 324 46" preserveAspectRatio="xMinYMin meet">
 										<path
 												d="M41.25 1H23C10.85 1 1 10.85 1 23s9.85 22 22 22h240.883M60.117 1H301c12.15 0 22 9.85 22 22s-9.85 22-22 22h-27.18"
 												stroke="#EEEBE5" stroke-width="2" stroke-linecap="round"></path>
 									</svg>
 									Индивидуальный ремонт
-								</button><!-- /.repair-types__nav-item --></div>
+								</button><!-- /.repair-types__nav-item -->
+							</div>
 						</nav><!-- /.repair-types__nav -->
-						<div class="nav-arrow nav-arrow_left desktop-hide" id="nav-arrow-repair-left_base">
-							<svg width="12" height="16" fill="none" xmlns="http://www.w3.org/2000/svg">
-								<path d="M11 1L1 8l10 7" stroke="#322823" stroke-width=".3" stroke-linecap="round"
-									  stroke-linejoin="round"></path>
-							</svg>
-						</div>
-						<div class="nav-arrow nav-arrow_right desktop-hide" id="nav-arrow-repair-right_base">
-							<svg width="12" height="16" fill="none" xmlns="http://www.w3.org/2000/svg">
-								<path d="M1 1l10 7-10 7" stroke="#322823" stroke-width=".3" stroke-linecap="round"
-									  stroke-linejoin="round"></path>
-							</svg>
-						</div>
 					</div><!-- /.repair-types__nav-wrap -->
-					<div class="link-list link-list-repair mobile-hide tablet-hide"><a>Полный список услуг и цен
+					<div class="link-list link-list-repair mobile-hide tablet-hide">
+						<a data-popup="popup-repair-types">Полный список услуг и цен
 						<div>
 							<svg width="17" height="16" fill="none" viewBox="0 0 18 12" preserveAspectRatio="xMinYMin meet">
 								<path
@@ -493,8 +542,12 @@
 										fill="#7F6956"></path>
 							</svg>
 						</div>
-					</a></div><!-- link-list tablet-hide  --></div><!-- /.repair-types-tab --></div><!-- /.row --></div>
-		<!-- /.wrapper_small --></div><!-- /.repair-types -->
+					</a>
+				</div><!-- link-list tablet-hide  -->
+				</div><!-- /.repair-types-tab -->
+			</div><!-- /.row -->
+		</div><!-- /.wrapper_small -->
+	</div><!-- /.repair-types -->
 	<div class="wave-block feedback-block">
 		<div class="wrapper_feedback">
 			<div class="section-title feedback-block__title mobile-hide tablet-hide">Давайте начнем
@@ -507,33 +560,49 @@
 				<span>вашу мечту о ремонте со встречи?</span>
 			</div>
 			<div class="feedback-block__descr">Обсудите проект со специалистом или вызовите замерщика.</div>
-			<form class="feedback-block__form" id="feedback2"><label><span><sup>*</sup>Введите ваше имя:</span> <input
-					type="text" class="feedback-block__form-input feedback-block__form-input_name" name="name" required=""
-					maxlength="20"></label> <label><span><sup>*</sup>Введите ваш номер:</span> <input type="text"
-																									  class="feedback-block__form-input feedback-block__form-input_phone"
-																									  name="phone"
-																									  id="feedback-input2"
-																									  required=""
-																									  placeholder="+7 (___)___-__-__"
-																									  minlength="18"></label>
-				<button class="button button-feedback-block">Перезвоните мне</button>
-				<div class="checkbox checkbox-feedback-block">
-					<input class="checkbox__input" type="checkbox" id="checkbox2"
-						   required=""> <label class="checkbox__label"
-											   for="checkbox2"></label>
-					<div class="checkbox__descr">Нажимая на кнопку, Вы даете согласие на
-						<span class="link-privacy">обработку своих персональных данных</span>
+			<form class="feedback-block__form" id="feedback2">
+				<div class="feedback__body" >
+					<div class="feedback--flex--row">
+						<label>
+							<span>
+								<sup>*</sup>Введите ваше имя:
+							</span> 
+							<input
+							type="text" class="feedback-block__form-input feedback-block__form-input_name" name="name" required
+							maxlength="20">
+						</label> 
+						<label>
+							<span>
+								<sup>*</sup>Введите ваш номер:
+							</span> 
+							<input type="text" class="feedback-block__form-input feedback-block__form-input_phone" 
+								name="phone"
+								id="feedback-input2"
+								required=""
+								placeholder="+7 (___)___-__-__"
+								minlength="18">
+						</label>
+						<button class="button button-feedback-block">Перезвоните мне</button>
+						<div class="checkbox checkbox-feedback-block">
+							<input class="checkbox__input" type="checkbox" id="checkbox2"
+									 > <label class="checkbox__label"
+														 for="checkbox2"></label>
+							<div class="checkbox__descr">Нажимая на кнопку, Вы даете согласие на
+								<span class="link-privacy" data-popup="popup-privacy">обработку своих персональных данных</span>
+							</div>
+						</div>
 					</div>
 				</div>
 			</form>
 		</div>
 	</div><!-- /feedback-block -->
 	<div class="portfolio" id="portfolio">
-		<div class="wrapper_middle">
+		<div class="wrapper_middle ">
 			<div class="section-title portfolio-title">Вдохновляющее портфолио <span>реализованное нами</span></div>
-			<div class="portfolio-slider-wrap">
-				<div class="portfolio-slider-mobile tablet-hide desktop-hide">
-					<div class="portfolio-slider__slide-frame"><img class="portfolio-slider__slide-frame-img"
+			<div class="portfolio-slider-wrap ">
+				<!-- <div class="portfolio-slider-mobile tablet-hide desktop-hide">
+					<div class="portfolio-slider__slide-frame">
+						<img class="portfolio-slider__slide-frame-img"
 																	src="./images/portfolio/img_1.jpg" alt="img_1">
 						<div class="item-hover"></div>
 					</div>
@@ -548,7 +617,7 @@
 					<div class="portfolio-slider__slide-frame"><img class="portfolio-slider__slide-frame-img"
 																	src="./images/portfolio/img_4.jpg" alt="img_4">
 						<div class="item-hover"></div>
-					</div><!-- /portfolio-slider__slide -->
+					</div>
 					<div class="portfolio-slider__slide-frame"><img class="portfolio-slider__slide-frame-img"
 																	src="./images/portfolio/img_5.jpg" alt="img_5">
 						<div class="item-hover"></div>
@@ -556,7 +625,7 @@
 					<div class="portfolio-slider__slide-frame"><img class="portfolio-slider__slide-frame-img"
 																	src="./images/portfolio/img_6.jpg" alt="img_6">
 						<div class="item-hover"></div>
-					</div><!-- /portfolio-slider__slide -->
+					</div>
 					<div class="portfolio-slider__slide-frame"><img class="portfolio-slider__slide-frame-img"
 																	src="./images/portfolio/img_4.jpg" alt="img_1">
 						<div class="item-hover"></div>
@@ -564,7 +633,7 @@
 					<div class="portfolio-slider__slide-frame"><img class="portfolio-slider__slide-frame-img"
 																	src="./images/portfolio/img_3.jpg" alt="img_2">
 						<div class="item-hover"></div>
-					</div><!-- /portfolio-slider__slide -->
+					</div>
 					<div class="portfolio-slider__slide-frame"><img class="portfolio-slider__slide-frame-img"
 																	src="./images/portfolio/img_2.jpg" alt="img_3">
 						<div class="item-hover"></div>
@@ -572,14 +641,15 @@
 					<div class="portfolio-slider__slide-frame"><img class="portfolio-slider__slide-frame-img"
 																	src="./images/portfolio/img_1.jpg" alt="img_4">
 						<div class="item-hover"></div>
-					</div><!-- /portfolio-slider__slide --></div><!-- /portfolio-slider -->
+					</div>
+				</div>
 				<div class="slider-counter slider-counter-responsive desktop-hide" id="portfolio-counter">
 					<div class="slider-counter-content">
 						<div class="slider-counter-content__current">1</div>
 						<div class="slider-counter-content__total">3</div>
 					</div>
-				</div>
-				<div class="slider-arrow-tablet-mobile slider-arrow-tablet-mobile_left tablet-hide desktop-hide"
+				</div> -->
+				<!-- <div class="slider-arrow-tablet-mobile slider-arrow-tablet-mobile_left tablet-hide desktop-hide"
 					 id="portfolio-arrow-mobile_left">
 					<svg width="25" height="34" fill="none" viewBox="0 0 25 34" preserveAspectRatio="xMinYMin meet"
 						 xmlns="http://www.w3.org/2000/svg">
@@ -594,84 +664,92 @@
 						<path d="M2 2l21 15L2 32" stroke="#fff" stroke-opacity=".5" stroke-width="3" stroke-linecap="round"
 							  stroke-linejoin="round"></path>
 					</svg>
+				</div> -->
+				<div class="portfolio-desktop splide">
+					<div class="splide__arrows">
+						<div class="splide__arrow splide__arrow--prev slider-arrow slider-arrow_left-portfolio mobile-hide" id="portfolio-arrow_left">
+							<svg width="18" height="12" fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 12"
+								 preserveAspectRatio="xMinYMin meet">
+								<path
+										d="M.97 5.47a.75.75 0 0 0 0 1.06l4.773 4.773a.75.75 0 1 0 1.06-1.06L2.561 6l4.242-4.243a.75.75 0 0 0-1.06-1.06L.97 5.47zm16.53-.22h-16v1.5h16v-1.5z"
+										fill="#322823"></path>
+							</svg>
+						</div>
+						<div class="splide__arrow splide__arrow--next slider-arrow slider-arrow_right-portfolio mobile-hide" id="portfolio-arrow_right">
+							<svg width="17" height="12" fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 12"
+								 preserveAspectRatio="xMinYMin meet">
+								<path
+										d="M16.03 5.47a.75.75 0 0 1 0 1.06l-4.773 4.773a.75.75 0 0 1-1.06-1.06L14.439 6l-4.242-4.243a.75.75 0 1 1 1.06-1.06L16.03 5.47zM.5 5.25h15v1.5H.5v-1.5z"
+										fill="#322823"></path>
+							</svg>
+						</div>
+					</div>
+					<div class="splide__track">
+						<div class="portfolio-slider mobile-hide splide__list">
+								<div class="portfolio-slider__slide-frame splide__slide" data-popup="popup-portfolio">
+									<img class="portfolio-slider__slide-frame-img"
+																				src="./images/portfolio/img_1.jpg" alt="img_1">
+									<div class="item-hover"><img src="./images/zoom.svg" alt="zoom"> <span>Нажмите, чтобы<br>увеличить</span>
+									</div>
+								</div>
+								<div class="portfolio-slider__slide-frame splide__slide" data-popup="popup-portfolio">
+									<img class="portfolio-slider__slide-frame-img"
+																				src="./images/portfolio/img_2.jpg" alt="img_2">
+									<div class="item-hover"><img src="./images/zoom.svg" alt="zoom"> <span>Нажмите, чтобы<br>увеличить</span>
+									</div>
+								</div>
+								<div class="portfolio-slider__slide-frame splide__slide" data-popup="popup-portfolio">
+									<img class="portfolio-slider__slide-frame-img"
+																				src="./images/portfolio/img_3.jpg" alt="img_3">
+									<div class="item-hover"><img src="./images/zoom.svg" alt="zoom"> <span>Нажмите, чтобы<br>увеличить</span>
+									</div>
+								</div>
+								<div class="portfolio-slider__slide-frame splide__slide" data-popup="popup-portfolio">
+									<img class="portfolio-slider__slide-frame-img"
+																				src="./images/portfolio/img_4.jpg" alt="img_4">
+									<div class="item-hover"><img src="./images/zoom.svg" alt="zoom"> <span>Нажмите, чтобы<br>увеличить</span>
+									</div>
+								</div>
+								<div class="portfolio-slider__slide-frame splide__slide" data-popup="popup-portfolio">
+									<img class="portfolio-slider__slide-frame-img"
+																				src="./images/portfolio/img_5.jpg" alt="img_5">
+									<div class="item-hover"><img src="./images/zoom.svg" alt="zoom"> <span>Нажмите, чтобы<br>увеличить</span>
+									</div>
+								</div>
+								<div class="portfolio-slider__slide-frame splide__slide" data-popup="popup-portfolio">
+									<img class="portfolio-slider__slide-frame-img"
+																				src="./images/portfolio/img_6.jpg" alt="img_6">
+									<div class="item-hover"><img src="./images/zoom.svg" alt="zoom"> <span>Нажмите, чтобы<br>увеличить</span>
+									</div>
+								</div>
+								<div class="portfolio-slider__slide-frame splide__slide" data-popup="popup-portfolio">
+									<img class="portfolio-slider__slide-frame-img"
+																				src="./images/portfolio/img_4.jpg" alt="img_7">
+									<div class="item-hover"><img src="./images/zoom.svg" alt="zoom"> <span>Нажмите, чтобы<br>увеличить</span>
+									</div>
+								</div>
+								<div class="portfolio-slider__slide-frame splide__slide" data-popup="popup-portfolio">
+									<img class="portfolio-slider__slide-frame-img"
+																				src="./images/portfolio/img_3.jpg" alt="img_8">
+									<div class="item-hover"><img src="./images/zoom.svg" alt="zoom"> <span>Нажмите, чтобы<br>увеличить</span>
+									</div>
+								</div>
+								<div class="portfolio-slider__slide-frame splide__slide" data-popup="popup-portfolio">
+									<img class="portfolio-slider__slide-frame-img"
+																				src="./images/portfolio/img_2.jpg" alt="img_9">
+									<div class="item-hover"><img src="./images/zoom.svg" alt="zoom"> <span>Нажмите, чтобы<br>увеличить</span>
+									</div>
+								</div>
+								<div class="portfolio-slider__slide-frame splide__slide" data-popup="popup-portfolio">
+									<img class="portfolio-slider__slide-frame-img"
+																				src="./images/portfolio/img_1.jpg" alt="img_10">
+									<div class="item-hover"><img src="./images/zoom.svg" alt="zoom"> <span>Нажмите, чтобы<br>увеличить</span>
+									</div>
+								</div>
+						</div><!-- /portfolio-slider -->
+					</div>
 				</div>
-				<div class="slider-arrow slider-arrow_left-portfolio mobile-hide" id="portfolio-arrow_left">
-					<svg width="18" height="12" fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 12"
-						 preserveAspectRatio="xMinYMin meet">
-						<path
-								d="M.97 5.47a.75.75 0 0 0 0 1.06l4.773 4.773a.75.75 0 1 0 1.06-1.06L2.561 6l4.242-4.243a.75.75 0 0 0-1.06-1.06L.97 5.47zm16.53-.22h-16v1.5h16v-1.5z"
-								fill="#322823"></path>
-					</svg>
-				</div>
-				<div class="slider-arrow slider-arrow_right-portfolio mobile-hide" id="portfolio-arrow_right">
-					<svg width="17" height="12" fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 12"
-						 preserveAspectRatio="xMinYMin meet">
-						<path
-								d="M16.03 5.47a.75.75 0 0 1 0 1.06l-4.773 4.773a.75.75 0 0 1-1.06-1.06L14.439 6l-4.242-4.243a.75.75 0 1 1 1.06-1.06L16.03 5.47zM.5 5.25h15v1.5H.5v-1.5z"
-								fill="#322823"></path>
-					</svg>
-				</div>
-				<div class="portfolio-slider mobile-hide">
-					<div class="portfolio-slider__slide fade-tab">
-						<div class="portfolio-slider__slide-frame"><img class="portfolio-slider__slide-frame-img"
-																		src="./images/portfolio/img_1.jpg" alt="img_1">
-							<div class="item-hover"><img src="./images/zoom.svg" alt="zoom"> <span>Нажмите, чтобы<br>увеличить</span>
-							</div>
-						</div>
-						<div class="portfolio-slider__slide-frame"><img class="portfolio-slider__slide-frame-img"
-																		src="./images/portfolio/img_2.jpg" alt="img_2">
-							<div class="item-hover"><img src="./images/zoom.svg" alt="zoom"> <span>Нажмите, чтобы<br>увеличить</span>
-							</div>
-						</div>
-					</div><!-- /portfolio-slider__slide -->
-					<div class="portfolio-slider__slide fade-tab">
-						<div class="portfolio-slider__slide-frame"><img class="portfolio-slider__slide-frame-img"
-																		src="./images/portfolio/img_3.jpg" alt="img_3">
-							<div class="item-hover"><img src="./images/zoom.svg" alt="zoom"> <span>Нажмите, чтобы<br>увеличить</span>
-							</div>
-						</div>
-						<div class="portfolio-slider__slide-frame"><img class="portfolio-slider__slide-frame-img"
-																		src="./images/portfolio/img_4.jpg" alt="img_4">
-							<div class="item-hover"><img src="./images/zoom.svg" alt="zoom"> <span>Нажмите, чтобы<br>увеличить</span>
-							</div>
-						</div>
-					</div><!-- /portfolio-slider__slide -->
-					<div class="portfolio-slider__slide fade-tab">
-						<div class="portfolio-slider__slide-frame"><img class="portfolio-slider__slide-frame-img"
-																		src="./images/portfolio/img_5.jpg" alt="img_5">
-							<div class="item-hover"><img src="./images/zoom.svg" alt="zoom"> <span>Нажмите, чтобы<br>увеличить</span>
-							</div>
-						</div>
-						<div class="portfolio-slider__slide-frame"><img class="portfolio-slider__slide-frame-img"
-																		src="./images/portfolio/img_6.jpg" alt="img_6">
-							<div class="item-hover"><img src="./images/zoom.svg" alt="zoom"> <span>Нажмите, чтобы<br>увеличить</span>
-							</div>
-						</div>
-					</div><!-- /portfolio-slider__slide -->
-					<div class="portfolio-slider__slide fade-tab">
-						<div class="portfolio-slider__slide-frame"><img class="portfolio-slider__slide-frame-img"
-																		src="./images/portfolio/img_4.jpg" alt="img_1">
-							<div class="item-hover"><img src="./images/zoom.svg" alt="zoom"> <span>Нажмите, чтобы<br>увеличить</span>
-							</div>
-						</div>
-						<div class="portfolio-slider__slide-frame"><img class="portfolio-slider__slide-frame-img"
-																		src="./images/portfolio/img_3.jpg" alt="img_2">
-							<div class="item-hover"><img src="./images/zoom.svg" alt="zoom"> <span>Нажмите, чтобы<br>увеличить</span>
-							</div>
-						</div>
-					</div><!-- /portfolio-slider__slide -->
-					<div class="portfolio-slider__slide fade-tab">
-						<div class="portfolio-slider__slide-frame"><img class="portfolio-slider__slide-frame-img"
-																		src="./images/portfolio/img_2.jpg" alt="img_3">
-							<div class="item-hover"><img src="./images/zoom.svg" alt="zoom"> <span>Нажмите, чтобы<br>увеличить</span>
-							</div>
-						</div>
-						<div class="portfolio-slider__slide-frame"><img class="portfolio-slider__slide-frame-img"
-																		src="./images/portfolio/img_1.jpg" alt="img_4">
-							<div class="item-hover"><img src="./images/zoom.svg" alt="zoom"> <span>Нажмите, чтобы<br>увеличить</span>
-							</div>
-						</div>
-					</div><!-- /portfolio-slider__slide --></div><!-- /portfolio-slider --></div><!-- /slider-wrap-->
+			</div><!-- /slider-wrap-->
 		</div>
 	</div><!-- /portfolio -->
 	<div class="transparency" id="transparency">
@@ -681,68 +759,72 @@
 			<div class="section-title transparency-title tablet-hide desktop-hide">Работаем с каждым
 				<span><strong>клиентом</strong> честно и прозрачно</span></div>
 			<div class="section-subtitle">Никаких скрытых платежей и сорванных сроков!</div>
-			<div class="transparency-slider-wrap">
-				<div class="transparency-slider row">
-					<div class="transparency-item">
-						<div class="transparency-item__img">
-							<img src="./images/transparency/item_img.jpg" alt="document">
-							<div class="item-hover"><img src="./images/zoom.svg" alt="zoom"> <span>Нажмите, чтобы<br>увеличить</span>
-								<div class="transparency-item__hint">
-									<strong>нажмите</strong> на документ, чтобы его посмотреть
+			<div class="transparency-slider-wrap splide">
+				<div class="splide__track">
+					<div class="transparency-slider row splide__list">
+						<div class="transparency-item splide__slide">
+							<div class="transparency-item__img" data-popup="popup-transparency" data-id="1">
+								<img src="./images/transparency/item_img.jpg" alt="document">
+								<div class="item-hover"><img src="./images/zoom.svg" alt="zoom"> <span>Нажмите, чтобы<br>увеличить</span>
+									<div class="transparency-item__hint">
+										<strong>нажмите</strong> на документ, чтобы его посмотреть
+									</div>
 								</div>
 							</div>
-						</div>
-						<div class="transparency-item__title">Договор</div>
-						<div class="transparency-item__descr">Заключение договора четко фиксирует финансовые и временные показатели
-							выполнения работы, прав и обязанности сторон.
-						</div>
-					</div>
-					<div class="transparency-item">
-						<div class="transparency-item__img">
-							<img src="./images/transparency/item_img.jpg" alt="document">
-							<div class="item-hover"><img src="./images/zoom.svg" alt="zoom"> <span>Нажмите, чтобы<br>увеличить</span>
-								<div class="transparency-item__hint">
-									<strong>нажмите</strong> на документ, чтобы его посмотреть
+							<div class="transparency-item__title">Договор</div>
+							<div class="transparency-item__descr">Заключение договора четко фиксирует финансовые и временные показатели
+								выполнения работы, прав и обязанности сторон.
+							</div>
+						</div><!-- splide__slide --> 
+						<div class="transparency-item splide__slide">
+							<div class="transparency-item__img" data-popup="popup-transparency" data-id="2">
+								<img src="./images/transparency/item_img.jpg" alt="document">
+								<div class="item-hover"><img src="./images/zoom.svg" alt="zoom"> <span>Нажмите, чтобы<br>увеличить</span>
+									<div class="transparency-item__hint">
+										<strong>нажмите</strong> на документ, чтобы его посмотреть
+									</div>
 								</div>
 							</div>
-						</div>
-						<div class="transparency-item__title">Смета</div>
-						<div class="transparency-item__descr">Профессиональная команда сметчиков готовит детальную смету с учетом всех
-							накладных расходов. После этого смета на протяжении строительства не меняется.
-						</div>
-					</div>
-					<div class="transparency-item">
-						<div class="transparency-item__img">
-							<img src="./images/transparency/item_img.jpg" alt="document">
-							<div class="item-hover"><img src="./images/zoom.svg" alt="zoom"> <span>Нажмите, чтобы<br>увеличить</span>
-								<div class="transparency-item__hint">
-									<strong>нажмите</strong> на документ, чтобы его посмотреть
+							<div class="transparency-item__title">Смета</div>
+							<div class="transparency-item__descr">Профессиональная команда сметчиков готовит детальную смету с учетом всех
+								накладных расходов. После этого смета на протяжении строительства не меняется.
+							</div>
+						</div><!-- splide__slide -->
+						<div class="transparency-item splide__slide">
+							<div class="transparency-item__img" data-popup="popup-transparency" data-id="3">
+								<img src="./images/transparency/item_img.jpg" alt="document">
+								<div class="item-hover"><img src="./images/zoom.svg" alt="zoom"> <span>Нажмите, чтобы<br>увеличить</span>
+									<div class="transparency-item__hint">
+										<strong>нажмите</strong> на документ, чтобы его посмотреть
+									</div>
 								</div>
 							</div>
-						</div>
-						<div class="transparency-item__title">График платежей</div>
-						<div class="transparency-item__descr">На этапе подписания договора составляется-график производства и
-							финансирования работ. Данный документ является основным при проведении и контроле работ на объекте.
-						</div>
+							<div class="transparency-item__title">График платежей</div>
+							<div class="transparency-item__descr">На этапе подписания договора составляется-график производства и
+								финансирования работ. Данный документ является основным при проведении и контроле работ на объекте.
+							</div>
+						</div><!-- splide__slide -->
+					</div><!-- /transparency-slider row splide__list-->
+				</div><!-- splide__track -->
+				<div class="splide__arrows">
+					<div class="splide__arrow splide__arrow--prev slider-arrow slider-arrow_left" id="transparency-arrow_left">
+						<svg width="18" height="12" fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 12"
+							 preserveAspectRatio="xMinYMin meet">
+							<path
+									d="M.97 5.47a.75.75 0 0 0 0 1.06l4.773 4.773a.75.75 0 1 0 1.06-1.06L2.561 6l4.242-4.243a.75.75 0 0 0-1.06-1.06L.97 5.47zm16.53-.22h-16v1.5h16v-1.5z"
+									fill="#322823"></path>
+						</svg>
 					</div>
-				</div><!-- /transparency-slider row -->
-				<div class="slider-arrow slider-arrow_left" id="transparency-arrow_left">
-					<svg width="18" height="12" fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 12"
-						 preserveAspectRatio="xMinYMin meet">
-						<path
-								d="M.97 5.47a.75.75 0 0 0 0 1.06l4.773 4.773a.75.75 0 1 0 1.06-1.06L2.561 6l4.242-4.243a.75.75 0 0 0-1.06-1.06L.97 5.47zm16.53-.22h-16v1.5h16v-1.5z"
-								fill="#322823"></path>
-					</svg>
+					<div class="splide__arrow splide__arrow--next slider-arrow slider-arrow_right" id="transparency-arrow_right">
+						<svg width="17" height="12" fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 12"
+							 preserveAspectRatio="xMinYMin meet">
+							<path
+									d="M16.03 5.47a.75.75 0 0 1 0 1.06l-4.773 4.773a.75.75 0 0 1-1.06-1.06L14.439 6l-4.242-4.243a.75.75 0 1 1 1.06-1.06L16.03 5.47zM.5 5.25h15v1.5H.5v-1.5z"
+									fill="#322823"></path>
+						</svg>
+					</div>
 				</div>
-				<div class="slider-arrow slider-arrow_right" id="transparency-arrow_right">
-					<svg width="17" height="12" fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 12"
-						 preserveAspectRatio="xMinYMin meet">
-						<path
-								d="M16.03 5.47a.75.75 0 0 1 0 1.06l-4.773 4.773a.75.75 0 0 1-1.06-1.06L14.439 6l-4.242-4.243a.75.75 0 1 1 1.06-1.06L16.03 5.47zM.5 5.25h15v1.5H.5v-1.5z"
-								fill="#322823"></path>
-					</svg>
-				</div>
-			</div>
+			</div><!-- splide -->
 			<div class="transparency-videoreport">
 				<div class="transparency-videoreport__icon"><img src="./images/transparency/camera.svg" alt="camera">
 				</div>
@@ -786,14 +868,17 @@
 					<div class="feedback__icon"><img src="./images/main/feedback_icon.svg" alt=""></div>
 					<div class="feedback__title">Получите консультацию от специалиста в удобное для Вас время</div>
 					<form class="feedback__form" id="feedback3">
-						<div class="feedback__input"><input class="input feedback__input-input" name="phone" type="text"
-															placeholder="Введите номер телефона" id="feedback-input3" minlength="18">
-						</div>
-						<button class="button">Перезвоните мне</button>
-						<div class="checkbox"><input class="checkbox__input" type="checkbox" id="checkbox3"> <label
-								class="checkbox__label" for="checkbox3"></label>
-							<div class="checkbox__descr checkbox__descr_round-feedback">Я соглашаюсь с
-								<span class="link-privacy">политикой конфиденциальности</span>
+						<div class="feedback__body" >
+							<div class="feedback__input"><input class="input feedback__input-input" name="phone" type="text"
+																placeholder="Введите номер телефона" id="feedback-input3" minlength="18">
+							</div>
+							<button class="button">Перезвоните мне</button>
+							<div class="checkbox">
+								<input class="checkbox__input" type="checkbox" id="checkbox3" required> <label
+									class="checkbox__label" for="checkbox3"></label>
+								<div class="checkbox__descr checkbox__descr_round-feedback">Я соглашаюсь с
+									<span class="link-privacy" data-popup="popup-privacy">политикой конфиденциальности</span>
+								</div>
 							</div>
 						</div>
 					</form>
@@ -812,7 +897,7 @@
 					<div class="director-avatar__descr mobile-hide tablet-hide">Мы с любовью создаем уют для Вашего дома. Получите
 						от меня персональную консультацию!
 					</div>
-					<button class="button button_wide mobile-hide tablet-hide">Проконсультироваться</button>
+					<button class="button button_wide mobile-hide tablet-hide" data-popup="popup-consultation">Проконсультироваться</button>
 				</div>
 				<div class="director-content">
 					<div class="section-title director__title mobile-hide tablet-hide">Эдуард
@@ -839,71 +924,76 @@
 						персональную консультацию!
 					</div>
 				</div>
-				<button class="button button_wide desktop-hide">Проконсультироваться</button>
+				<button class="button button_wide desktop-hide" data-popup="popup-consultation">Проконсультироваться</button>
 			</div>
 		</div>
 	</div><!-- /director -->
 	<div class="reviews" id="reviews">
 		<div class="section-title reviews__title">Мы рады делать <span>клиентов счастливыми</span></div>
-		<div class="reviews-slider-wrap">
-			<div class="slider-arrow slider-arrow_left slider-arrow_left" id="reviews-arrow_left">
-				<svg width="17" height="12" fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 17 12"
-					 preserveAspectRatio="xMinYMin meet">
-					<path
-							d="M.97 5.47a.75.75 0 0 0 0 1.06l4.773 4.773a.75.75 0 1 0 1.06-1.06L2.561 6l4.242-4.243a.75.75 0 0 0-1.06-1.06L.97 5.47zm16.53-.22h-16v1.5h16v-1.5z"
-							fill="#322823"></path>
-				</svg>
+		<div class="reviews-slider-wrap splide">
+			<div class="splide__arrows splide__arrows--ltr">
+				<div class="splide__arrow splide__arrow--prev slider-arrow slider-arrow_left" id="reviews-arrow_left">
+					<svg width="17" height="12" fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 17 12"
+						 preserveAspectRatio="xMinYMin meet">
+						<path 
+								d="M.97 5.47a.75.75 0 0 0 0 1.06l4.773 4.773a.75.75 0 1 0 1.06-1.06L2.561 6l4.242-4.243a.75.75 0 0 0-1.06-1.06L.97 5.47zm16.53-.22h-16v1.5h16v-1.5z"
+								fill="#322823"></path>
+					</svg>
+				</div>
+				<div class="splide__arrow splide__arrow--next slider-arrow slider-arrow_right" id="reviews-arrow_right">
+					<svg width="17" height="12" fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 17 12"
+						 preserveAspectRatio="xMinYMin meet">
+						<path
+								d="M16.03 5.47a.75.75 0 0 1 0 1.06l-4.773 4.773a.75.75 0 0 1-1.06-1.06L14.439 6l-4.242-4.243a.75.75 0 1 1 1.06-1.06L16.03 5.47zM.5 5.25h15v1.5H.5v-1.5z"
+								fill="#322823"></path>
+					</svg>
+				</div>
 			</div>
-			<div class="slider-arrow slider-arrow_right" id="reviews-arrow_right">
-				<svg width="17" height="12" fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 17 12"
-					 preserveAspectRatio="xMinYMin meet">
-					<path
-							d="M16.03 5.47a.75.75 0 0 1 0 1.06l-4.773 4.773a.75.75 0 0 1-1.06-1.06L14.439 6l-4.242-4.243a.75.75 0 1 1 1.06-1.06L16.03 5.47zM.5 5.25h15v1.5H.5v-1.5z"
-							fill="#322823"></path>
-				</svg>
+			<div class="splide__track">
+				<div class="reviews-slider splide__list">
+					<div class="reviews-slider__slide splide__slide">
+						<div class="reviews-slider__slide-img"><img src="./images/reviews/ava1.jpg" alt=""></div>
+						<div class="reviews-slider__slide-date">05.02.2020</div>
+						<div class="reviews-slider__slide-title">Анютка Дюгурова</div>
+						<div class="reviews-slider__slide-descr">Выражаю свою благодарность компании, проводившей полный ремонт *под
+							ключ* в моей однокомнатной квартире. Предварительная смета была расписана подробно, понятно по каждому виду
+							работ. Фактическая смета ... <a class="link-reviews-detail">Подробнее</a></div>
+					</div>
+					<div class="reviews-slider__slide splide__slide">
+						<div class="reviews-slider__slide-img"><img src="./images/reviews/ava2.jpg" alt=""></div>
+						<div class="reviews-slider__slide-date">08.03.2020</div>
+						<div class="reviews-slider__slide-title">Дюгурова Анютка</div>
+						<div class="reviews-slider__slide-descr">Предварительная смета была расписана подробно, понятно по каждому виду
+							работ. Фактическая смета Выражаю свою благодарность компании, проводившей полный ремонт *под ключ* в моей
+							однокомнатной квартире... <a class="link-reviews-detail">Подробнее</a></div>
+					</div>
+					<div class="reviews-slider__slide splide__slide">
+						<div class="reviews-slider__slide-img"><img src="./images/reviews/ava3.jpg" alt=""></div>
+						<div class="reviews-slider__slide-date">05.12.2020</div>
+						<div class="reviews-slider__slide-title">Анютка Дюгурова</div>
+						<div class="reviews-slider__slide-descr">Выражаю свою благодарность компании, проводившей полный ремонт *под
+							ключ* в моей однокомнатной квартире. Предварительная смета была расписана подробно, понятно по каждому виду
+							работ. Фактическая смета ... <a class="link-reviews-detail">Подробнее</a></div>
+					</div>
+					<div class="reviews-slider__slide splide__slide">
+						<div class="reviews-slider__slide-img"><img src="./images/reviews/ava4.jpg" alt=""></div>
+						<div class="reviews-slider__slide-date">05.02.2020</div>
+						<div class="reviews-slider__slide-title">Анютка Дюгурова</div>
+						<div class="reviews-slider__slide-descr">Предварительная смета была расписана подробно, понятно по каждому виду
+							работ. Фактическая смета Выражаю свою благодарность компании, проводившей полный ремонт *под ключ* в моей
+							однокомнатной квартире... <a class="link-reviews-detail">Подробнее</a></div>
+					</div>
+					<div class="reviews-slider__slide splide__slide">
+						<div class="reviews-slider__slide-img"><img src="./images/reviews/ava5.jpg" alt=""></div>
+						<div class="reviews-slider__slide-date">05.02.2020</div>
+						<div class="reviews-slider__slide-title">Анютка Дюгурова</div>
+						<div class="reviews-slider__slide-descr">Выражаю свою благодарность компании, проводившей полный ремонт *под
+							ключ* в моей однокомнатной квартире. Предварительная смета была расписана подробно, понятно по каждому виду
+							работ. Фактическая смета ... <a class="link-reviews-detail">Подробнее</a></div>
+					</div>
+				</div><!-- /reviews-slider -->
 			</div>
-			<div class="reviews-slider">
-				<div class="reviews-slider__slide">
-					<div class="reviews-slider__slide-img"><img src="./images/reviews/ava1.jpg" alt=""></div>
-					<div class="reviews-slider__slide-date">05.02.2020</div>
-					<div class="reviews-slider__slide-title">Анютка Дюгурова</div>
-					<div class="reviews-slider__slide-descr">Выражаю свою благодарность компании, проводившей полный ремонт *под
-						ключ* в моей однокомнатной квартире. Предварительная смета была расписана подробно, понятно по каждому виду
-						работ. Фактическая смета ... <a class="link-reviews-detail">Подробнее</a></div>
-				</div>
-				<div class="reviews-slider__slide">
-					<div class="reviews-slider__slide-img"><img src="./images/reviews/ava2.jpg" alt=""></div>
-					<div class="reviews-slider__slide-date">08.03.2020</div>
-					<div class="reviews-slider__slide-title">Дюгурова Анютка</div>
-					<div class="reviews-slider__slide-descr">Предварительная смета была расписана подробно, понятно по каждому виду
-						работ. Фактическая смета Выражаю свою благодарность компании, проводившей полный ремонт *под ключ* в моей
-						однокомнатной квартире... <a class="link-reviews-detail">Подробнее</a></div>
-				</div>
-				<div class="reviews-slider__slide">
-					<div class="reviews-slider__slide-img"><img src="./images/reviews/ava3.jpg" alt=""></div>
-					<div class="reviews-slider__slide-date">05.12.2020</div>
-					<div class="reviews-slider__slide-title">Анютка Дюгурова</div>
-					<div class="reviews-slider__slide-descr">Выражаю свою благодарность компании, проводившей полный ремонт *под
-						ключ* в моей однокомнатной квартире. Предварительная смета была расписана подробно, понятно по каждому виду
-						работ. Фактическая смета ... <a class="link-reviews-detail">Подробнее</a></div>
-				</div>
-				<div class="reviews-slider__slide">
-					<div class="reviews-slider__slide-img"><img src="./images/reviews/ava4.jpg" alt=""></div>
-					<div class="reviews-slider__slide-date">05.02.2020</div>
-					<div class="reviews-slider__slide-title">Анютка Дюгурова</div>
-					<div class="reviews-slider__slide-descr">Предварительная смета была расписана подробно, понятно по каждому виду
-						работ. Фактическая смета Выражаю свою благодарность компании, проводившей полный ремонт *под ключ* в моей
-						однокомнатной квартире... <a class="link-reviews-detail">Подробнее</a></div>
-				</div>
-				<div class="reviews-slider__slide">
-					<div class="reviews-slider__slide-img"><img src="./images/reviews/ava5.jpg" alt=""></div>
-					<div class="reviews-slider__slide-date">05.02.2020</div>
-					<div class="reviews-slider__slide-title">Анютка Дюгурова</div>
-					<div class="reviews-slider__slide-descr">Выражаю свою благодарность компании, проводившей полный ремонт *под
-						ключ* в моей однокомнатной квартире. Предварительная смета была расписана подробно, понятно по каждому виду
-						работ. Фактическая смета ... <a class="link-reviews-detail">Подробнее</a></div>
-				</div>
-			</div><!-- /reviews-slider --></div>
+		</div>
 		<div class="slider-dots slider-dots-reviews slider-dots-base">
 			<div class="dot dot-reviews switch dot_active">
 				<div class="dot__inner"></div>
@@ -932,22 +1022,35 @@
 				<span>стоимости ремонта Вашего помещения</span>
 			</div>
 			<div class="feedback-block__descr">Обсудите проект со специалистом или вызовите замерщика.</div>
-			<form class="feedback-block__form" id="feedback4"><label><span><sup>*</sup>Введите ваше имя:</span> <input
-					type="text" class="feedback-block__form-input feedback-block__form-input_name" name="name" required=""
-					maxlength="20"></label> <label><span><sup>*</sup>Введите ваш номер:</span> <input type="text"
-																									  class="feedback-block__form-input feedback-block__form-input_phone"
-																									  name="phone"
-																									  id="feedback-input4"
-																									  required=""
-																									  placeholder="+7 (___)___-__-__"
-																									  minlength="18"></label>
-				<button class="button button-feedback-block">Перезвоните мне</button>
-				<div class="checkbox checkbox-feedback-block">
-					<input class="checkbox__input" type="checkbox" id="checkbox4"
-						   required=""> <label class="checkbox__label"
-											   for="checkbox4"></label>
-					<div class="checkbox__descr">Нажимая на кнопку, Вы даете согласие на
-						<span class="link-privacy">обработку своих персональных данных</span>
+			<form class="feedback-block__form" id="feedback4">
+				<div class="feedback__body" >
+					<div class="feedback--flex--row">
+						<label>
+							<span><sup>*</sup>Введите ваше имя:</span> 
+							<input
+							type="text" class="feedback-block__form-input feedback-block__form-input_name" name="name" required=""
+							maxlength="20">
+						</label> 
+						<label>
+							<span><sup>*</sup>Введите ваш номер:</span> 
+							<input type="text"
+								class="feedback-block__form-input feedback-block__form-input_phone"
+								name="phone"
+								id="feedback-input4"
+								required=""
+								placeholder="+7 (___)___-__-__"
+								minlength="18">
+						</label>
+						<button class="button button-feedback-block">Перезвоните мне</button>
+						<div class="checkbox checkbox-feedback-block">
+							<input class="checkbox__input" type="checkbox" id="checkbox4"
+									required> 
+							<label class="checkbox__label" for="checkbox4">
+							</label>
+							<div class="checkbox__descr">Нажимая на кнопку, Вы даете согласие на
+								<span class="link-privacy" data-popup="popup-privacy">обработку своих персональных данных</span>
+							</div>
+						</div>
 					</div>
 				</div>
 			</form>
@@ -958,122 +1061,10 @@
 			<div class="section-title faq__title">Часто задаваемые <span>вопросы</span></div>
 			<div class="accordion">
 				<ul>
-					<li><h2 class="title_block msg-active">«Можно ли удешевить ремонт и как это сделать?»</h2>
-						<div class="msg">
-							<p>Ремонт забирает не мало сил, нервов, времени и конечно же финансовых затрат. Удешевить и
-								сэкономить на ремонте можно!</p>
-							<p>1. Создав дизайн проект, Вы получаете интересную идею, продуманный ремонт и не стандартный подход,
-								сэкономив приличную сумму денег до 15%, сохранив ваше время, поможет избежать типовых решений, переделок и
-								срыва работ, сделает квартиру вашим идеальным и самым уютным местом для жизни. На основании проекта
-								составляется смета, планируются этапы работ и сроки их выполнения, заказ и закупка материалов,
-								оборудования мебели.</p>
-							<p>2. Используя в работе компании комплекс современных технологий, таких как: - Машинная штукатурка
-								стандарта Q4. Позволяет сделать идеально ровные и гладкие стены, экономя время проведения работ до75%,
-								стоимость работ до 15%, расход материала до 30%. - Полусухая стяжка B.S. (British standards).
-								Использование специальных материалов и инструментов, даёт идеально ровную и гладкую поверхность пола без
-								трещин, гарантируя качественную установку паркета, ламината, плитки и т.д., экономя время проведения работ
-								до 75%, затрат на подъём материала до 100%. - Монтаж сантехники по технологии «Система натяжное кольцо»
-								гарантирует высокое качество соединения и долговечность. - Пайка доз медью в электромонтажных работах даёт
-								надежный контакт.</p>
-							<p>3. Выбрав нашу строительную компанию Вы экономите на закупке материалов, выборе и приобретении
-								оборудования, мебели и т.д. Мы работаем с проверенными поставщиками, которые гарантируют качество
-								материала и оборудования, сроки доставки, а также сэкономят до 10% Вашего бюджета.</p>
-							<p>Доверяя свой ремонт специалистам Вы экономите свою жизненную энергию, время и деньги.</p>
-						</div>
-					</li>
-					<li><h2 class="title_block">«В какое время лучше делать ремонт?»</h2>
-						<div class="msg">
-							<p>Ремонт забирает не мало сил, нервов, времени и конечно же финансовых затрат. Удешевить и
-								сэкономить на ремонте можно!</p>
-							<p>1. Создав дизайн проект, Вы получаете интересную идею, продуманный ремонт и не стандартный подход,
-								сэкономив приличную сумму денег до 15%, сохранив ваше время, поможет избежать типовых решений, переделок и
-								срыва работ, сделает квартиру вашим идеальным и самым уютным местом для жизни. На основании проекта
-								составляется смета, планируются этапы работ и сроки их выполнения, заказ и закупка материалов,
-								оборудования мебели.</p>
-							<p>2. Используя в работе компании комплекс современных технологий, таких как: - Машинная штукатурка
-								стандарта Q4. Позволяет сделать идеально ровные и гладкие стены, экономя время проведения работ до75%,
-								стоимость работ до 15%, расход материала до 30%. - Полусухая стяжка B.S. (British standards).
-								Использование специальных материалов и инструментов, даёт идеально ровную и гладкую поверхность пола без
-								трещин, гарантируя качественную установку паркета, ламината, плитки и т.д., экономя время проведения работ
-								до 75%, затрат на подъём материала до 100%. - Монтаж сантехники по технологии «Система натяжное кольцо»
-								гарантирует высокое качество соединения и долговечность. - Пайка доз медью в электромонтажных работах даёт
-								надежный контакт.</p>
-							<p>3. Выбрав нашу строительную компанию Вы экономите на закупке материалов, выборе и приобретении
-								оборудования, мебели и т.д. Мы работаем с проверенными поставщиками, которые гарантируют качество
-								материала и оборудования, сроки доставки, а также сэкономят до 10% Вашего бюджета.</p>
-							<p>Доверяя свой ремонт специалистам Вы экономите свою жизненную энергию, время и деньги.</p>
-						</div>
-					</li>
-					<li><h2 class="title_block">«Сколько времени потребуется на ремонт?»</h2>
-						<div class="msg">
-							<p>Ремонт забирает не мало сил, нервов, времени и конечно же финансовых затрат. Удешевить и
-								сэкономить на ремонте можно!</p>
-							<p>1. Создав дизайн проект, Вы получаете интересную идею, продуманный ремонт и не стандартный подход,
-								сэкономив приличную сумму денег до 15%, сохранив ваше время, поможет избежать типовых решений, переделок и
-								срыва работ, сделает квартиру вашим идеальным и самым уютным местом для жизни. На основании проекта
-								составляется смета, планируются этапы работ и сроки их выполнения, заказ и закупка материалов,
-								оборудования мебели.</p>
-							<p>2. Используя в работе компании комплекс современных технологий, таких как: - Машинная штукатурка
-								стандарта Q4. Позволяет сделать идеально ровные и гладкие стены, экономя время проведения работ до75%,
-								стоимость работ до 15%, расход материала до 30%. - Полусухая стяжка B.S. (British standards).
-								Использование специальных материалов и инструментов, даёт идеально ровную и гладкую поверхность пола без
-								трещин, гарантируя качественную установку паркета, ламината, плитки и т.д., экономя время проведения работ
-								до 75%, затрат на подъём материала до 100%. - Монтаж сантехники по технологии «Система натяжное кольцо»
-								гарантирует высокое качество соединения и долговечность. - Пайка доз медью в электромонтажных работах даёт
-								надежный контакт.</p>
-							<p>3. Выбрав нашу строительную компанию Вы экономите на закупке материалов, выборе и приобретении
-								оборудования, мебели и т.д. Мы работаем с проверенными поставщиками, которые гарантируют качество
-								материала и оборудования, сроки доставки, а также сэкономят до 10% Вашего бюджета.</p>
-							<p>Доверяя свой ремонт специалистам Вы экономите свою жизненную энергию, время и деньги.</p>
-						</div>
-					</li>
-					<li><h2 class="title_block">«От чего зависит стоимость ремонта?»</h2>
-						<div class="msg">
-							<p>Ремонт забирает не мало сил, нервов, времени и конечно же финансовых затрат. Удешевить и
-								сэкономить на ремонте можно!</p>
-							<p>1. Создав дизайн проект, Вы получаете интересную идею, продуманный ремонт и не стандартный подход,
-								сэкономив приличную сумму денег до 15%, сохранив ваше время, поможет избежать типовых решений, переделок и
-								срыва работ, сделает квартиру вашим идеальным и самым уютным местом для жизни. На основании проекта
-								составляется смета, планируются этапы работ и сроки их выполнения, заказ и закупка материалов,
-								оборудования мебели.</p>
-							<p>2. Используя в работе компании комплекс современных технологий, таких как: - Машинная штукатурка
-								стандарта Q4. Позволяет сделать идеально ровные и гладкие стены, экономя время проведения работ до75%,
-								стоимость работ до 15%, расход материала до 30%. - Полусухая стяжка B.S. (British standards).
-								Использование специальных материалов и инструментов, даёт идеально ровную и гладкую поверхность пола без
-								трещин, гарантируя качественную установку паркета, ламината, плитки и т.д., экономя время проведения работ
-								до 75%, затрат на подъём материала до 100%. - Монтаж сантехники по технологии «Система натяжное кольцо»
-								гарантирует высокое качество соединения и долговечность. - Пайка доз медью в электромонтажных работах даёт
-								надежный контакт.</p>
-							<p>3. Выбрав нашу строительную компанию Вы экономите на закупке материалов, выборе и приобретении
-								оборудования, мебели и т.д. Мы работаем с проверенными поставщиками, которые гарантируют качество
-								материала и оборудования, сроки доставки, а также сэкономят до 10% Вашего бюджета.</p>
-							<p>Доверяя свой ремонт специалистам Вы экономите свою жизненную энергию, время и деньги.</p>
-						</div>
-					</li>
-					<li><h2 class="title_block">«Нужен ли мне дизайн проект или нет?»</h2>
-						<div class="msg">
-							<p>Ремонт забирает не мало сил, нервов, времени и конечно же финансовых затрат. Удешевить и
-								сэкономить на ремонте можно!</p>
-							<p>1. Создав дизайн проект, Вы получаете интересную идею, продуманный ремонт и не стандартный подход,
-								сэкономив приличную сумму денег до 15%, сохранив ваше время, поможет избежать типовых решений, переделок и
-								срыва работ, сделает квартиру вашим идеальным и самым уютным местом для жизни. На основании проекта
-								составляется смета, планируются этапы работ и сроки их выполнения, заказ и закупка материалов,
-								оборудования мебели.</p>
-							<p>2. Используя в работе компании комплекс современных технологий, таких как: - Машинная штукатурка
-								стандарта Q4. Позволяет сделать идеально ровные и гладкие стены, экономя время проведения работ до75%,
-								стоимость работ до 15%, расход материала до 30%. - Полусухая стяжка B.S. (British standards).
-								Использование специальных материалов и инструментов, даёт идеально ровную и гладкую поверхность пола без
-								трещин, гарантируя качественную установку паркета, ламината, плитки и т.д., экономя время проведения работ
-								до 75%, затрат на подъём материала до 100%. - Монтаж сантехники по технологии «Система натяжное кольцо»
-								гарантирует высокое качество соединения и долговечность. - Пайка доз медью в электромонтажных работах даёт
-								надежный контакт.</p>
-							<p>3. Выбрав нашу строительную компанию Вы экономите на закупке материалов, выборе и приобретении
-								оборудования, мебели и т.д. Мы работаем с проверенными поставщиками, которые гарантируют качество
-								материала и оборудования, сроки доставки, а также сэкономят до 10% Вашего бюджета.</p>
-							<p>Доверяя свой ремонт специалистам Вы экономите свою жизненную энергию, время и деньги.</p>
-						</div>
-					</li>
-					<li><h2 class="title_block">«Есть ли у Вашей компании гарантии?»</h2>
+					<li>
+						<h2 class="title_block msg-active">
+						<div class="plus">+</div>
+						«Можно ли удешевить ремонт и как это сделать?»</h2>
 						<div class="msg">
 							<p>Ремонт забирает не мало сил, нервов, времени и конечно же финансовых затрат. Удешевить и
 								сэкономить на ремонте можно!</p>
@@ -1097,7 +1088,139 @@
 						</div>
 					</li>
 					<li>
-						<h2 class="title_block">«Кто будет работать? Можно ли специалистов оставлять самих на объекте?»</h2>
+						<h2 class="title_block">
+							<div class="plus">+</div>
+							«В какое время лучше делать ремонт?»</h2>
+						<div class="msg">
+							<p>Ремонт забирает не мало сил, нервов, времени и конечно же финансовых затрат. Удешевить и
+								сэкономить на ремонте можно!</p>
+							<p>1. Создав дизайн проект, Вы получаете интересную идею, продуманный ремонт и не стандартный подход,
+								сэкономив приличную сумму денег до 15%, сохранив ваше время, поможет избежать типовых решений, переделок и
+								срыва работ, сделает квартиру вашим идеальным и самым уютным местом для жизни. На основании проекта
+								составляется смета, планируются этапы работ и сроки их выполнения, заказ и закупка материалов,
+								оборудования мебели.</p>
+							<p>2. Используя в работе компании комплекс современных технологий, таких как: - Машинная штукатурка
+								стандарта Q4. Позволяет сделать идеально ровные и гладкие стены, экономя время проведения работ до75%,
+								стоимость работ до 15%, расход материала до 30%. - Полусухая стяжка B.S. (British standards).
+								Использование специальных материалов и инструментов, даёт идеально ровную и гладкую поверхность пола без
+								трещин, гарантируя качественную установку паркета, ламината, плитки и т.д., экономя время проведения работ
+								до 75%, затрат на подъём материала до 100%. - Монтаж сантехники по технологии «Система натяжное кольцо»
+								гарантирует высокое качество соединения и долговечность. - Пайка доз медью в электромонтажных работах даёт
+								надежный контакт.</p>
+							<p>3. Выбрав нашу строительную компанию Вы экономите на закупке материалов, выборе и приобретении
+								оборудования, мебели и т.д. Мы работаем с проверенными поставщиками, которые гарантируют качество
+								материала и оборудования, сроки доставки, а также сэкономят до 10% Вашего бюджета.</p>
+							<p>Доверяя свой ремонт специалистам Вы экономите свою жизненную энергию, время и деньги.</p>
+						</div>
+					</li>
+					<li>
+						<h2 class="title_block">
+							<div class="plus">+</div>
+							«Сколько времени потребуется на ремонт?»</h2>
+						<div class="msg">
+							<p>Ремонт забирает не мало сил, нервов, времени и конечно же финансовых затрат. Удешевить и
+								сэкономить на ремонте можно!</p>
+							<p>1. Создав дизайн проект, Вы получаете интересную идею, продуманный ремонт и не стандартный подход,
+								сэкономив приличную сумму денег до 15%, сохранив ваше время, поможет избежать типовых решений, переделок и
+								срыва работ, сделает квартиру вашим идеальным и самым уютным местом для жизни. На основании проекта
+								составляется смета, планируются этапы работ и сроки их выполнения, заказ и закупка материалов,
+								оборудования мебели.</p>
+							<p>2. Используя в работе компании комплекс современных технологий, таких как: - Машинная штукатурка
+								стандарта Q4. Позволяет сделать идеально ровные и гладкие стены, экономя время проведения работ до75%,
+								стоимость работ до 15%, расход материала до 30%. - Полусухая стяжка B.S. (British standards).
+								Использование специальных материалов и инструментов, даёт идеально ровную и гладкую поверхность пола без
+								трещин, гарантируя качественную установку паркета, ламината, плитки и т.д., экономя время проведения работ
+								до 75%, затрат на подъём материала до 100%. - Монтаж сантехники по технологии «Система натяжное кольцо»
+								гарантирует высокое качество соединения и долговечность. - Пайка доз медью в электромонтажных работах даёт
+								надежный контакт.</p>
+							<p>3. Выбрав нашу строительную компанию Вы экономите на закупке материалов, выборе и приобретении
+								оборудования, мебели и т.д. Мы работаем с проверенными поставщиками, которые гарантируют качество
+								материала и оборудования, сроки доставки, а также сэкономят до 10% Вашего бюджета.</p>
+							<p>Доверяя свой ремонт специалистам Вы экономите свою жизненную энергию, время и деньги.</p>
+						</div>
+					</li>
+					<li>
+						<h2 class="title_block">
+							<div class="plus">+</div>
+							«От чего зависит стоимость ремонта?»</h2>
+						<div class="msg">
+							<p>Ремонт забирает не мало сил, нервов, времени и конечно же финансовых затрат. Удешевить и
+								сэкономить на ремонте можно!</p>
+							<p>1. Создав дизайн проект, Вы получаете интересную идею, продуманный ремонт и не стандартный подход,
+								сэкономив приличную сумму денег до 15%, сохранив ваше время, поможет избежать типовых решений, переделок и
+								срыва работ, сделает квартиру вашим идеальным и самым уютным местом для жизни. На основании проекта
+								составляется смета, планируются этапы работ и сроки их выполнения, заказ и закупка материалов,
+								оборудования мебели.</p>
+							<p>2. Используя в работе компании комплекс современных технологий, таких как: - Машинная штукатурка
+								стандарта Q4. Позволяет сделать идеально ровные и гладкие стены, экономя время проведения работ до75%,
+								стоимость работ до 15%, расход материала до 30%. - Полусухая стяжка B.S. (British standards).
+								Использование специальных материалов и инструментов, даёт идеально ровную и гладкую поверхность пола без
+								трещин, гарантируя качественную установку паркета, ламината, плитки и т.д., экономя время проведения работ
+								до 75%, затрат на подъём материала до 100%. - Монтаж сантехники по технологии «Система натяжное кольцо»
+								гарантирует высокое качество соединения и долговечность. - Пайка доз медью в электромонтажных работах даёт
+								надежный контакт.</p>
+							<p>3. Выбрав нашу строительную компанию Вы экономите на закупке материалов, выборе и приобретении
+								оборудования, мебели и т.д. Мы работаем с проверенными поставщиками, которые гарантируют качество
+								материала и оборудования, сроки доставки, а также сэкономят до 10% Вашего бюджета.</p>
+							<p>Доверяя свой ремонт специалистам Вы экономите свою жизненную энергию, время и деньги.</p>
+						</div>
+					</li>
+					<li>
+						<h2 class="title_block">
+							<div class="plus">+</div>
+							«Нужен ли мне дизайн проект или нет?»</h2>
+						<div class="msg">
+							<p>Ремонт забирает не мало сил, нервов, времени и конечно же финансовых затрат. Удешевить и
+								сэкономить на ремонте можно!</p>
+							<p>1. Создав дизайн проект, Вы получаете интересную идею, продуманный ремонт и не стандартный подход,
+								сэкономив приличную сумму денег до 15%, сохранив ваше время, поможет избежать типовых решений, переделок и
+								срыва работ, сделает квартиру вашим идеальным и самым уютным местом для жизни. На основании проекта
+								составляется смета, планируются этапы работ и сроки их выполнения, заказ и закупка материалов,
+								оборудования мебели.</p>
+							<p>2. Используя в работе компании комплекс современных технологий, таких как: - Машинная штукатурка
+								стандарта Q4. Позволяет сделать идеально ровные и гладкие стены, экономя время проведения работ до75%,
+								стоимость работ до 15%, расход материала до 30%. - Полусухая стяжка B.S. (British standards).
+								Использование специальных материалов и инструментов, даёт идеально ровную и гладкую поверхность пола без
+								трещин, гарантируя качественную установку паркета, ламината, плитки и т.д., экономя время проведения работ
+								до 75%, затрат на подъём материала до 100%. - Монтаж сантехники по технологии «Система натяжное кольцо»
+								гарантирует высокое качество соединения и долговечность. - Пайка доз медью в электромонтажных работах даёт
+								надежный контакт.</p>
+							<p>3. Выбрав нашу строительную компанию Вы экономите на закупке материалов, выборе и приобретении
+								оборудования, мебели и т.д. Мы работаем с проверенными поставщиками, которые гарантируют качество
+								материала и оборудования, сроки доставки, а также сэкономят до 10% Вашего бюджета.</p>
+							<p>Доверяя свой ремонт специалистам Вы экономите свою жизненную энергию, время и деньги.</p>
+						</div>
+					</li>
+					<li>
+						<h2 class="title_block">
+							<div class="plus">+</div>
+							«Есть ли у Вашей компании гарантии?»</h2>
+						<div class="msg">
+							<p>Ремонт забирает не мало сил, нервов, времени и конечно же финансовых затрат. Удешевить и
+								сэкономить на ремонте можно!</p>
+							<p>1. Создав дизайн проект, Вы получаете интересную идею, продуманный ремонт и не стандартный подход,
+								сэкономив приличную сумму денег до 15%, сохранив ваше время, поможет избежать типовых решений, переделок и
+								срыва работ, сделает квартиру вашим идеальным и самым уютным местом для жизни. На основании проекта
+								составляется смета, планируются этапы работ и сроки их выполнения, заказ и закупка материалов,
+								оборудования мебели.</p>
+							<p>2. Используя в работе компании комплекс современных технологий, таких как: - Машинная штукатурка
+								стандарта Q4. Позволяет сделать идеально ровные и гладкие стены, экономя время проведения работ до75%,
+								стоимость работ до 15%, расход материала до 30%. - Полусухая стяжка B.S. (British standards).
+								Использование специальных материалов и инструментов, даёт идеально ровную и гладкую поверхность пола без
+								трещин, гарантируя качественную установку паркета, ламината, плитки и т.д., экономя время проведения работ
+								до 75%, затрат на подъём материала до 100%. - Монтаж сантехники по технологии «Система натяжное кольцо»
+								гарантирует высокое качество соединения и долговечность. - Пайка доз медью в электромонтажных работах даёт
+								надежный контакт.</p>
+							<p>3. Выбрав нашу строительную компанию Вы экономите на закупке материалов, выборе и приобретении
+								оборудования, мебели и т.д. Мы работаем с проверенными поставщиками, которые гарантируют качество
+								материала и оборудования, сроки доставки, а также сэкономят до 10% Вашего бюджета.</p>
+							<p>Доверяя свой ремонт специалистам Вы экономите свою жизненную энергию, время и деньги.</p>
+						</div>
+					</li>
+					<li>
+						<h2 class="title_block">
+							<div class="plus">+</div>
+							«Кто будет работать? Можно ли специалистов оставлять самих на объекте?»</h2>
 						<div class="msg">
 							<p>Ремонт забирает не мало сил, нервов, времени и конечно же финансовых затрат. Удешевить и
 								сэкономить на ремонте можно!</p>
@@ -1131,22 +1254,27 @@
 				<span>на свой вопрос?</span>
 			</div>
 			<div class="feedback-block__descr">Обсудите проект со специалистом или вызовите замерщика.</div>
-			<form class="feedback-block__form" id="feedback5"><label><span><sup>*</sup>Введите ваше имя:</span> <input
-					type="text" class="feedback-block__form-input feedback-block__form-input_name" name="name" required=""
-					maxlength="20"></label> <label><span><sup>*</sup>Введите ваш номер:</span> <input type="text"
-																									  class="feedback-block__form-input feedback-block__form-input_phone"
-																									  name="phone"
-																									  id="feedback-input5"
-																									  required=""
-																									  placeholder="+7 (___)___-__-__"
-																									  minlength="18"></label>
-				<button class="button button-feedback-block">Перезвоните мне</button>
-				<div class="checkbox checkbox-feedback-block">
-					<input class="checkbox__input" type="checkbox" id="checkbox5"
-						   required=""> <label class="checkbox__label"
-											   for="checkbox5"></label>
-					<div class="checkbox__descr">Нажимая на кнопку, Вы даете согласие на
-						<span class="link-privacy">обработку своих персональных данных</span>
+			<form class="feedback-block__form" id="feedback5">
+				<div class="feedback__body" >
+					<div class="feedback--flex--row">
+						<label><span><sup>*</sup>Введите ваше имя:</span> <input
+							type="text" class="feedback-block__form-input feedback-block__form-input_name" name="name" required=""
+							maxlength="20"></label> <label><span><sup>*</sup>Введите ваш номер:</span> <input type="text"
+																												class="feedback-block__form-input feedback-block__form-input_phone"
+																												name="phone"
+																												id="feedback-input5"
+																												required=""
+																												placeholder="+7 (___)___-__-__"
+																												minlength="18"></label>
+						<button class="button button-feedback-block">Перезвоните мне</button>
+						<div class="checkbox checkbox-feedback-block">
+							<input class="checkbox__input" type="checkbox" id="checkbox5"
+									required> <label class="checkbox__label"
+														for="checkbox5"></label>
+							<div class="checkbox__descr">Нажимая на кнопку, Вы даете согласие на
+								<span class="link-privacy" data-popup="popup-privacy">обработку своих персональных данных</span>
+							</div>
+						</div>
 					</div>
 				</div>
 			</form>
@@ -1217,7 +1345,8 @@
 
 						<div class="popup-menu-nav__item"><a class="menu-link" href="#faq">часто задаваемые вопросы</a>
 						</div>
-						<div class="link-list link-list-menu mobile-hide"><a class="menu-link no-overflow" href="#">
+						<div class="link-list link-list-menu mobile-hide">
+							<a class="menu-link no-overflow" href="#" data-popup="popup-repair-types">
 							<svg width="17" height="16" fill="none" viewBox="0 0 17 16" xmlns="http://www.w3.org/2000/svg">
 								<path
 										d="M.293 8.707a1 1 0 0 1 0-1.414L6.657.929A1 1 0 0 1 8.07 2.343L2.414 8l5.657 5.657a1 1 0 1 1-1.414 1.414L.293 8.707zM16.5 9H1V7h15.5v2z"
@@ -1256,18 +1385,22 @@
 			<div class="feedback__icon"><img src="./images/main/feedback_icon.svg" alt=""></div>
 			<div class="feedback__title">Получите консультацию от специалиста в удобное для Вас время</div>
 			<form class="feedback__form" id="feedback6">
-				<div class="feedback__input"><input class="input feedback__input-input" name="phone" type="text"
-													placeholder="Введите номер телефона" id="feedback-input6" minlength="18">
-				</div>
-				<button class="button button-consultation">Перезвоните мне</button>
-				<div class="checkbox"><input class="checkbox__input" type="checkbox" id="checkbox6"> <label
-						class="checkbox__label checkbox__label-consultation" for="checkbox6"></label>
-					<div class="checkbox__descr checkbox__descr_round-feedback">Я соглашаюсь с
-						<span class="link-privacy">политикой конфиденциальности</span>
+				<div class="feedback__body">
+					<div class="feedback__input"><input class="input feedback__input-input" name="phone" type="text"
+														placeholder="Введите номер телефона" id="feedback-input6" minlength="18">
+					</div>
+					<button class="button button-consultation">Перезвоните мне</button>
+					<div class="checkbox">
+						<input class="checkbox__input" type="checkbox" id="checkbox6" required> <label
+							class="checkbox__label checkbox__label-consultation" for="checkbox6"></label>
+						<div class="checkbox__descr checkbox__descr_round-feedback">Я соглашаюсь с
+							<span class="link-privacy" data-popup="popup-privacy">политикой конфиденциальности</span>
+						</div>
 					</div>
 				</div>
 			</form>
-		</div><!-- /feedback --></div><!-- /popup consultation -->
+		</div><!-- /feedback -->
+	</div><!-- /popup consultation -->
 	<div class="popup popup-thank">
 		<div class="feedback-wrap popup-thank-bg">
 			<div class="close close-thank">
@@ -1286,7 +1419,8 @@
 				<div class="popup-thank__descr">Ожидайте звонка нашего специалиста. Будем рады помогать Вам!</div>
 				<div class="popup-thank__logo">Relax Live</div>
 			</div>
-		</div><!-- /feedback --></div>
+		</div><!-- /feedback -->
+	</div>
 	<div class="popup popup-repair-types">
 		<div class="close mobile-hide">
 			<svg width="22" height="22" fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22 22">
@@ -1311,10 +1445,6 @@
 					<div class="nav-wrap nav-wrap-repair">
 						<nav class="nav-popup nav-popup-repair-types transparancy-cut">
 							<div class="nav-list nav-list-popup-repair">
-								<button class="button_o popup-repair-types-nav__item active">Потолок: Демонтажные работы</button>
-								<button class="button_o popup-repair-types-nav__item">Потолок: Монтажные работы</button>
-								<button class="button_o popup-repair-types-nav__item">Стены: Демонтажные работы</button>
-								<button class="button_o popup-repair-types-nav__item">Стены: Монтажные работы</button>
 							</div>
 						</nav><!-- /.repair-types__nav -->
 						<div class="nav-arrow nav-arrow_left desktop-hide" id="nav-arrow-popup-repair_left">
@@ -1355,86 +1485,10 @@
 									<td class="repair-types-value">м<sup>2</sup></td>
 									<td class="repair-types-value">130 руб.</td>
 								</tr>
-								<tr class="mobile-row">
-									<td class="repair-types-name">Очистка потолка от обоев</td>
-									<td class="mobile-col-title tablet-hide desktop-hide">Ед.измерения</td>
-									<td class="mobile-col-title tablet-hide desktop-hide">Цена за ед.</td>
-									<td class="repair-types-value">м<sup>2</sup></td>
-									<td class="repair-types-value">120 руб.</td>
-								</tr>
-								<tr class="mobile-row">
-									<td class="repair-types-name">Разборка ПВХ ,МДФ панелей с потолка</td>
-									<td class="mobile-col-title tablet-hide desktop-hide">Ед.измерения</td>
-									<td class="mobile-col-title tablet-hide desktop-hide">Цена за ед.</td>
-									<td class="repair-types-value">м<sup>2</sup></td>
-									<td class="repair-types-value">170 руб.</td>
-								</tr>
-								<tr class="mobile-row">
-									<td class="repair-types-name">Очистка потолка от побелки, краски,водоэмульсионки</td>
-									<td class="mobile-col-title tablet-hide desktop-hide">Ед.измерения</td>
-									<td class="mobile-col-title tablet-hide desktop-hide">Цена за ед.</td>
-									<td class="repair-types-value">м<sup>2</sup></td>
-									<td class="repair-types-value">110 руб.</td>
-								</tr>
-								<tr class="mobile-row">
-									<td class="repair-types-name">Очистка потолка от обоев</td>
-									<td class="mobile-col-title tablet-hide desktop-hide">Ед.измерения</td>
-									<td class="mobile-col-title tablet-hide desktop-hide">Цена за ед.</td>
-									<td class="repair-types-value">м<sup>2</sup></td>
-									<td class="repair-types-value">140 руб.</td>
-								</tr>
-								<tr class="mobile-row">
-									<td class="repair-types-name">Разборка ПВХ ,МДФ панелей с потолка</td>
-									<td class="mobile-col-title tablet-hide desktop-hide">Ед.измерения</td>
-									<td class="mobile-col-title tablet-hide desktop-hide">Цена за ед.</td>
-									<td class="repair-types-value">м<sup>2</sup></td>
-									<td class="repair-types-value">180 руб.</td>
-								</tr>
-								<tr class="mobile-row">
-									<td class="repair-types-name">Очистка потолка от побелки, краски,водоэмульсионки</td>
-									<td class="mobile-col-title tablet-hide desktop-hide">Ед.измерения</td>
-									<td class="mobile-col-title tablet-hide desktop-hide">Цена за ед.</td>
-									<td class="repair-types-value">м<sup>2</sup></td>
-									<td class="repair-types-value">100 руб.</td>
-								</tr>
-								<tr class="mobile-row">
-									<td class="repair-types-name">Очистка потолка от обоев</td>
-									<td class="mobile-col-title tablet-hide desktop-hide">Ед.измерения</td>
-									<td class="mobile-col-title tablet-hide desktop-hide">Цена за ед.</td>
-									<td class="repair-types-value">м<sup>2</sup></td>
-									<td class="repair-types-value">120 руб.</td>
-								</tr>
-								<tr class="mobile-row">
-									<td class="repair-types-name">Разборка ПВХ ,МДФ панелей с потолка</td>
-									<td class="mobile-col-title tablet-hide desktop-hide">Ед.измерения</td>
-									<td class="mobile-col-title tablet-hide desktop-hide">Цена за ед.</td>
-									<td class="repair-types-value">м<sup>2</sup></td>
-									<td class="repair-types-value">110 руб.</td>
-								</tr>
-								<tr class="mobile-row">
-									<td class="repair-types-name">Очистка потолка от побелки, краски,водоэмульсионки</td>
-									<td class="mobile-col-title tablet-hide desktop-hide">Ед.измерения</td>
-									<td class="mobile-col-title tablet-hide desktop-hide">Цена за ед.</td>
-									<td class="repair-types-value">м<sup>2</sup></td>
-									<td class="repair-types-value">100 руб.</td>
-								</tr>
-								<tr class="mobile-row">
-									<td class="repair-types-name">Очистка потолка от обоев</td>
-									<td class="mobile-col-title tablet-hide desktop-hide">Ед.измерения</td>
-									<td class="mobile-col-title tablet-hide desktop-hide">Цена за ед.</td>
-									<td class="repair-types-value">м<sup>2</sup></td>
-									<td class="repair-types-value">120 руб.</td>
-								</tr>
-								<tr class="mobile-row">
-									<td class="repair-types-name">Разборка ПВХ ,МДФ панелей с потолка</td>
-									<td class="mobile-col-title tablet-hide desktop-hide">Ед.измерения</td>
-									<td class="mobile-col-title tablet-hide desktop-hide">Цена за ед.</td>
-									<td class="repair-types-value">м<sup>2</sup></td>
-									<td class="repair-types-value">110 руб.</td>
-								</tr>
+								
 								</tbody>
 							</table><!-- /popup-repair-types-tab-table-list -->
-							<table class="popup-repair-types-content-table__list">
+							<!-- <table class="popup-repair-types-content-table__list">
 								<tbody>
 								<tr class="mobile-row">
 									<td class="repair-types-name">Побелка, покраска</td>
@@ -1522,7 +1576,7 @@
 								</tr>
 								</tbody>
 							</table><!-- /popup-repair-types-tab-table-list -->
-							<table class="popup-repair-types-content-table__list">
+							<!-- <table class="popup-repair-types-content-table__list">
 								<tbody>
 								<tr class="mobile-row">
 									<td class="repair-types-name">Очистка стен от побелки, краски,водоэмульсионки</td>
@@ -1610,7 +1664,7 @@
 								</tr>
 								</tbody>
 							</table><!-- /popup-repair-types-tab-table-list -->
-							<table class="popup-repair-types-content-table__list">
+							<!-- <table class="popup-repair-types-content-table__list">
 								<tbody>
 								<tr class="mobile-row">
 									<td class="repair-types-name">Очистка потолка от побелки, краски,водоэмульсионки</td>
@@ -1697,10 +1751,12 @@
 									<td class="repair-types-value">110 руб.</td>
 								</tr>
 								</tbody>
-							</table><!-- /popup-repair-types-tab-table-list -->
+							</table>/popup-repair-types-tab-table-list --> 
 						</div><!-- /popup-repair-types-tab-table --></div>
-				</div><!-- /popup-repair-types-tab --></div><!-- /.row --></div><!-- /popup-dialog --></div>
-	<!-- /popup popup-repair-types -->
+				</div><!-- /popup-repair-types-tab -->
+			</div><!-- /.row -->
+		</div><!-- /popup-dialog -->
+	</div><!-- /popup popup-repair-types -->
 	<div class="popup popup-portfolio">
 		<div class="close mobile-hide">
 			<svg width="22" height="22" fill="none" viewBox="0 0 22 22" xmlns="http://www.w3.org/2000/svg">
@@ -1711,7 +1767,7 @@
 		</div>
 		<div class="popup-dialog popup-dialog-portfolio">
 			<div class="row">
-				<div class="popup-portfolio-slider-wrap">
+				<div class="popup-portfolio-slider-wrap splide">
 					<div class="close tablet-hide desktop-hide">
 						<svg width="22" height="22" fill="none" viewBox="0 0 22 22" xmlns="http://www.w3.org/2000/svg">
 							<path fill-rule="evenodd" clip-rule="evenodd"
@@ -1719,389 +1775,397 @@
 								  fill="#322823" fill-opacity=".5"></path>
 						</svg>
 					</div>
-					<div class="popup-portfolio-slider">
-						<div class="popup-portfolio-slider__slide"><img src="./images/popup/1.jpg" alt=""></div>
-						<div class="popup-portfolio-slider__slide"><img src="./images/popup/2.jpg" alt=""></div>
-						<div class="popup-portfolio-slider__slide"><img src="./images/popup/3.jpg" alt=""></div>
-						<div class="popup-portfolio-slider__slide"><img src="./images/popup/4.jpg" alt=""></div>
-						<div class="popup-portfolio-slider__slide"><img src="./images/popup/5.jpg" alt=""></div>
-						<div class="popup-portfolio-slider__slide"><img src="./images/popup/6.jpg" alt=""></div>
-						<div class="popup-portfolio-slider__slide"><img src="./images/popup/4.jpg" alt=""></div>
-						<div class="popup-portfolio-slider__slide"><img src="./images/popup/3.jpg" alt=""></div>
-						<div class="popup-portfolio-slider__slide"><img src="./images/popup/2.jpg" alt=""></div>
-						<div class="popup-portfolio-slider__slide"><img src="./images/popup/1.jpg" alt=""></div>
-						<!-- /popup-portfolio-slide --></div>
-					<div class="slider-counter" id="popup-portfolio-counter">
-						<div class="slider-counter-content">
-							<div class="slider-counter-content__current">1</div>
-							<div class="slider-counter-content__total">3</div>
+					<div class="splide__track">
+						<div class="popup-portfolio-slider splide__list">
+							<div class="popup-portfolio-slider__slide splide__slide">
+								<img src="./images/popup/1.jpg" alt="">
+								<div class="popup-portfolio-text">
+									<div class="popup-portfolio-text-important">
+										<div class="popup-portfolio-text-wrap">
+											<div class="popup-portfolio-text__title">Площадь квартиры</div>
+											<div class="popup-portfolio-text__value_big">64<span> м<sup>2</sup></span></div>
+										</div>
+										<div class="popup-portfolio-text-wrap">
+											<div class="popup-portfolio-text__title">Срок<br>ремонта</div>
+											<div class="popup-portfolio-text__value_big">51<span> дней</span></div>
+										</div>
+									</div>
+									<div class="popup-portfolio-text-price">
+										<div>
+											<div class="popup-portfolio-text__title">Вид ремонта</div>
+											<div class="popup-portfolio-text__value">Косметический</div>
+										</div>
+										<div>
+											<div class="popup-portfolio-text__title">Стоимость работ</div>
+											<div class="popup-portfolio-text__value">111 000 &#8381;</div>
+										</div>
+										<div>
+											<div class="popup-portfolio-text__title">Стоимость материалов</div>
+											<div class="popup-portfolio-text__value">129 000 &#8381;</div>
+										</div>
+									</div><!-- /popup-portfolio-text-price -->
+									<div class="popup-portfolio-text-authors">
+										<div>
+											<div class="popup-portfolio-text__title">Общая стоимость ремонта</div>
+											<div class="popup-portfolio-text__value">240 000 &#8381;</div>
+										</div>
+										<div class="popup-portfolio-text__title">Прораб: <strong>Петренко А.В.</strong></div>
+										<div class="popup-portfolio-text__title">Руководитель проекта:</div>
+										<div class="popup-portfolio-text__title"><strong>Тюленев Э.Н.</strong></div>
+									</div>
+								</div><!-- /popup-portfolio-text -->
+							</div>
+							<div class="popup-portfolio-slider__slide splide__slide">
+								<img src="./images/popup/2.jpg" alt="">
+								<div class="popup-portfolio-text">
+									<div class="popup-portfolio-text-important">
+										<div class="popup-portfolio-text-wrap">
+											<div class="popup-portfolio-text__title">Площадь квартиры</div>
+											<div class="popup-portfolio-text__value_big">97<span> м<sup>2</sup></span></div>
+										</div>
+										<div class="popup-portfolio-text-wrap">
+											<div class="popup-portfolio-text__title">Срок<br>ремонта</div>
+											<div class="popup-portfolio-text__value_big">98<span> дней</span></div>
+										</div>
+									</div>
+									<div class="popup-portfolio-text-price">
+										<div>
+											<div class="popup-portfolio-text__title">Вид ремонта</div>
+											<div class="popup-portfolio-text__value">Евроремонт</div>
+										</div>
+										<div>
+											<div class="popup-portfolio-text__title">Стоимость работ</div>
+											<div class="popup-portfolio-text__value">200 500 &#8381;</div>
+										</div>
+										<div>
+											<div class="popup-portfolio-text__title">Стоимость материалов</div>
+											<div class="popup-portfolio-text__value">135 900 &#8381;</div>
+										</div>
+									</div><!-- /popup-portfolio-text-price -->
+									<div class="popup-portfolio-text-authors">
+										<div>
+											<div class="popup-portfolio-text__title">Общая стоимость ремонта</div>
+											<div class="popup-portfolio-text__value">346 400 &#8381;</div>
+										</div>
+										<div class="popup-portfolio-text__title">Прораб: <strong>Петренко А.В.</strong></div>
+										<div class="popup-portfolio-text__title">Руководитель проекта:</div>
+										<div class="popup-portfolio-text__title"><strong>Тюленев Э.Н.</strong></div>
+									</div>
+								</div>
+							</div>
+							<div class="popup-portfolio-slider__slide splide__slide">
+								<img src="./images/popup/3.jpg" alt="">
+								<div class="popup-portfolio-text">
+									<div class="popup-portfolio-text-important">
+										<div class="popup-portfolio-text-wrap">
+											<div class="popup-portfolio-text__title">Площадь квартиры</div>
+											<div class="popup-portfolio-text__value_big">56<span> м<sup>2</sup></span></div>
+										</div>
+										<div class="popup-portfolio-text-wrap">
+											<div class="popup-portfolio-text__title">Срок<br>ремонта</div>
+											<div class="popup-portfolio-text__value_big">54<span> дней</span></div>
+										</div>
+									</div>
+									<div class="popup-portfolio-text-price">
+										<div>
+											<div class="popup-portfolio-text__title">Вид ремонта</div>
+											<div class="popup-portfolio-text__value">Косметический</div>
+										</div>
+										<div>
+											<div class="popup-portfolio-text__title">Стоимость работ</div>
+											<div class="popup-portfolio-text__value">120 000 &#8381;</div>
+										</div>
+										<div>
+											<div class="popup-portfolio-text__title">Стоимость материалов</div>
+											<div class="popup-portfolio-text__value">180 000 &#8381;</div>
+										</div>
+									</div><!-- /popup-portfolio-text-price -->
+									<div class="popup-portfolio-text-authors">
+										<div>
+											<div class="popup-portfolio-text__title">Общая стоимость ремонта</div>
+											<div class="popup-portfolio-text__value">300 000 &#8381;</div>
+										</div>
+										<div class="popup-portfolio-text__title">Прораб: <strong>Петренко А.В.</strong></div>
+										<div class="popup-portfolio-text__title">Руководитель проекта:</div>
+										<div class="popup-portfolio-text__title"><strong>Тюленев Э.Н.</strong></div>
+									</div>
+								</div><!-- /popup-portfolio-text -->
+							</div>
+							<div class="popup-portfolio-slider__slide splide__slide">
+								<img src="./images/popup/4.jpg" alt="">
+								<div class="popup-portfolio-text">
+									<div class="popup-portfolio-text-important">
+										<div class="popup-portfolio-text-wrap">
+											<div class="popup-portfolio-text__title">Площадь квартиры</div>
+											<div class="popup-portfolio-text__value_big">102<span> м<sup>2</sup></span></div>
+										</div>
+										<div class="popup-portfolio-text-wrap">
+											<div class="popup-portfolio-text__title">Срок<br>ремонта</div>
+											<div class="popup-portfolio-text__value_big">99<span> дней</span></div>
+										</div>
+									</div>
+									<div class="popup-portfolio-text-price">
+										<div>
+											<div class="popup-portfolio-text__title">Вид ремонта</div>
+											<div class="popup-portfolio-text__value">Евроремонт</div>
+										</div>
+										<div>
+											<div class="popup-portfolio-text__title">Стоимость работ</div>
+											<div class="popup-portfolio-text__value">200 500 &#8381;</div>
+										</div>
+										<div>
+											<div class="popup-portfolio-text__title">Стоимость материалов</div>
+											<div class="popup-portfolio-text__value">185 900 &#8381;</div>
+										</div>
+									</div><!-- /popup-portfolio-text-price -->
+									<div class="popup-portfolio-text-authors">
+										<div>
+											<div class="popup-portfolio-text__title">Общая стоимость ремонта</div>
+											<div class="popup-portfolio-text__value">386 400 &#8381;</div>
+										</div>
+										<div class="popup-portfolio-text__title">Прораб: <strong>Петренко А.В.</strong></div>
+										<div class="popup-portfolio-text__title">Руководитель проекта:</div>
+										<div class="popup-portfolio-text__title"><strong>Тюленев Э.Н.</strong></div>
+									</div>
+								</div><!-- /popup-portfolio-text -->
+							</div>
+							<div class="popup-portfolio-slider__slide splide__slide">
+								<img src="./images/popup/5.jpg" alt="">
+								<div class="popup-portfolio-text">
+									<div class="popup-portfolio-text-important">
+										<div class="popup-portfolio-text-wrap">
+											<div class="popup-portfolio-text__title">Площадь квартиры</div>
+											<div class="popup-portfolio-text__value_big">82<span> м<sup>2</sup></span></div>
+										</div>
+										<div class="popup-portfolio-text-wrap">
+											<div class="popup-portfolio-text__title">Срок<br>ремонта</div>
+											<div class="popup-portfolio-text__value_big">90<span> дней</span></div>
+										</div>
+									</div>
+									<div class="popup-portfolio-text-price">
+										<div>
+											<div class="popup-portfolio-text__title">Вид ремонта</div>
+											<div class="popup-portfolio-text__value">Индивидуальный</div>
+										</div>
+										<div>
+											<div class="popup-portfolio-text__title">Стоимость работ</div>
+											<div class="popup-portfolio-text__value">200 500 &#8381;</div>
+										</div>
+										<div>
+											<div class="popup-portfolio-text__title">Стоимость материалов</div>
+											<div class="popup-portfolio-text__value">185 900 &#8381;</div>
+										</div>
+									</div><!-- /popup-portfolio-text-price -->
+									<div class="popup-portfolio-text-authors">
+										<div>
+											<div class="popup-portfolio-text__title">Общая стоимость ремонта</div>
+											<div class="popup-portfolio-text__value">386 400 &#8381;</div>
+										</div>
+										<div class="popup-portfolio-text__title">Прораб: <strong>Петренко А.В.</strong></div>
+										<div class="popup-portfolio-text__title">Руководитель проекта:</div>
+										<div class="popup-portfolio-text__title"><strong>Тюленев Э.Н.</strong></div>
+									</div>
+								</div><!-- /popup-portfolio-text -->
+							</div>
+							<div class="popup-portfolio-slider__slide splide__slide">
+								<img src="./images/popup/6.jpg" alt="">
+								<div class="popup-portfolio-text">
+									<div class="popup-portfolio-text-important">
+										<div class="popup-portfolio-text-wrap">
+											<div class="popup-portfolio-text__title">Площадь квартиры</div>
+											<div class="popup-portfolio-text__value_big">82<span> м<sup>2</sup></span></div>
+										</div>
+										<div class="popup-portfolio-text-wrap">
+											<div class="popup-portfolio-text__title">Срок<br>ремонта</div>
+											<div class="popup-portfolio-text__value_big">90<span> дней</span></div>
+										</div>
+									</div>
+									<div class="popup-portfolio-text-price">
+										<div>
+											<div class="popup-portfolio-text__title">Вид ремонта</div>
+											<div class="popup-portfolio-text__value">Индивидуальный</div>
+										</div>
+										<div>
+											<div class="popup-portfolio-text__title">Стоимость работ</div>
+											<div class="popup-portfolio-text__value">200 500 &#8381;</div>
+										</div>
+										<div>
+											<div class="popup-portfolio-text__title">Стоимость материалов</div>
+											<div class="popup-portfolio-text__value">185 900 &#8381;</div>
+										</div>
+									</div><!-- /popup-portfolio-text-price -->
+									<div class="popup-portfolio-text-authors">
+										<div>
+											<div class="popup-portfolio-text__title">Общая стоимость ремонта</div>
+											<div class="popup-portfolio-text__value">386 400 &#8381;</div>
+										</div>
+										<div class="popup-portfolio-text__title">Прораб: <strong>Петренко А.В.</strong></div>
+										<div class="popup-portfolio-text__title">Руководитель проекта:</div>
+										<div class="popup-portfolio-text__title"><strong>Тюленев Э.Н.</strong></div>
+									</div>
+								</div><!-- /popup-portfolio-text -->
+							</div>
+							<div class="popup-portfolio-slider__slide splide__slide">
+								<img src="./images/popup/4.jpg" alt="">
+								<div class="popup-portfolio-text">
+									<div class="popup-portfolio-text-important">
+										<div class="popup-portfolio-text-wrap">
+											<div class="popup-portfolio-text__title">Площадь квартиры</div>
+											<div class="popup-portfolio-text__value_big">87<span> м<sup>2</sup></span></div>
+										</div>
+										<div class="popup-portfolio-text-wrap">
+											<div class="popup-portfolio-text__title">Срок<br>ремонта</div>
+											<div class="popup-portfolio-text__value_big">74<span> дней</span></div>
+										</div>
+									</div>
+									<div class="popup-portfolio-text-price">
+										<div>
+											<div class="popup-portfolio-text__title">Вид ремонта</div>
+											<div class="popup-portfolio-text__value">Евроремонт</div>
+										</div>
+										<div>
+											<div class="popup-portfolio-text__title">Стоимость работ</div>
+											<div class="popup-portfolio-text__value">200 500 &#8381;</div>
+										</div>
+										<div>
+											<div class="popup-portfolio-text__title">Стоимость материалов</div>
+											<div class="popup-portfolio-text__value">185 900 &#8381;</div>
+										</div>
+									</div><!-- /popup-portfolio-text-price -->
+									<div class="popup-portfolio-text-authors">
+										<div>
+											<div class="popup-portfolio-text__title">Общая стоимость ремонта</div>
+											<div class="popup-portfolio-text__value">386 400 &#8381;</div>
+										</div>
+										<div class="popup-portfolio-text__title">Прораб: <strong>Петренко А.В.</strong></div>
+										<div class="popup-portfolio-text__title">Руководитель проекта:</div>
+										<div class="popup-portfolio-text__title"><strong>Тюленев Э.Н.</strong></div>
+									</div>
+								</div><!-- /popup-portfolio-text -->
+							</div>
+							<div class="popup-portfolio-slider__slide splide__slide">
+								<img src="./images/popup/3.jpg" alt="">
+								<div class="popup-portfolio-text">
+									<div class="popup-portfolio-text-important">
+										<div class="popup-portfolio-text-wrap">
+											<div class="popup-portfolio-text__title">Площадь квартиры</div>
+											<div class="popup-portfolio-text__value_big">56<span> м<sup>2</sup></span></div>
+										</div>
+										<div class="popup-portfolio-text-wrap">
+											<div class="popup-portfolio-text__title">Срок<br>ремонта</div>
+											<div class="popup-portfolio-text__value_big">54<span> дней</span></div>
+										</div>
+									</div>
+									<div class="popup-portfolio-text-price">
+										<div>
+											<div class="popup-portfolio-text__title">Вид ремонта</div>
+											<div class="popup-portfolio-text__value">Косметический</div>
+										</div>
+										<div>
+											<div class="popup-portfolio-text__title">Стоимость работ</div>
+											<div class="popup-portfolio-text__value">120 000 &#8381;</div>
+										</div>
+										<div>
+											<div class="popup-portfolio-text__title">Стоимость материалов</div>
+											<div class="popup-portfolio-text__value">180 000 &#8381;</div>
+										</div>
+									</div><!-- /popup-portfolio-text-price -->
+									<div class="popup-portfolio-text-authors">
+										<div>
+											<div class="popup-portfolio-text__title">Общая стоимость ремонта</div>
+											<div class="popup-portfolio-text__value">300 000 &#8381;</div>
+										</div>
+										<div class="popup-portfolio-text__title">Прораб: <strong>Петренко А.В.</strong></div>
+										<div class="popup-portfolio-text__title">Руководитель проекта:</div>
+										<div class="popup-portfolio-text__title"><strong>Тюленев Э.Н.</strong></div>
+									</div>
+								</div><!-- /popup-portfolio-text -->
+							</div>
+							<div class="popup-portfolio-slider__slide splide__slide">
+								<img src="./images/popup/2.jpg" alt="">
+								<div class="popup-portfolio-text">
+									<div class="popup-portfolio-text-important">
+										<div class="popup-portfolio-text-wrap">
+											<div class="popup-portfolio-text__title">Площадь квартиры</div>
+											<div class="popup-portfolio-text__value_big">102<span> м<sup>2</sup></span></div>
+										</div>
+										<div class="popup-portfolio-text-wrap">
+											<div class="popup-portfolio-text__title">Срок<br>ремонта</div>
+											<div class="popup-portfolio-text__value_big">99<span> дней</span></div>
+										</div>
+									</div>
+									<div class="popup-portfolio-text-price">
+										<div>
+											<div class="popup-portfolio-text__title">Вид ремонта</div>
+											<div class="popup-portfolio-text__value">Евроремонт</div>
+										</div>
+										<div>
+											<div class="popup-portfolio-text__title">Стоимость работ</div>
+											<div class="popup-portfolio-text__value">200 500 &#8381;</div>
+										</div>
+										<div>
+											<div class="popup-portfolio-text__title">Стоимость материалов</div>
+											<div class="popup-portfolio-text__value">185 900 &#8381;</div>
+										</div>
+									</div><!-- /popup-portfolio-text-price -->
+									<div class="popup-portfolio-text-authors">
+										<div>
+											<div class="popup-portfolio-text__title">Общая стоимость ремонта</div>
+											<div class="popup-portfolio-text__value">386 400 &#8381;</div>
+										</div>
+										<div class="popup-portfolio-text__title">Прораб: <strong>Петренко А.В.</strong></div>
+										<div class="popup-portfolio-text__title">Руководитель проекта:</div>
+										<div class="popup-portfolio-text__title"><strong>Тюленев Э.Н.</strong></div>
+									</div>
+								</div><!-- /popup-portfolio-text -->
+							</div>
+							<div class="popup-portfolio-slider__slide splide__slide">
+								<img src="./images/popup/1.jpg" alt="">
+								<div class="popup-portfolio-text">
+									<div class="popup-portfolio-text-important">
+										<div class="popup-portfolio-text-wrap">
+											<div class="popup-portfolio-text__title">Площадь квартиры</div>
+											<div class="popup-portfolio-text__value_big">82<span> м<sup>2</sup></span></div>
+										</div>
+										<div class="popup-portfolio-text-wrap">
+											<div class="popup-portfolio-text__title">Срок<br>ремонта</div>
+											<div class="popup-portfolio-text__value_big">90<span> дней</span></div>
+										</div>
+									</div>
+									<div class="popup-portfolio-text-price">
+										<div>
+											<div class="popup-portfolio-text__title">Вид ремонта</div>
+											<div class="popup-portfolio-text__value">Индивидуальный</div>
+										</div>
+										<div>
+											<div class="popup-portfolio-text__title">Стоимость работ</div>
+											<div class="popup-portfolio-text__value">200 500 &#8381;</div>
+										</div>
+										<div>
+											<div class="popup-portfolio-text__title">Стоимость материалов</div>
+											<div class="popup-portfolio-text__value">185 900 &#8381;</div>
+										</div>
+									</div><!-- /popup-portfolio-text-price -->
+									<div class="popup-portfolio-text-authors">
+										<div>
+											<div class="popup-portfolio-text__title">Общая стоимость ремонта</div>
+											<div class="popup-portfolio-text__value">386 400 &#8381;</div>
+										</div>
+										<div class="popup-portfolio-text__title">Прораб: <strong>Петренко А.В.</strong></div>
+										<div class="popup-portfolio-text__title">Руководитель проекта:</div>
+										<div class="popup-portfolio-text__title"><strong>Тюленев Э.Н.</strong></div>
+									</div>
+								</div><!-- /popup-portfolio-text -->
+							</div>
+							</div><!-- /popup-portfolio-slide -->
 						</div>
 					</div>
-					<div class="popup-arrow popup-arrow_left" id="popup_portfolio_left">
-						<svg width="32" height="44" fill="none" viewBox="0 0 32 44" preserveAspectRatio="xMinYMin meet"
-							 xmlns="http://www.w3.org/2000/svg">
-							<path d="M30 41.999l-28-20 28-20" stroke="#fff" stroke-opacity=".5" stroke-width="3" stroke-linecap="round"
-								  stroke-linejoin="round"></path>
-						</svg>
+					<div class="splide__pagination">
+						<div class="count"></div>
 					</div>
-					<div class="popup-arrow popup-arrow_right" id="popup_portfolio_right">
-						<svg width="32" height="44" fill="none" viewBox="0 0 32 44" preserveAspectRatio="xMinYMin meet"
-							 xmlns="http://www.w3.org/2000/svg">
-							<path d="M2 1.999l28 20-28 20" stroke="#fff" stroke-opacity=".5" stroke-width="3" stroke-linecap="round"
-								  stroke-linejoin="round"></path>
-						</svg>
+					<div class="splide__arrows">
 					</div>
 				</div>
-				<div class="popup-portfolio-text">
-					<div class="popup-portfolio-text-important">
-						<div class="popup-portfolio-text-wrap">
-							<div class="popup-portfolio-text__title">Площадь квартиры</div>
-							<div class="popup-portfolio-text__value_big">64<span> м<sup>2</sup></span></div>
-						</div>
-						<div class="popup-portfolio-text-wrap">
-							<div class="popup-portfolio-text__title">Срок<br>ремонта</div>
-							<div class="popup-portfolio-text__value_big">51<span> дней</span></div>
-						</div>
-					</div>
-					<div class="popup-portfolio-text-price">
-						<div>
-							<div class="popup-portfolio-text__title">Вид ремонта</div>
-							<div class="popup-portfolio-text__value">Косметический</div>
-						</div>
-						<div>
-							<div class="popup-portfolio-text__title">Стоимость работ</div>
-							<div class="popup-portfolio-text__value">111 000 &#8381;</div>
-						</div>
-						<div>
-							<div class="popup-portfolio-text__title">Стоимость материалов</div>
-							<div class="popup-portfolio-text__value">129 000 &#8381;</div>
-						</div>
-					</div><!-- /popup-portfolio-text-price -->
-					<div class="popup-portfolio-text-authors">
-						<div>
-							<div class="popup-portfolio-text__title">Общая стоимость ремонта</div>
-							<div class="popup-portfolio-text__value">240 000 &#8381;</div>
-						</div>
-						<div class="popup-portfolio-text__title">Прораб: <strong>Петренко А.В.</strong></div>
-						<div class="popup-portfolio-text__title">Руководитель проекта:</div>
-						<div class="popup-portfolio-text__title"><strong>Тюленев Э.Н.</strong></div>
-					</div>
-				</div><!-- /popup-portfolio-text -->
-				<div class="popup-portfolio-text">
-					<div class="popup-portfolio-text-important">
-						<div class="popup-portfolio-text-wrap">
-							<div class="popup-portfolio-text__title">Площадь квартиры</div>
-							<div class="popup-portfolio-text__value_big">97<span> м<sup>2</sup></span></div>
-						</div>
-						<div class="popup-portfolio-text-wrap">
-							<div class="popup-portfolio-text__title">Срок<br>ремонта</div>
-							<div class="popup-portfolio-text__value_big">98<span> дней</span></div>
-						</div>
-					</div>
-					<div class="popup-portfolio-text-price">
-						<div>
-							<div class="popup-portfolio-text__title">Вид ремонта</div>
-							<div class="popup-portfolio-text__value">Евроремонт</div>
-						</div>
-						<div>
-							<div class="popup-portfolio-text__title">Стоимость работ</div>
-							<div class="popup-portfolio-text__value">200 500 &#8381;</div>
-						</div>
-						<div>
-							<div class="popup-portfolio-text__title">Стоимость материалов</div>
-							<div class="popup-portfolio-text__value">135 900 &#8381;</div>
-						</div>
-					</div><!-- /popup-portfolio-text-price -->
-					<div class="popup-portfolio-text-authors">
-						<div>
-							<div class="popup-portfolio-text__title">Общая стоимость ремонта</div>
-							<div class="popup-portfolio-text__value">346 400 &#8381;</div>
-						</div>
-						<div class="popup-portfolio-text__title">Прораб: <strong>Петренко А.В.</strong></div>
-						<div class="popup-portfolio-text__title">Руководитель проекта:</div>
-						<div class="popup-portfolio-text__title"><strong>Тюленев Э.Н.</strong></div>
-					</div>
-				</div>
-				<div class="popup-portfolio-text">
-					<div class="popup-portfolio-text-important">
-						<div class="popup-portfolio-text-wrap">
-							<div class="popup-portfolio-text__title">Площадь квартиры</div>
-							<div class="popup-portfolio-text__value_big">56<span> м<sup>2</sup></span></div>
-						</div>
-						<div class="popup-portfolio-text-wrap">
-							<div class="popup-portfolio-text__title">Срок<br>ремонта</div>
-							<div class="popup-portfolio-text__value_big">54<span> дней</span></div>
-						</div>
-					</div>
-					<div class="popup-portfolio-text-price">
-						<div>
-							<div class="popup-portfolio-text__title">Вид ремонта</div>
-							<div class="popup-portfolio-text__value">Косметический</div>
-						</div>
-						<div>
-							<div class="popup-portfolio-text__title">Стоимость работ</div>
-							<div class="popup-portfolio-text__value">120 000 &#8381;</div>
-						</div>
-						<div>
-							<div class="popup-portfolio-text__title">Стоимость материалов</div>
-							<div class="popup-portfolio-text__value">180 000 &#8381;</div>
-						</div>
-					</div><!-- /popup-portfolio-text-price -->
-					<div class="popup-portfolio-text-authors">
-						<div>
-							<div class="popup-portfolio-text__title">Общая стоимость ремонта</div>
-							<div class="popup-portfolio-text__value">300 000 &#8381;</div>
-						</div>
-						<div class="popup-portfolio-text__title">Прораб: <strong>Петренко А.В.</strong></div>
-						<div class="popup-portfolio-text__title">Руководитель проекта:</div>
-						<div class="popup-portfolio-text__title"><strong>Тюленев Э.Н.</strong></div>
-					</div>
-				</div><!-- /popup-portfolio-text -->
-				<div class="popup-portfolio-text">
-					<div class="popup-portfolio-text-important">
-						<div class="popup-portfolio-text-wrap">
-							<div class="popup-portfolio-text__title">Площадь квартиры</div>
-							<div class="popup-portfolio-text__value_big">102<span> м<sup>2</sup></span></div>
-						</div>
-						<div class="popup-portfolio-text-wrap">
-							<div class="popup-portfolio-text__title">Срок<br>ремонта</div>
-							<div class="popup-portfolio-text__value_big">99<span> дней</span></div>
-						</div>
-					</div>
-					<div class="popup-portfolio-text-price">
-						<div>
-							<div class="popup-portfolio-text__title">Вид ремонта</div>
-							<div class="popup-portfolio-text__value">Евроремонт</div>
-						</div>
-						<div>
-							<div class="popup-portfolio-text__title">Стоимость работ</div>
-							<div class="popup-portfolio-text__value">200 500 &#8381;</div>
-						</div>
-						<div>
-							<div class="popup-portfolio-text__title">Стоимость материалов</div>
-							<div class="popup-portfolio-text__value">185 900 &#8381;</div>
-						</div>
-					</div><!-- /popup-portfolio-text-price -->
-					<div class="popup-portfolio-text-authors">
-						<div>
-							<div class="popup-portfolio-text__title">Общая стоимость ремонта</div>
-							<div class="popup-portfolio-text__value">386 400 &#8381;</div>
-						</div>
-						<div class="popup-portfolio-text__title">Прораб: <strong>Петренко А.В.</strong></div>
-						<div class="popup-portfolio-text__title">Руководитель проекта:</div>
-						<div class="popup-portfolio-text__title"><strong>Тюленев Э.Н.</strong></div>
-					</div>
-				</div><!-- /popup-portfolio-text -->
-				<div class="popup-portfolio-text">
-					<div class="popup-portfolio-text-important">
-						<div class="popup-portfolio-text-wrap">
-							<div class="popup-portfolio-text__title">Площадь квартиры</div>
-							<div class="popup-portfolio-text__value_big">82<span> м<sup>2</sup></span></div>
-						</div>
-						<div class="popup-portfolio-text-wrap">
-							<div class="popup-portfolio-text__title">Срок<br>ремонта</div>
-							<div class="popup-portfolio-text__value_big">90<span> дней</span></div>
-						</div>
-					</div>
-					<div class="popup-portfolio-text-price">
-						<div>
-							<div class="popup-portfolio-text__title">Вид ремонта</div>
-							<div class="popup-portfolio-text__value">Индивидуальный</div>
-						</div>
-						<div>
-							<div class="popup-portfolio-text__title">Стоимость работ</div>
-							<div class="popup-portfolio-text__value">200 500 &#8381;</div>
-						</div>
-						<div>
-							<div class="popup-portfolio-text__title">Стоимость материалов</div>
-							<div class="popup-portfolio-text__value">185 900 &#8381;</div>
-						</div>
-					</div><!-- /popup-portfolio-text-price -->
-					<div class="popup-portfolio-text-authors">
-						<div>
-							<div class="popup-portfolio-text__title">Общая стоимость ремонта</div>
-							<div class="popup-portfolio-text__value">386 400 &#8381;</div>
-						</div>
-						<div class="popup-portfolio-text__title">Прораб: <strong>Петренко А.В.</strong></div>
-						<div class="popup-portfolio-text__title">Руководитель проекта:</div>
-						<div class="popup-portfolio-text__title"><strong>Тюленев Э.Н.</strong></div>
-					</div>
-				</div><!-- /popup-portfolio-text -->
-				<div class="popup-portfolio-text">
-					<div class="popup-portfolio-text-important">
-						<div class="popup-portfolio-text-wrap">
-							<div class="popup-portfolio-text__title">Площадь квартиры</div>
-							<div class="popup-portfolio-text__value_big">82<span> м<sup>2</sup></span></div>
-						</div>
-						<div class="popup-portfolio-text-wrap">
-							<div class="popup-portfolio-text__title">Срок<br>ремонта</div>
-							<div class="popup-portfolio-text__value_big">90<span> дней</span></div>
-						</div>
-					</div>
-					<div class="popup-portfolio-text-price">
-						<div>
-							<div class="popup-portfolio-text__title">Вид ремонта</div>
-							<div class="popup-portfolio-text__value">Индивидуальный</div>
-						</div>
-						<div>
-							<div class="popup-portfolio-text__title">Стоимость работ</div>
-							<div class="popup-portfolio-text__value">200 500 &#8381;</div>
-						</div>
-						<div>
-							<div class="popup-portfolio-text__title">Стоимость материалов</div>
-							<div class="popup-portfolio-text__value">185 900 &#8381;</div>
-						</div>
-					</div><!-- /popup-portfolio-text-price -->
-					<div class="popup-portfolio-text-authors">
-						<div>
-							<div class="popup-portfolio-text__title">Общая стоимость ремонта</div>
-							<div class="popup-portfolio-text__value">386 400 &#8381;</div>
-						</div>
-						<div class="popup-portfolio-text__title">Прораб: <strong>Петренко А.В.</strong></div>
-						<div class="popup-portfolio-text__title">Руководитель проекта:</div>
-						<div class="popup-portfolio-text__title"><strong>Тюленев Э.Н.</strong></div>
-					</div>
-				</div><!-- /popup-portfolio-text -->
-				<div class="popup-portfolio-text">
-					<div class="popup-portfolio-text-important">
-						<div class="popup-portfolio-text-wrap">
-							<div class="popup-portfolio-text__title">Площадь квартиры</div>
-							<div class="popup-portfolio-text__value_big">87<span> м<sup>2</sup></span></div>
-						</div>
-						<div class="popup-portfolio-text-wrap">
-							<div class="popup-portfolio-text__title">Срок<br>ремонта</div>
-							<div class="popup-portfolio-text__value_big">74<span> дней</span></div>
-						</div>
-					</div>
-					<div class="popup-portfolio-text-price">
-						<div>
-							<div class="popup-portfolio-text__title">Вид ремонта</div>
-							<div class="popup-portfolio-text__value">Евроремонт</div>
-						</div>
-						<div>
-							<div class="popup-portfolio-text__title">Стоимость работ</div>
-							<div class="popup-portfolio-text__value">200 500 &#8381;</div>
-						</div>
-						<div>
-							<div class="popup-portfolio-text__title">Стоимость материалов</div>
-							<div class="popup-portfolio-text__value">185 900 &#8381;</div>
-						</div>
-					</div><!-- /popup-portfolio-text-price -->
-					<div class="popup-portfolio-text-authors">
-						<div>
-							<div class="popup-portfolio-text__title">Общая стоимость ремонта</div>
-							<div class="popup-portfolio-text__value">386 400 &#8381;</div>
-						</div>
-						<div class="popup-portfolio-text__title">Прораб: <strong>Петренко А.В.</strong></div>
-						<div class="popup-portfolio-text__title">Руководитель проекта:</div>
-						<div class="popup-portfolio-text__title"><strong>Тюленев Э.Н.</strong></div>
-					</div>
-				</div><!-- /popup-portfolio-text -->
-				<div class="popup-portfolio-text">
-					<div class="popup-portfolio-text-important">
-						<div class="popup-portfolio-text-wrap">
-							<div class="popup-portfolio-text__title">Площадь квартиры</div>
-							<div class="popup-portfolio-text__value_big">56<span> м<sup>2</sup></span></div>
-						</div>
-						<div class="popup-portfolio-text-wrap">
-							<div class="popup-portfolio-text__title">Срок<br>ремонта</div>
-							<div class="popup-portfolio-text__value_big">54<span> дней</span></div>
-						</div>
-					</div>
-					<div class="popup-portfolio-text-price">
-						<div>
-							<div class="popup-portfolio-text__title">Вид ремонта</div>
-							<div class="popup-portfolio-text__value">Косметический</div>
-						</div>
-						<div>
-							<div class="popup-portfolio-text__title">Стоимость работ</div>
-							<div class="popup-portfolio-text__value">120 000 &#8381;</div>
-						</div>
-						<div>
-							<div class="popup-portfolio-text__title">Стоимость материалов</div>
-							<div class="popup-portfolio-text__value">180 000 &#8381;</div>
-						</div>
-					</div><!-- /popup-portfolio-text-price -->
-					<div class="popup-portfolio-text-authors">
-						<div>
-							<div class="popup-portfolio-text__title">Общая стоимость ремонта</div>
-							<div class="popup-portfolio-text__value">300 000 &#8381;</div>
-						</div>
-						<div class="popup-portfolio-text__title">Прораб: <strong>Петренко А.В.</strong></div>
-						<div class="popup-portfolio-text__title">Руководитель проекта:</div>
-						<div class="popup-portfolio-text__title"><strong>Тюленев Э.Н.</strong></div>
-					</div>
-				</div><!-- /popup-portfolio-text -->
-				<div class="popup-portfolio-text">
-					<div class="popup-portfolio-text-important">
-						<div class="popup-portfolio-text-wrap">
-							<div class="popup-portfolio-text__title">Площадь квартиры</div>
-							<div class="popup-portfolio-text__value_big">102<span> м<sup>2</sup></span></div>
-						</div>
-						<div class="popup-portfolio-text-wrap">
-							<div class="popup-portfolio-text__title">Срок<br>ремонта</div>
-							<div class="popup-portfolio-text__value_big">99<span> дней</span></div>
-						</div>
-					</div>
-					<div class="popup-portfolio-text-price">
-						<div>
-							<div class="popup-portfolio-text__title">Вид ремонта</div>
-							<div class="popup-portfolio-text__value">Евроремонт</div>
-						</div>
-						<div>
-							<div class="popup-portfolio-text__title">Стоимость работ</div>
-							<div class="popup-portfolio-text__value">200 500 &#8381;</div>
-						</div>
-						<div>
-							<div class="popup-portfolio-text__title">Стоимость материалов</div>
-							<div class="popup-portfolio-text__value">185 900 &#8381;</div>
-						</div>
-					</div><!-- /popup-portfolio-text-price -->
-					<div class="popup-portfolio-text-authors">
-						<div>
-							<div class="popup-portfolio-text__title">Общая стоимость ремонта</div>
-							<div class="popup-portfolio-text__value">386 400 &#8381;</div>
-						</div>
-						<div class="popup-portfolio-text__title">Прораб: <strong>Петренко А.В.</strong></div>
-						<div class="popup-portfolio-text__title">Руководитель проекта:</div>
-						<div class="popup-portfolio-text__title"><strong>Тюленев Э.Н.</strong></div>
-					</div>
-				</div><!-- /popup-portfolio-text -->
-				<div class="popup-portfolio-text">
-					<div class="popup-portfolio-text-important">
-						<div class="popup-portfolio-text-wrap">
-							<div class="popup-portfolio-text__title">Площадь квартиры</div>
-							<div class="popup-portfolio-text__value_big">82<span> м<sup>2</sup></span></div>
-						</div>
-						<div class="popup-portfolio-text-wrap">
-							<div class="popup-portfolio-text__title">Срок<br>ремонта</div>
-							<div class="popup-portfolio-text__value_big">90<span> дней</span></div>
-						</div>
-					</div>
-					<div class="popup-portfolio-text-price">
-						<div>
-							<div class="popup-portfolio-text__title">Вид ремонта</div>
-							<div class="popup-portfolio-text__value">Индивидуальный</div>
-						</div>
-						<div>
-							<div class="popup-portfolio-text__title">Стоимость работ</div>
-							<div class="popup-portfolio-text__value">200 500 &#8381;</div>
-						</div>
-						<div>
-							<div class="popup-portfolio-text__title">Стоимость материалов</div>
-							<div class="popup-portfolio-text__value">185 900 &#8381;</div>
-						</div>
-					</div><!-- /popup-portfolio-text-price -->
-					<div class="popup-portfolio-text-authors">
-						<div>
-							<div class="popup-portfolio-text__title">Общая стоимость ремонта</div>
-							<div class="popup-portfolio-text__value">386 400 &#8381;</div>
-						</div>
-						<div class="popup-portfolio-text__title">Прораб: <strong>Петренко А.В.</strong></div>
-						<div class="popup-portfolio-text__title">Руководитель проекта:</div>
-						<div class="popup-portfolio-text__title"><strong>Тюленев Э.Н.</strong></div>
-					</div>
-				</div><!-- /popup-portfolio-text --></div>
 		</div>
 	</div><!-- /popup-portfolio -->
 	<div class="popup popup-transparency">
@@ -2112,47 +2176,55 @@
 					  fill="#322823" fill-opacity=".5"></path>
 			</svg>
 		</div>
-		<div class="popup-dialog-transparency">
-			<div class="close tablet-hide desktop-hide">
+		<div class="popup-dialog popup-dialog-transparency">
+			<!-- <div class="close tablet-hide desktop-hide">
 				<svg width="22" height="22" fill="none" viewBox="0 0 22 22" xmlns="http://www.w3.org/2000/svg">
 					<path fill-rule="evenodd" clip-rule="evenodd"
 						  d="M21.673.327a1.118 1.118 0 0 0-1.581 0L11 9.42 1.909.327A1.118 1.118 0 0 0 .327 1.91L9.42 11 .327 20.091a1.118 1.118 0 1 0 1.582 1.581L11 12.582l9.091 9.09a1.118 1.118 0 1 0 1.581-1.58L12.582 11l9.09-9.091a1.118 1.118 0 0 0 0-1.582z"
 						  fill="#322823" fill-opacity=".5"></path>
 				</svg>
-			</div>
-			<div class="popup-transparency-slider-wrap">
-				<div class="popup-transparency-slider">
-					<div class="popup-transparency-slider__slide"><img class="mobile-hide"
-																	   src="./images/popup/transparency-slide1.jpg" alt="">
-						<img
-								class="tablet-hide desktop-hide" src="./images/popup/mobile1.jpg" alt=""></div>
-					<div class="popup-transparency-slider__slide"><img class="mobile-hide"
-																	   src="./images/popup/transparency-slide2.jpg" alt="">
-						<img
-								class="tablet-hide desktop-hide" src="./images/popup/mobile1.jpg" alt=""></div>
-					<div class="popup-transparency-slider__slide"><img class="mobile-hide"
-																	   src="./images/popup/transparency-slide3.jpg" alt="">
-						<img
-								class="tablet-hide desktop-hide" src="./images/popup/mobile1.jpg" alt=""></div>
-				</div>
-				<div class="slider-counter slider-counter_dark" id="transparency-popup-counter">
-					<div class="slider-counter-content">
-						<div class="slider-counter-content__current"></div>
-						<div class="slider-counter-content__total"></div>
+			</div> -->
+			<div class="popup-transparency-slider-wrap splide">
+				<div class="splide__track">
+					<div class="popup-transparency-slider splide__list">
+						<div class="popup-transparency-slider__slide splide__slide">
+							<img class="mobile-hide"
+																			 src="./images/popup/transparency-slide1.jpg" alt="">
+							<img
+									class="tablet-hide desktop-hide" src="./images/popup/mobile1.jpg" alt="">
+						</div>
+						<div class="popup-transparency-slider__slide splide__slide">
+							<img class="mobile-hide"
+																			 src="./images/popup/transparency-slide2.jpg" alt="">
+							<img
+									class="tablet-hide desktop-hide" src="./images/popup/mobile1.jpg" alt="">
+						</div>
+						<div class="popup-transparency-slider__slide splide__slide">
+							<img class="mobile-hide"
+																			 src="./images/popup/transparency-slide3.jpg" alt="">
+							<img
+									class="tablet-hide desktop-hide" src="./images/popup/mobile1.jpg" alt="">
+						</div>
 					</div>
 				</div>
-				<div class="popup-arrow popup-arrow_transparency popup-arrow_transparency_left" id="transparency_left">
-					<svg width="18" height="25" fill="none" xmlns="http://www.w3.org/2000/svg">
-						<path d="M16.543 23.205L1 12.103 16.543 1.002" stroke="#fff" stroke-opacity=".5" stroke-width="1.665"
-							  stroke-linecap="round" stroke-linejoin="round"></path>
-					</svg>
+				<div class="splide__arrows">
+					<div class="splide__arrow splide__arrow--prev popup-arrow popup-arrow_transparency popup-arrow_transparency_left" id="transparency_left">
+						<svg width="18" height="25" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<path d="M16.543 23.205L1 12.103 16.543 1.002" stroke="#fff" stroke-opacity=".5" stroke-width="1.665"
+									stroke-linecap="round" stroke-linejoin="round"></path>
+						</svg>
+					</div>
+					<div class="splide__arrow splide__arrow--next  popup-arrow popup-arrow_transparency popup-arrow_transparency_right" id="transparency_right">
+						<svg width="18" height="25" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<path d="M1.458 1L17 12.102 1.458 23.204" stroke="#fff" stroke-opacity=".5" stroke-width="1.665"
+									stroke-linecap="round" stroke-linejoin="round"></path>
+						</svg>
+					</div>
 				</div>
-				<div class="popup-arrow popup-arrow_transparency popup-arrow_transparency_right" id="transparency_right">
-					<svg width="18" height="25" fill="none" xmlns="http://www.w3.org/2000/svg">
-						<path d="M1.458 1L17 12.102 1.458 23.204" stroke="#fff" stroke-opacity=".5" stroke-width="1.665"
-							  stroke-linecap="round" stroke-linejoin="round"></path>
-					</svg>
-				</div>
+				<ul class="splide__pagination">
+					<div class="count"></div>
+				</ul>
+				
 			</div>
 		</div>
 	</div>
