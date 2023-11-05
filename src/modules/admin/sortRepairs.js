@@ -2,6 +2,9 @@ import { repairRender } from "./repairRender";
 
 export const sortRepairs = () => {
   const table = document.querySelector("table");
+  if (!table) {
+    return;
+  }
   const headerSortId = table.querySelector(".th-id");
   const headerSortType = table.querySelector(".th-type");
   const headerSortName = table.querySelector(".th-name");
