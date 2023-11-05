@@ -1,11 +1,12 @@
 import { UserService } from "./modules/admin/userService/userService";
 import { render } from "./modules/admin/userService/render";
-import { addUsers } from "./modules/admin/userService/addUsers";
+// import { addUsers } from "./modules/admin/userService/addUsers";
 import { removeUsers } from "./modules/admin/userService/removeUsers";
 import { changePermissions } from "./modules/admin/userService/changePermissions";
 import { editUsers } from "./modules/admin/userService/editUsers";
 import { filterUsers } from "./modules/admin/userService/filterUsers";
 import { sortUsers } from "./modules/admin/userService/sortUsers";
+import { authorization } from "./modules/admin/userService/authorization";
 
 import { RepairService } from "./modules/admin/repairService";
 import { repairRender } from "./modules/admin/repairRender";
@@ -27,12 +28,13 @@ repairService.getRepairs().then((data) => {
   repairRender(data);
 });
 
-addUsers();
+// addUsers();
 removeUsers();
 changePermissions();
 editUsers();
 filterUsers();
 sortUsers();
+authorization();
 
 addRepairs();
 removeRepairs();
