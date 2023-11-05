@@ -643,6 +643,13 @@
       "units": "v",
       "cost": "v",
       "id": "eL2tq8u"
+    },
+    {
+      "type": "rrr",
+      "name": "rrr",
+      "units": "rrr",
+      "cost": "rrr",
+      "id": "7VSa4B6"
     }
   ]
 }
