@@ -72,7 +72,7 @@ export const repairTypesContent = () => {
   };
 
   // заполнение списков
-  getData("http://localhost:4545/repairTypes")
+  getData("http://127.0.0.1:4545/repair")
     .then((arrRepair) => {
       //Заполнение списка услуг и цен
       repairTypes(arrRepair);

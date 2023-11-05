@@ -7,9 +7,8 @@
     "build": "webpack --mode=production",
     "watch": "webpack --watch --mode=development",
     "start": "webpack serve --mode=development --open",
-    "server2525": "json-server --watch db/dbFeedback.json --port=2525",
-    "server4545": "json-server --watch db/dbRepairTypes.json --port=4545 --host=127.0.0.1",
-    "server3535": "json-server --watch db/dbUsers.json --port=3535"
+    "server": "json-server --watch db/merger.js --port=4545 --host=127.0.0.1"
+
   },
   "keywords": [],
   "author": "",

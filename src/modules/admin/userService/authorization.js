@@ -94,7 +94,7 @@ export const authorization = () => {
     }
   };
 
-  getData("http://localhost:3535/users")
+  getData("http://127.0.0.1:4545/users")
     .then((arrUsers) => {
       auth(arrUsers[0]);
     })
