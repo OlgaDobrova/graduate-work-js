@@ -28,7 +28,7 @@ const emerging = (popupElement) => {
 
   popupElement.style.opacity = 0;
   animate({
-    duration: 1000,
+    duration: 500,
     timing(timeFraction) {
       return timeFraction;
     },
@@ -41,7 +41,7 @@ const emerging = (popupElement) => {
 //скрытие
 const hiding = (popupElement, removeClass = "") => {
   animate({
-    duration: 1000,
+    duration: 500,
     timing(timeFraction) {
       return timeFraction;
     },

@@ -87,39 +87,30 @@
   visibility: visible;
   opacity: 1;
 }
-.repair-types .repair-types-tab .slider-arrow {
-  display: none;
+
+@media (max-width: 1024px) {
+  .formula-item.splide__slide .formula-item-popup {
+      top: 125px;
+  }
+
+  #formula .splide__arrows .splide__arrow--prev svg {
+    transform: scaleX(1);
+  }
 }
-.repair-types .splide__arrow--prev svg {
-  transform: translateY(3px);
-}
-.repair-types .splide__arrow--next svg {
-  transform: translateY(3px);
+@media (max-width: 575px) {
+  .formula-slider.splide__list {
+    min-height: 335px;
+  }
+  .formula-item.splide__slide .formula-item-popup {
+      top: 125px;
+  }
 }
 
-/* .repair-types .splide {
-  visibility: visible;
-} */
-.repair-types .splide__arrows.splide__arrows--ltr {
-  display: block !important;
-}
+/* слайдер в блоке ВИДЫ РЕМОНТА */
+
 .repair-types .nav-list-repair.splide__list {
   display: flex;
   flex-direction: column;
-}
-.repair-types .nav-list-repair.splide__list .button_o.splide__slide {
-  position: relative;
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  width: 100% !important;
-  margin: 10px 0 10px 170px;
-}
-.repair-types .nav-list-repair.splide__list .button_o.splide__slide svg {
-  position: absolute;
-  top: 0;
-  left: -40px;
-  z-index: -1;
 }
 
 .repair-types .nav-list-repair.splide__list .splide__slide.is-active svg path {
@@ -175,6 +166,68 @@
   padding-top: 3px;
 }
 
+@media (max-width: 1024px) {
+  #repair-types .splide__arrows .splide__arrow--prev svg {
+    transform: scaleX(1);
+  }
+  #repair-types .row {
+    align-items: flex-start;
+    justify-content: center;
+  }
+  #repair-types .repair-types-slider {
+    border-radius: 0;
+    width: 100%;
+    height: auto;
+  }
+  #repair-types .repair-types-slider.splide__list {
+    border-radius: 50%;
+  }
+  #repair-types  .repair-types-tab.splide .nav-wrap:before {
+    display: none;
+  }
+  #repair-types  .repair-types-nav.splide__track {
+    width: 100%;
+  }
+  #repair-types  .nav-list-repair.splide__list {
+    flex-wrap: nowrap;
+    flex-direction: row;
+  }
+  #repair-types .button_o.splide__slide {
+    margin: 10px 0;
+    position: relative;
+    display: flex;
+    justify-content: center;
+  }
+  #repair-types .button_o.splide__slide svg {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-15%);
+    width: 100%;
+  }
+  #repair-types .button_o.splide__slide svg path {
+    width: 100%;
+  }
+  #repair-types .repair-types-tab .slider-arrow {
+    display: flex;
+  }
+  .popup-repair-types .nav-list.nav-list-popup-repair {
+    min-width: 100%;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+  .popup-repair-types .nav-arrow {
+    display: none;
+  }
+}
+@media (max-width: 576px) {
+  #repair-types .button_o.splide__slide svg {
+    transform: translateX(-35%);
+  }
+}
+
+/* АККОРДЕОН */
+
 .accordion h2 {
   position: relative;
 }
@@ -189,59 +242,9 @@
 .accordion h2.msg-active .plus {
   transform: rotate(45deg);
 }
-@media (max-width: 1024px) {
-  .formula-item.splide__slide .formula-item-popup {
-      top: 125px;
-  }
-  .repair-types .repair-types-tab .slider-arrow {
-    display: flex;
-  }
-  .repair-types .nav-wrap.nav-wrap-repair::before{
-    display: none;
-  }
-  .repair-types .nav-list-repair.splide__list {
-    flex-direction: row;
-    flex-wrap: nowrap;
-    align-items: flex-start;
-    justify-content: center;
-    width: 100%;
-  }
-  .repair-types .nav-list-repair.splide__list .button_o.splide__slide {
-    justify-content: center !important;
-    margin: 0;
-  }
-  .repair-types .nav-list-repair.splide__list .splide__slide.is-active {
-    margin: 0;
-    justify-content: center !important;
-  }
-  .repair-types .nav-list-repair .button_o.splide__slide  svg{
-    left: 50% !important;
-    transform: translateX(-50%)
-  }
-  .repair-types .nav-list-repair .is-active svg path {
-    -webkit-transition: 0.5s;
-    transition: 0.5s;
-    stroke: #F48922;
-  }
-  
-  .repair-types .nav-list-repair .button_o:hover svg path {
-    stroke: #F48922;
-  }
-  .repair-types .repair-types-slider .splide__pagination {
-    bottom: 5.5em;
-  }
-}
+
 
 @media (max-width: 575px) {
-  .splide__arrow svg {
-    transform: none;
-  }
-  .formula-slider.splide__list {
-    min-height: 335px;
-  }
-  .formula-item.splide__slide .formula-item-popup {
-      top: 125px;
-  }
   #reviews-arrow_left svg, 
   #reviews-arrow_right svg {
     padding-top: 0;
@@ -318,6 +321,49 @@
 .popup-portfolio-slider-wrap .splide__arrow svg path {
   fill: #fff
 }
+
+@media (max-width: 1024px) {
+  .portfolio-desktop.splide {
+    width: 100% ;
+  }
+  .portfolio-slider.mobile-hide.splide__list {
+    display: flex;
+    height: auto;
+  }
+  #portfolio-arrow_left {
+    display: flex;
+  }
+  #portfolio-arrow_left svg {
+    transform: scaleX(1);
+  }
+  .popup-portfolio .popup-dialog-portfolio {
+    height: auto;
+  }
+  .popup-portfolio .popup-portfolio-slider__slide.splide__slide {
+    flex-direction: column;
+  }
+  .popup-portfolio .popup-portfolio-slider__slide.splide__slide img {
+    width: 100%;
+    height: 50%;
+    object-fit: cover;
+  }
+  .popup-portfolio .popup-portfolio-slider__slide.splide__slide .popup-portfolio-text {
+    width: 100%;
+    height: 50%;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+}
+@media (max-width: 576px) {
+  .popup-portfolio .popup-dialog-portfolio {
+    max-height: 100%;
+    max-width: 100%;
+  }
+  #portfolio-arrow_right {
+    display: flex;
+  }
+}
+
  
 
 /* слайдер в блоке ДОГОВОР */
@@ -392,4 +438,17 @@
   .transparency-slider-wrap .splide__arrow svg {
     margin-top: 0;
   }
+}
+
+/* слайдер УСЛОВИЯ РЕМОНТА на баннере */
+.services-slider.splide .services-item.splide__slide {
+  top: 0px;
+  margin-top: 30px;
+  flex-wrap: wrap;
+  min-height: 234px;
+  height: 100%;
+}
+.services-slider.splide .services-item.splide__slide .services-item__img {
+  min-height: 180px;
+  height: 100%;
 }

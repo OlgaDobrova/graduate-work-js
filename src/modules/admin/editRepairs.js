@@ -37,9 +37,12 @@ export const editRepairs = () => {
         modalOverlay.addEventListener("click", (e) => {
           if (
             !e.target.closest(".modal") ||
-            e.target.closest(".button__close")
+            e.target.closest(".button__close") ||
+            e.target.closest(".cancel-button")
           ) {
             modalOverlay.style.display = "";
+            form.reset();
+            form.removeAttribute("data-repair");
           }
         });
       }

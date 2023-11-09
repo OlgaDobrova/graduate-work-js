@@ -2,6 +2,7 @@ import { repairRender } from "./repairRender";
 
 export const addRepairs = () => {
   const btnAddItem = document.querySelector(".button.btn-addItem");
+  const modalOverlay = document.getElementById("modal");
 
   const addition = () => {
     const form = document.querySelector("form");
@@ -9,6 +10,10 @@ export const addRepairs = () => {
     const nameInput = form.querySelector("#name");
     const unitsInput = form.querySelector("#units");
     const costInput = form.querySelector("#cost");
+
+    if (!form) {
+      return;
+    }
 
     if (form) {
       form.addEventListener("submit", (e) => {
@@ -29,6 +34,7 @@ export const addRepairs = () => {
               // отрисовываем repairs
               repairRender(repairs);
               form.reset();
+              modalOverlay.style.display = "";
             });
           });
         }
@@ -38,15 +44,19 @@ export const addRepairs = () => {
 
   if (btnAddItem) {
     btnAddItem.addEventListener("click", () => {
-      const modalOverlay = document.getElementById("modal");
       if (modalOverlay) {
+        const form = document.querySelector("form");
+        const formHeader = modalOverlay.querySelector(".modal__header");
         modalOverlay.style.display = "flex";
+        formHeader.textContent = "Добавение новой услуги";
 
         modalOverlay.addEventListener("click", (e) => {
           if (
             !e.target.closest(".modal") ||
-            e.target.closest(".button__close")
+            e.target.closest(".button__close") ||
+            e.target.closest(".cancel-button")
           ) {
+            form.reset();
             modalOverlay.style.display = "";
           }
         });

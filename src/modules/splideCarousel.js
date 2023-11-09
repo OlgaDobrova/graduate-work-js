@@ -37,6 +37,22 @@ export const splideCarousel = () => {
       // инициализация слайдера
       splideSliderFormula.mount();
 
+      // //в БЛОКе ПОЛНЫЙ СПИСОК УСЛУГ И ЦЕН - мобилка
+      // const splideNavListPopupRepair = new Splide(
+      //   ".nav-popup-repair-types.splide",
+      //   {
+      //     type: "loop", // зацикливание слайдера
+      //     perPage: 1, // кол-во видимых страниц
+      //     perMove: 1, //движение по 1 слайду
+      //     focus: "center", // м.б. num(№ слайда) или позиционирование
+      //     // pauseOnHover: true,
+      //     autoplay: false,
+      //     pagination: false, // наличие пагинации
+      //   }
+      // );
+      // // инициализация слайдера
+      // splideNavListPopupRepair.mount();
+
       //БЛОК ДОГОВОР - мобилка
       const splideTransparency = new Splide(
         ".transparency-slider-wrap.splide",
@@ -52,14 +68,29 @@ export const splideCarousel = () => {
       // инициализация слайдера
       splideTransparency.mount();
     }
+    if (windowClientWidth < 576) {
+      //БЛОК УСЛОВИЯ РЕМОНТА - мобилка
+      const splideRepairConditions = new Splide(
+        ".services .services-slider.splide",
+        {
+          type: "loop", // зацикливание слайдера
+          perPage: 1, // кол-во видимых страниц
+          perMove: 1, //движение по 1 слайду
+          focus: "center", // м.б. num(№ слайда) или позиционирование
+          pagination: false, // наличие пагинации
+        }
+      );
+      // инициализация слайдера
+      splideRepairConditions.mount();
+    }
 
     // ====================================================
     // СЛАЙДЕРЫ В МОДАЛЬНОМ ОКНЕ
 
     //БЛОК ДОГОВОР - модалка
-    const arrTransparency = document.querySelectorAll(
-      "#transparency .transparency-slider.splide__list .transparency-item__img"
-    );
+    // const arrTransparency = document.querySelectorAll(
+    //   "#transparency .transparency-slider.splide__list .transparency-item__img"
+    // );
 
     const splidePopupTransparency = new Splide(
       ".popup-transparency-slider-wrap.splide",
@@ -116,12 +147,13 @@ export const splideCarousel = () => {
           // здесь изменения
           updateOnMove: true, //Обновляет is-active статус слайдов непосредственно перед перемещением карусели
           type: "loop",
+          rewind: false,
+          autoWidth: false,
           perMove: 1,
           perPage: 1,
           gap: 0,
           arrows: true,
           autoplay: false,
-          focus: "center",
         },
       },
     });
@@ -162,6 +194,15 @@ export const splideCarousel = () => {
       omitEnd: true,
       arrowPath:
         "M16.03 5.47a.75.75 0 0 1 0 1.06l-4.773 4.773a.75.75 0 0 1-1.06-1.06L14.439 6l-4.242-4.243a.75.75 0 1 1 1.06-1.06L16.03 5.47zM.5 5.25h15v1.5H.5v-1.5z",
+      breakpoints: {
+        1024: {
+          perPage: 2,
+          type: "loop",
+        },
+        768: {
+          perPage: 1,
+        },
+      },
     });
 
     portfolioSplider.on("click", function (e) {

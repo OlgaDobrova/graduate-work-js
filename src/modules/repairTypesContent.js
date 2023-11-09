@@ -32,6 +32,7 @@ export const repairTypesContent = () => {
       let newElem = document.createElement("button");
       newElem.classList.add("button_o");
       newElem.classList.add("popup-repair-types-nav__item");
+      newElem.classList.add("splide__slide");
       if (index == 0) {
         newElem.classList.add("active");
       }

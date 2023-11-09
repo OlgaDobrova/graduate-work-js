@@ -17,14 +17,14 @@ export const menu = () => {
 
     if (direction == "up") {
       if (top - currentTop < 0) {
-        currentTop -= 10;
+        currentTop -= 30;
         document.documentElement.scrollTop = currentTop;
       } else {
         cancelAnimationFrame(idInterval);
       }
     } else {
       if (top - currentTop > 0) {
-        currentTop += 10;
+        currentTop += 15;
         document.documentElement.scrollTop = currentTop;
       } else {
         cancelAnimationFrame(idInterval);
@@ -47,6 +47,7 @@ export const menu = () => {
       e.preventDefault();
       topElement = document.getElementById(link).offsetTop; // позиция элемента от верхнего края документа
       handleElement(".popup-dialog-menu", "active-menu");
+      direction = "down";
       scroll();
     }
   });

@@ -7,19 +7,23 @@ export const popupToggle = () => {
 
   arrayFormulaItem.forEach((item) => {
     let dataAtt = item.dataset["popupformula"];
-    let popupElement = document.querySelector(`.formula-item-popup.${dataAtt}`);
+    let popupFormulaElement = document.querySelector(
+      `.formula-item-popup.${dataAtt}`
+    );
 
-    if (popupElement) {
+    if (popupFormulaElement) {
       item.addEventListener("mouseenter", () => {
-        if (popupElement.getBoundingClientRect().y < 0) {
-          popupElement.classList.add("active-bottom");
+        if (popupFormulaElement.getBoundingClientRect().y < 0) {
+          popupFormulaElement.classList.add("active-bottom");
         }
-
-        emerging(popupElement);
+        popupFormulaElement.style.visibility = "visible";
+        popupFormulaElement.style.opacity = 1;
       });
 
       item.addEventListener("mouseleave", () => {
-        hiding(popupElement, "active-bottom");
+        popupFormulaElement.classList.remove("active-bottom");
+        popupFormulaElement.style.opacity = "";
+        popupFormulaElement.style.visibility = "";
       });
     }
   });

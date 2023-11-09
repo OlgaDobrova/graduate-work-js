@@ -1,4 +1,4 @@
-import { authorization } from "./modules/admin/userService/authorization";
+import { authorization } from "./modules/admin/authorization";
 
 import { RepairService } from "./modules/admin/repairService";
 import { repairRender } from "./modules/admin/repairRender";

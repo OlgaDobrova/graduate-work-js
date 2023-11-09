@@ -1,6 +1,9 @@
 .main-auth {
   flex-direction: column;
 }
+.table__wrapper {
+  height: 700px;
+}
 #table .table-th.down svg {
   transform: rotate(180deg);
 }
